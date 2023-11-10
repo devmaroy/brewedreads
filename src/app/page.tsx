@@ -1,13 +1,11 @@
 import { prisma } from "@/lib/prisma";
 
 export default async function Home() {
-  const user = await prisma.user.findFirst({
-    where: { email: "test@test.com" },
-  });
+  const books = await prisma.book.findMany();
 
   return (
-    <main>
-      <h1>hello, {user?.email}</h1>
+    <main className="container mx-auto">
+      {/* <h1>Meet your coffee book</h1> */}
     </main>
   );
 }

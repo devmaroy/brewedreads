@@ -1,0 +1,122 @@
+[
+  {
+    "isbn": "978-0439023528",
+    "title": "The Hunger Games",
+    "publisher": "Scholastic Press",
+    "author": "Suzanne Collins",
+    "publishedDate": "2008-09-14T00:00:00.000Z",
+    "pageCount": 374,
+    "genres": ["Adventure", "Science Fiction", "Dystopian"],
+    "description": "In a dystopian future, the totalitarian nation of Panem is divided into 12 districts and the Capitol. Each year two young representatives from each district are selected by lottery to participate in The Hunger Games.",
+    "language": "English",
+    "coverImageUrl": "https://covers.openlibrary.org/b/id/12646545-L.jpg"
+  },
+  {
+    "isbn": "978-0439358071",
+    "title": "Harry Potter and the Order of the Phoenix",
+    "publisher": "Scholastic Inc.",
+    "author": "J.K. Rowling",
+    "publishedDate": "2003-06-21T00:00:00.000Z",
+    "pageCount": 870,
+    "genres": ["Fantasy", "Adventure", "Young Adult"],
+    "description": "Harry Potter is due to start his fifth year at Hogwarts School of Witchcraft and Wizardry. He is desperate to find out why his friends have been keeping secrets from him.",
+    "language": "English",
+    "coverImageUrl": "https://covers.openlibrary.org/b/id/12025326-L.jpg"
+  },
+  {
+    "isbn": "978-0141439556",
+    "title": "Pride and Prejudice",
+    "publisher": "Penguin Books",
+    "author": "Jane Austen",
+    "publishedDate": "1813-01-28T00:00:00.000Z",
+    "pageCount": 279,
+    "genres": ["Classic", "Romance", "Literature"],
+    "description": "The romantic clash of two opinionated people in England. Elizabeth Bennet, the daughter of a country gentleman, and Fitzwilliam Darcy, a rich aristocratic landowner.",
+    "language": "English",
+    "coverImageUrl": "https://covers.openlibrary.org/b/id/12714938-L.jpg"
+  },
+  {
+    "isbn": "978-0553296983",
+    "title": "Jurassic Park",
+    "publisher": "Ballantine Books",
+    "author": "Michael Crichton",
+    "publishedDate": "1990-11-20T00:00:00.000Z",
+    "pageCount": 416,
+    "genres": ["Science Fiction", "Thriller"],
+    "description": "An astonishing technique for recovering and cloning dinosaur DNA has been discovered. Now one of mankind's most thrilling fantasies has come true.",
+    "language": "English",
+    "coverImageUrl": "https://covers.openlibrary.org/b/id/12456920-L.jpg"
+  },
+  {
+    "isbn": "978-1594480003",
+    "title": "The Kite Runner",
+    "publisher": "Riverhead Books",
+    "author": "Khaled Hosseini",
+    "publishedDate": "2003-05-29T00:00:00.000Z",
+    "pageCount": 371,
+    "genres": ["Drama", "Historical Fiction"],
+    "description": "The unforgettable, heartbreaking story of the unlikely friendship between a wealthy boy and the son of his father's servant, set in a country that is in the process of being destroyed.",
+    "language": "English",
+    "coverImageUrl": "https://covers.openlibrary.org/b/id/9248224-L.jpg"
+  },
+  {
+    "isbn": "978-0316769488",
+    "title": "The Catcher in the Rye",
+    "publisher": "Little, Brown and Company",
+    "author": "J.D. Salinger",
+    "publishedDate": "1951-07-16T00:00:00.000Z",
+    "pageCount": 234,
+    "genres": ["Classic", "Young Adult", "Literature"],
+    "description": "The hero-narrator of The Catcher in the Rye is an ancient child of sixteen, a native New Yorker named Holden Caulfield.",
+    "language": "English",
+    "coverImageUrl": "https://covers.openlibrary.org/b/id/14318932-L.jpg"
+  },
+  {
+    "isbn": "978-0451524935",
+    "title": "1984",
+    "publisher": "Signet Classic",
+    "author": "George Orwell",
+    "publishedDate": "1949-06-08T00:00:00.000Z",
+    "pageCount": 328,
+    "genres": ["Dystopian", "Science Fiction", "Political Fiction"],
+    "description": "Written in 1948, 1984 was George Orwell's chilling prophecy about the future. And while 1984 has come and gone, Orwell's narrative is timelier than ever.",
+    "language": "English",
+    "coverImageUrl": "https://covers.openlibrary.org/b/id/8579190-L.jpg"
+  },
+  {
+    "isbn": "978-0743273565",
+    "title": "The Great Gatsby",
+    "publisher": "Scribner",
+    "author": "F. Scott Fitzgerald",
+    "publishedDate": "1925-04-10T00:00:00.000Z",
+    "pageCount": 180,
+    "genres": ["Classic", "Literature"],
+    "description": "The Great Gatsby, F. Scott Fitzgerald’s third book, stands as the supreme achievement of his career.",
+    "language": "English",
+    "coverImageUrl": "https://covers.openlibrary.org/b/id/8432047-L.jpg"
+  },
+  {
+    "isbn": "978-0140177398",
+    "title": "Of Mice and Men",
+    "publisher": "Penguin Books",
+    "author": "John Steinbeck",
+    "publishedDate": "1937-02-06T00:00:00.000Z",
+    "pageCount": 107,
+    "genres": ["Classic", "Literature", "Fiction"],
+    "description": "The compelling story of two outsiders striving to find their place in an unforgiving world.",
+    "language": "English",
+    "coverImageUrl": "https://covers.openlibrary.org/b/id/14320048-L.jpg"
+  },
+  {
+    "isbn": "978-0679783268",
+    "title": "To Kill a Mockingbird",
+    "publisher": "J.B. Lippincott & Co.",
+    "author": "Harper Lee",
+    "publishedDate": "1960-07-11T00:00:00.000Z",
+    "pageCount": 281,
+    "genres": ["Classic", "Historical Fiction", "Literature"],
+    "description": "The unforgettable novel of a childhood in a sleepy Southern town and the crisis of conscience that rocked it.",
+    "language": "English",
+    "coverImageUrl": "https://covers.openlibrary.org/b/id/12606567-L.jpg"
+  }
+]

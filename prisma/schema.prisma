@@ -16,3 +16,19 @@ model User {
   password String
   name String
 }
+
+model Book {
+  id Int @id @default(autoincrement())
+  isbn String @unique
+  title String
+  publisher String?
+  author String
+  publishedDate DateTime?
+  pageCount Int?
+  genres String[]
+  description String
+  language String
+  coverImageUrl String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

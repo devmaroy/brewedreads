@@ -1,9 +1,11 @@
-export default async function Home() {
+import Hero from "@/app/_components/sections/Hero";
+
+const Home = () => {
   return (
     <main>
-      <div>
-        <h1>BrewedReads</h1>
-      </div>
+      <Hero />
     </main>
   );
-}
+};
+
+export default Home;

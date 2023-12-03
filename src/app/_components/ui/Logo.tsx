@@ -8,7 +8,7 @@ interface LogoProps {
 const Logo = ({ className = "" }: LogoProps) => {
   return (
     <div
-      className={`w-logo-sm h-logo-sm sm:w-logo-lg sm:h-logo-lg relative top-1.5 flex-shrink-0 ${className}`}
+      className={`w-206p h-30p sm:h-35p sm:w-233p relative top-1.5 flex-shrink-0 ${className}`}
     >
       <Link href="/">
         <Image src="/logo.svg" alt="Brewed Reads logo" fill />

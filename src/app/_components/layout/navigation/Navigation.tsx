@@ -114,6 +114,7 @@ const Navigation = ({ isOpen, toggleNavigation }: NavigationProps) => {
               "lg:flex",
               "lg:w-full",
               "lg:justify-end",
+              "lg:!pr-0",
             )}
           >
             <NavigationMenuItem

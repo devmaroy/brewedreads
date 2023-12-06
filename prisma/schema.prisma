@@ -6,7 +6,7 @@ generator client {
 }
 
 datasource db {
-    provider = "sqlite"
+    provider = "postgresql"
     // NOTE: When using mysql or sqlserver, uncomment the @db.Text annotations in model Account below
     // Further reading:
     // https://next-auth.js.org/adapters/prisma#create-the-prisma-schema
@@ -14,17 +14,17 @@ datasource db {
     url      = env("DATABASE_URL")
 }
 
-model Post {
-    id        Int      @id @default(autoincrement())
-    name      String
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
+// model Post {
+//     id        Int      @id @default(autoincrement())
+//     name      String
+//     createdAt DateTime @default(now())
+//     updatedAt DateTime @updatedAt
 
-    createdBy   User   @relation(fields: [createdById], references: [id])
-    createdById String
+//     createdBy   User   @relation(fields: [createdById], references: [id])
+//     createdById String
 
-    @@index([name])
-}
+//     @@index([name])
+// }
 
 // Necessary for Next auth
 model Account {
@@ -53,21 +53,77 @@ model Session {
     user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
-model User {
-    id            String    @id @default(cuid())
-    name          String?
-    email         String?   @unique
-    emailVerified DateTime?
-    image         String?
-    accounts      Account[]
-    sessions      Session[]
-    posts         Post[]
-}
-
 model VerificationToken {
     identifier String
     token      String   @unique
     expires    DateTime
 
     @@unique([identifier, token])
+}
+
+model Book {
+    id               String   @id @default(cuid())
+    isbn             String   @unique
+    title            String
+    slug             String
+    publisher        String
+    user             User     @relation(fields: [userId], references: [id])
+    userId           String
+    publishedDate    DateTime
+    pageCount        Int
+    genres           Genre[]
+    description      String
+    language         String
+    coverImageUrl    String
+    coverImageWidth  Int
+    coverImageHeight Int
+    createdAt        DateTime @default(now())
+    updatedAt        DateTime @updatedAt
+    ratings          Rating[]
+    reviews          Review[]
+}
+
+model Genre {
+    id    String @id @default(cuid())
+    name  String
+    books Book[]
+}
+
+model Rating {
+    id     String @id @default(cuid())
+    score  Float
+    book   Book   @relation(fields: [bookId], references: [id])
+    bookId String
+    user   User   @relation(fields: [userId], references: [id])
+    userId String
+}
+
+model Review {
+    id      String @id @default(cuid())
+    content String
+    book    Book   @relation(fields: [bookId], references: [id])
+    bookId  String
+    user    User   @relation(fields: [userId], references: [id])
+    userId  String
+}
+
+model User {
+    id            String    @id @default(cuid())
+    name          String
+    email         String?   @unique
+    emailVerified DateTime?
+    avatar        String?
+    ratings       Rating[]
+    reviews       Review[]
+    Account       Account[]
+    Session       Session[]
+    Role          Role?     @relation(fields: [roleId], references: [id])
+    roleId        String?
+    Book          Book[]
+}
+
+model Role {
+    id    String @id @default(cuid())
+    name  String @unique
+    users User[]
 }

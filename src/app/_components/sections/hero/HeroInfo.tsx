@@ -6,11 +6,12 @@ const HeroInfo = () => {
     <div className="lg:max-w-[700px]">
       <div>
         <h1 className="text-clamp-44p-to-80p leading-1.2 mb-16p font-serif font-bold">
-          <span className="text-gradient block">Where Books</span> Meet Coffee
+          <span className="text-gradient">Where Books</span>{" "}
+          <span className="block">Meet Coffee</span>
         </h1>
-        <p className="text-clamp-18p-to-20p text-gradient m-0 mb-32p">
+        <p className="text-gradient text-clamp-18p-to-20p m-0 mb-32p">
           Coffee in One Hand, Adventure{" "}
-          <span className="block">in the Other</span>
+          <span className="block md:inline-block">in the Other</span>
         </p>
       </div>
 
@@ -33,7 +34,7 @@ const HeroInfo = () => {
       </div>
 
       <div className="mt-48p">
-        <Button className="bg-gradient !text-16p !h-52p rounded-full !px-24p">
+        <Button className="bg-gradient !h-52p !text-16p rounded-full !px-24p">
           Discover Books
           <ChevronRightIcon className="ml-8p h-4 w-4" strokeWidth={3} />
         </Button>

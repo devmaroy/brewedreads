@@ -10,13 +10,31 @@ export default {
   ],
   theme: {
     container: {
+      // you can configure the container to be centered
       center: true,
-      padding: "2rem",
+
+      // or have default horizontal padding
+      padding: {
+        DEFAULT: "12px",
+        sm: "2rem",
+        lg: "4rem",
+        xl: "5rem",
+        "2xl": "6rem",
+      },
+
+      // default breakpoints but with 40px removed
       screens: {
-        "2xl": "1400px",
+        sm: "1120px", // smallest mobile
+        md: "1120px", // medium devices
+        lg: "1120px", // large devices
+        xl: "1120px", // extra large devices
+        "2xl": "1120px", // largest breakpoint
       },
     },
     extend: {
+      gridTemplateColumns: {
+        "fluid-fill": "repeat(auto-fill, minmax(8.5rem, 1fr))",
+      },
       width: {
         "206p": "12.875rem",
         "233p": "14.5625rem",
@@ -71,8 +89,11 @@ export default {
         "48p": "3rem", // 48px
         // Clamp
         "clamp-44p-to-80p": "clamp(2.75rem, 6vw, 5rem)",
+        "clamp-46p-to-52p": "clamp(2.875rem, 6vw, 3.25rem)",
+        "clamp-32p-to-46p": "clamp(2rem, 6vw, 2.875rem)",
         "clamp-20p-to-24p": "clamp(1.25rem, 3vw, 1.5rem)",
         "clamp-18p-to-20p": "clamp(1.125rem, 3vw, 1.25rem)",
+        "clamp-16p-to-18p": "clamp(1rem, 3vw, 1.125rem)",
       },
       lineHeight: {
         "1.2": "1.2", // Line height = 1.2 times the font size

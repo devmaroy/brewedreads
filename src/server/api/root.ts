@@ -1,4 +1,6 @@
 import { postRouter } from "@/server/api/routers/post";
+import { genreRouter } from "@/server/api/routers/genre";
+import { bookRouter } from "@/server/api/routers/book";
 import { createTRPCRouter } from "@/server/api/trpc";
 
 /**
@@ -8,6 +10,8 @@ import { createTRPCRouter } from "@/server/api/trpc";
  */
 export const appRouter = createTRPCRouter({
   post: postRouter,
+  genre: genreRouter,
+  book: bookRouter,
 });
 
 // export type definition of API

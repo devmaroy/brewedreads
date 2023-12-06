@@ -1,0 +1,403 @@
+{
+  "genres": [
+    { "name": "Fiction" },
+    { "name": "Non-Fiction" },
+    { "name": "Romance" },
+    { "name": "Sci-Fi" },
+    { "name": "History" },
+    { "name": "Steampunk" },
+    { "name": "Fantasy" },
+    { "name": "Mystery" },
+    { "name": "Thriller" },
+    { "name": "Young Adult" },
+    { "name": "Children" },
+    { "name": "Horror" },
+    { "name": "Graphic Novels" },
+    { "name": "Comics" },
+    { "name": "Poetry" },
+    { "name": "Photography" },
+    { "name": "Technology" },
+    { "name": "Cookbooks" },
+    { "name": "Food" },
+    { "name": "Travel" },
+    { "name": "Adventure" },
+    { "name": "Art" },
+    { "name": "Science" },
+    { "name": "Religion" },
+    { "name": "Spirituality" },
+    { "name": "Health" },
+    { "name": "Fitness" },
+    { "name": "Business" },
+    { "name": "Economics" },
+    { "name": "Education" },
+    { "name": "Teaching" }
+  ],
+  "books": [
+    {
+      "isbn": "978-0-00-000001-1",
+      "title": "Whispers of Paris",
+      "author": "Isabelle LaRue",
+      "publisher": "Amour Editions",
+      "publishedDate": "2023-06-29T00:00:00.000Z",
+      "pageCount": 287,
+      "genres": ["Romance"],
+      "description": "A poignant love story unfolding in the heart of Paris, revealing the intimate whispers that carry the promise of romance and redemption.",
+      "language": "English",
+      "coverImageUrl": "https://res.cloudinary.com/dfyclbzqr/image/upload/v1701697392/brewedreads.com/cydmvzro0olftfkriw3z.jpg",
+      "coverImageWidth": 768,
+      "coverImageHeight": 1024,
+      "ratings": [{ "score": 4.4 }, { "score": 4.6 }],
+      "reviews": [
+        {
+          "content": "A novel that truly captures the essence of love in the city of lights."
+        },
+        {
+          "content": "LaRue enchants readers with a beautifully written tale of passion and discovery."
+        }
+      ]
+    },
+    {
+      "isbn": "978-0-00-000001-2",
+      "title": "The Enchanted Loom",
+      "author": "Evelyn Starling",
+      "publisher": "Galactic Reads",
+      "publishedDate": "2023-06-28T00:00:00.000Z",
+      "pageCount": 322,
+      "genres": ["Fantasy", "Sci-Fi"],
+      "description": "An epic fantasy where the fate of the universe weaves through the Enchanted Loom, a mystical device with powers beyond comprehension.",
+      "language": "English",
+      "coverImageUrl": "https://res.cloudinary.com/dfyclbzqr/image/upload/v1701697393/brewedreads.com/rfznsuvkwujms6vbn6rw.jpg",
+      "coverImageWidth": 768,
+      "coverImageHeight": 1024,
+      "ratings": [{ "score": 4.8 }, { "score": 4.7 }],
+      "reviews": [
+        {
+          "content": "Starling's masterpiece intricately blends fantasy and science fiction to create a unique reading experience."
+        },
+        {
+          "content": "The Enchanted Loom is a compelling tale of adventure and the timeless struggle between good and evil."
+        }
+      ]
+    },
+    {
+      "isbn": "978-0-00-000001-3",
+      "title": "Shadows Over Love",
+      "author": "Helena Blakely",
+      "publisher": "Crimson Quill",
+      "publishedDate": "2023-06-27T00:00:00.000Z",
+      "pageCount": 298,
+      "genres": ["Romance", "Crime"],
+      "description": "A gripping narrative that intertwines a crime investigation with a tumultuous love affair, casting shadows over the hearts involved.",
+      "language": "English",
+      "coverImageUrl": "https://res.cloudinary.com/dfyclbzqr/image/upload/v1701697389/brewedreads.com/jyuzzjogyvtdxs3hpkaz.jpg",
+      "coverImageWidth": 768,
+      "coverImageHeight": 1024,
+      "ratings": [{ "score": 4.5 }, { "score": 4.3 }],
+      "reviews": [
+        {
+          "content": "Blakely's Shadows Over Love is a dark romance that keeps you on the edge of your seat."
+        },
+        {
+          "content": "A seductive thriller that explores the complex layers of love and betrayal."
+        }
+      ]
+    },
+    {
+      "isbn": "978-0-00-000002-1",
+      "title": "Galactic Pioneers",
+      "author": "Helena Blakely",
+      "publisher": "Interstellar Books",
+      "publishedDate": "2023-06-26T00:00:00.000Z",
+      "pageCount": 360,
+      "genres": ["Space Opera", "Sci-Fi"],
+      "description": "Embark on a thrilling odyssey through the stars with the crew of the Odyssey, as they discover new worlds and civilizations.",
+      "language": "English",
+      "coverImageUrl": "https://res.cloudinary.com/dfyclbzqr/image/upload/v1701697391/brewedreads.com/jxbmvfxvwuamqcyorbzx.jpg",
+      "coverImageWidth": 768,
+      "coverImageHeight": 1024,
+      "ratings": [{ "score": 4.7 }, { "score": 4.5 }],
+      "reviews": [
+        {
+          "content": "Blakely's vision of space exploration redefines the space opera genre."
+        },
+        {
+          "content": "Galactic Pioneers is an exhilarating journey that pushes the boundaries of imagination."
+        }
+      ]
+    },
+    {
+      "isbn": "978-0-14-313569-2",
+      "title": "Stars Beneath Our Feet",
+      "publisher": "Cosmic Tales",
+      "publishedDate": "2023-06-25T00:00:00.000Z",
+      "pageCount": 305,
+      "genres": ["Romance", "Horror"],
+      "description": "A love story with a dark twist, under the canopy of night.",
+      "language": "English",
+      "coverImageUrl": "https://res.cloudinary.com/dfyclbzqr/image/upload/v1701697390/brewedreads.com/ql02xyzo2unr4xf7hhp6.jpg",
+      "coverImageWidth": 768,
+      "coverImageHeight": 1024,
+      "ratings": [{ "score": 4.2 }, { "score": 3.8 }],
+      "reviews": [
+        { "content": "Chills and romance intertwine masterfully." },
+        { "content": "Hauntingly beautiful and deeply moving." }
+      ]
+    },
+    {
+      "isbn": "978-0-00-000002-3",
+      "title": "The Last Alibi",
+      "author": "James Cole",
+      "publisher": "Mystery Masters Publishing",
+      "publishedDate": "2023-06-24T00:00:00.000Z",
+      "pageCount": 280,
+      "genres": ["Mystery", "Detective"],
+      "description": "A cunning detective with a knack for solving the unsolvable is faced with his most challenging case yet, where every suspect has an alibi.",
+      "language": "English",
+      "coverImageUrl": "https://res.cloudinary.com/dfyclbzqr/image/upload/v1701697392/brewedreads.com/vmu7lxcdhcgrypsz2oyk.jpg",
+      "coverImageWidth": 768,
+      "coverImageHeight": 1024,
+      "ratings": [{ "score": 4.6 }, { "score": 4.4 }],
+      "reviews": [
+        {
+          "content": "Cole's intricate plot twists make The Last Alibi a must-read for mystery aficionados."
+        },
+        {
+          "content": "A masterclass in detective fiction, James Cole's latest book is both intellectually stimulating and deeply engaging."
+        }
+      ]
+    },
+    {
+      "isbn": "978-0-00-000003-1",
+      "title": "Echoes of the Past",
+      "author": "Pete Simons",
+      "publisher": "Thrill Bound Publishing",
+      "publishedDate": "2023-06-23T00:00:00.000Z",
+      "pageCount": 345,
+      "genres": ["Mystery", "Thriller"],
+      "description": "A gripping thriller that delves into the secrets of a small town, where the echoes of a forgotten past hold the key to solving a chilling mystery.",
+      "language": "English",
+      "coverImageUrl": "https://res.cloudinary.com/dfyclbzqr/image/upload/v1701697388/brewedreads.com/gbu7xcjmo5rdnsfoghxr.jpg",
+      "coverImageWidth": 768,
+      "coverImageHeight": 1024,
+      "ratings": [{ "score": 4.5 }, { "score": 4.3 }],
+      "reviews": [
+        {
+          "content": "Simons masterfully crafts a suspenseful tale that keeps you guessing until the last page."
+        },
+        {
+          "content": "Echoes of the Past is an enthralling read that combines deep character development with a compelling mystery."
+        }
+      ]
+    },
+    {
+      "isbn": "978-0-00-000003-2",
+      "title": "Weaver's Soldier",
+      "author": "Steve McCall",
+      "publisher": "Heart & Crime Publishing",
+      "publishedDate": "2023-06-22T00:00:00.000Z",
+      "pageCount": 322,
+      "genres": ["Romance", "Crime"],
+      "description": "In the heart of the city, a detective finds himself entangled in a web of romance and deceit, where every clue unravels more of the mysterious weaver's soldier.",
+      "language": "English",
+      "coverImageUrl": "https://res.cloudinary.com/dfyclbzqr/image/upload/v1701697393/brewedreads.com/vwzijkxree7ygabdxvwb.jpg",
+      "coverImageWidth": 768,
+      "coverImageHeight": 1024,
+      "ratings": [{ "score": 4.4 }, { "score": 4.2 }],
+      "reviews": [
+        {
+          "content": "McCall's unique blend of crime and romance makes Weaver's Soldier an unforgettable read."
+        },
+        {
+          "content": "A novel that expertly weaves together elements of passion and intrigue."
+        }
+      ]
+    },
+    {
+      "isbn": "978-0-00-000003-3",
+      "title": "Crown of Frost",
+      "author": "Leo Draven",
+      "publisher": "Fantasia Youth",
+      "publishedDate": "2023-06-21T00:00:00.000Z",
+      "pageCount": 300,
+      "genres": ["Young Adult", "Fantasy"],
+      "description": "In a world where magic reigns and winter never ends, a young hero must wear the crown of frost to save the kingdom from eternal darkness.",
+      "language": "English",
+      "coverImageUrl": "https://res.cloudinary.com/dfyclbzqr/image/upload/v1701697388/brewedreads.com/umrxfh0dqtzvrknig5go.jpg",
+      "coverImageWidth": 768,
+      "coverImageHeight": 1024,
+      "ratings": [{ "score": 4.7 }, { "score": 4.5 }],
+      "reviews": [
+        {
+          "content": "Draven's Crown of Frost is a mesmerizing fantasy adventure, perfect for young adult readers."
+        },
+        {
+          "content": "A magical tale filled with enchanting characters and a spellbinding plot."
+        }
+      ]
+    },
+    {
+      "isbn": "978-0-00-000004-1",
+      "title": "The Painter's Apprentice",
+      "author": "Charlotte Betts",
+      "publisher": "Epoch Publishing House",
+      "publishedDate": "2023-06-20T00:00:00.000Z",
+      "pageCount": 380,
+      "genres": ["Historical", "Fiction"],
+      "description": "Set in the Renaissance era, a young apprentice painter embarks on a journey of discovery, art, and intrigue, learning more than just the techniques of the masters.",
+      "language": "English",
+      "coverImageUrl": "https://res.cloudinary.com/dfyclbzqr/image/upload/v1701697396/brewedreads.com/ghnxkncitnmpqjxgazro.jpg",
+      "coverImageWidth": 768,
+      "coverImageHeight": 1024,
+      "ratings": [{ "score": 4.5 }, { "score": 4.4 }],
+      "reviews": [
+        {
+          "content": "A vivid and rich portrayal of historical artistry. Betts weaves a tale as intricate as the paintings she describes."
+        },
+        {
+          "content": "An immersive journey into the heart of the Renaissance, filled with color, passion, and drama."
+        }
+      ]
+    },
+    {
+      "isbn": "978-0-00-000004-2",
+      "title": "Nebula's Edge",
+      "author": "Steve McCall",
+      "publisher": "Cosmos Press",
+      "publishedDate": "2023-06-19T00:00:00.000Z",
+      "pageCount": 345,
+      "genres": ["Sci-Fi"],
+      "description": "In the vast expanse of space, a team of explorers ventures to the edge of a mysterious nebula, uncovering secrets that challenge their understanding of the universe.",
+      "language": "English",
+      "coverImageUrl": "https://res.cloudinary.com/dfyclbzqr/image/upload/v1701697386/brewedreads.com/dfcqdqebu4hm1j5pf0xz.jpg",
+      "coverImageWidth": 768,
+      "coverImageHeight": 1024,
+      "ratings": [{ "score": 4.6 }, { "score": 4.7 }],
+      "reviews": [
+        {
+          "content": "McCall delivers an epic sci-fi adventure that's both thrilling and thought-provoking."
+        },
+        {
+          "content": "Nebula's Edge is a masterful blend of science and storytelling, pushing the boundaries of space exploration fiction."
+        }
+      ]
+    },
+    {
+      "isbn": "978-0-00-000004-3",
+      "title": "Love's Recipe",
+      "author": "Emma Valentine",
+      "publisher": "Heartfelt Tales",
+      "publishedDate": "2023-06-18T00:00:00.000Z",
+      "pageCount": 310,
+      "genres": ["Comedy", "Romance"],
+      "description": "A delightful romantic comedy where the recipe for love includes a dash of humor, a pinch of passion, and a sprinkle of serendipity, all mixed in the chaos of a bustling kitchen.",
+      "language": "English",
+      "coverImageUrl": "https://res.cloudinary.com/dfyclbzqr/image/upload/v1701697392/brewedreads.com/wq5nporpim99kvgez5ky.jpg",
+      "coverImageWidth": 768,
+      "coverImageHeight": 1024,
+      "ratings": [{ "score": 4.3 }, { "score": 4.2 }],
+      "reviews": [
+        {
+          "content": "Valentine whips up a deliciously funny and heartwarming story with Love's Recipe."
+        },
+        {
+          "content": "A perfect blend of laughter, love, and culinary chaos. A must-read for rom-com enthusiasts."
+        }
+      ]
+    },
+    {
+      "isbn": "978-0-00-000005-1",
+      "title": "Uncharted Stars",
+      "author": "George Reed",
+      "publisher": "Galactic Tales Publishing",
+      "publishedDate": "2023-06-17T00:00:00.000Z",
+      "pageCount": 356,
+      "genres": ["Sci-Fi"],
+      "description": "A captivating journey through the cosmos, exploring new worlds and unraveling the mysteries of uncharted stars.",
+      "language": "English",
+      "coverImageUrl": "https://res.cloudinary.com/dfyclbzqr/image/upload/v1701697393/brewedreads.com/mi7vsmtbhovumzyfsn2x.jpg",
+      "coverImageWidth": 768,
+      "coverImageHeight": 1024,
+      "ratings": [{ "score": 4.6 }, { "score": 4.8 }],
+      "reviews": [
+        {
+          "content": "Reed's Uncharted Stars is a thrilling space odyssey, rich in detail and imagination."
+        },
+        {
+          "content": "An awe-inspiring adventure that takes you to the furthest reaches of the galaxy."
+        }
+      ]
+    },
+    {
+      "isbn": "978-0-00-000005-2",
+      "title": "The Emperor's Shadow",
+      "author": "George Reed",
+      "publisher": "Mystical Realms",
+      "publishedDate": "2023-06-16T00:00:00.000Z",
+      "pageCount": 378,
+      "genres": ["Romance", "Fantasy"],
+      "description": "In an ancient empire where magic and intrigue abound, a forbidden romance blossoms in the shadow of a powerful emperor.",
+      "language": "English",
+      "coverImageUrl": "https://res.cloudinary.com/dfyclbzqr/image/upload/v1701697395/brewedreads.com/hgwrc18zqrqqakuvjx79.jpg",
+      "coverImageWidth": 768,
+      "coverImageHeight": 1024,
+      "ratings": [{ "score": 4.7 }, { "score": 4.5 }],
+      "reviews": [
+        {
+          "content": "A mesmerizing tale of love and power, set in a beautifully crafted fantasy world."
+        },
+        {
+          "content": "Reed's The Emperor's Shadow is a spellbinding romance that deftly weaves magic and intrigue."
+        }
+      ]
+    },
+    {
+      "isbn": "978-0-00-000005-3",
+      "title": "Final Verdict",
+      "author": "Steve McCall",
+      "publisher": "Justice Thrillers",
+      "publishedDate": "2023-06-15T00:00:00.000Z",
+      "pageCount": 342,
+      "genres": ["Crime", "History"],
+      "description": "A gripping historical crime drama set in the heart of the 20th century, where a landmark trial delivers a verdict that changes the course of history.",
+      "language": "English",
+      "coverImageUrl": "https://res.cloudinary.com/dfyclbzqr/image/upload/v1701697389/brewedreads.com/v2jctbi4flzliuciwuw1.jpg",
+      "coverImageWidth": 768,
+      "coverImageHeight": 1024,
+      "ratings": [{ "score": 4.4 }, { "score": 4.6 }],
+      "reviews": [
+        {
+          "content": "McCall's Final Verdict masterfully blends historical fact with a riveting crime narrative."
+        },
+        {
+          "content": "An intense and compelling read that offers a unique perspective on a pivotal moment in history."
+        }
+      ]
+    }
+  ],
+  "users": [
+    {
+      "name": "Alice Johnson",
+      "email": "alice@example.com",
+      "emailVerified": "2022-10-12T07:20:50.52Z",
+      "avatar": "http://example.com/images/users/alice.jpg"
+    },
+    {
+      "name": "Bob Smith",
+      "email": "bob@example.com",
+      "emailVerified": "2022-10-13T08:30:10.31Z",
+      "avatar": "http://example.com/images/users/bob.jpg"
+    },
+    {
+      "name": "Carol White",
+      "email": "carol@example.com",
+      "emailVerified": "2022-09-10T11:15:33.00Z",
+      "avatar": "http://example.com/images/users/carol.jpg"
+    },
+    {
+      "name": "David Brown",
+      "email": "david@example.com",
+      "emailVerified": "2022-11-01T17:22:45.67Z",
+      "avatar": "http://example.com/images/users/david.jpg"
+    }
+  ]
+}

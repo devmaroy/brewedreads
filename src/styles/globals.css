@@ -99,7 +99,7 @@ body {
 }
 
 .text-gradient {
-  @apply bg-[linear-gradient(62.32deg,#7C3AED_12.69%,#DE6B48_88.64%)] bg-clip-text text-transparent;
+  @apply inline-block bg-[linear-gradient(62.32deg,#7C3AED_12.69%,#DE6B48_88.64%)] bg-clip-text text-transparent;
 }
 
 .bg-gradient {

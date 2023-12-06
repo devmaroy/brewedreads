@@ -8,7 +8,7 @@ interface GenresBooks {
 
 const GenresBooks = ({ books }: GenresBooks) => {
   return (
-    <div className="grid-cols-fluid-fill mt-32p grid gap-24p md:gap-32p">
+    <div className="mt-32p grid grid-cols-fluid-fill gap-24p md:gap-32p">
       {books.map(({ id, title, slug, coverImageUrl }) => (
         <div key={id}>
           <Link href={`/books/${slug}`}>

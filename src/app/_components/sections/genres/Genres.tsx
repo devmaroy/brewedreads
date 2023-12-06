@@ -17,7 +17,7 @@ const Genres = async () => {
           </p>
         </div>
 
-        <GenresContent genres={genres} books={books} />
+        {books.length !== 0 && <GenresContent genres={genres} books={books} />}
       </div>
     </section>
   );

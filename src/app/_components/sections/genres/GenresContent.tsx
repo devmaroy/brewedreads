@@ -2,9 +2,11 @@
 
 import GenresBooks from "@/app/_components/sections/genres/GenresBooks";
 import GenresFilters from "@/app/_components/sections/genres/GenresFilters";
+import ErrorMessage from "@/app/_components/ui/ErrorMessage";
 import { Button } from "@/app/_components/ui/button";
+import SkeletonGenreBooks from "@/app/_components/ui/skeletons/SkeletonGenreBooks";
 import { api } from "@/trpc/react";
-import { type Book, type Genre } from "@/types/types";
+import { type Book, type Genre } from "@prisma/client";
 import { ChevronRightIcon } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
@@ -32,12 +34,23 @@ const GenresContent = ({ genres, books }: GenresContentProps) => {
     },
   );
 
+  const hasBooksToDisplay = isMountedRef.current
+    ? (booksQuery.data && booksQuery.data.length > 0) ??
+      (booksQuery.isLoading || booksQuery.isError)
+    : books.length > 0;
+
   const handleFilterClick = (genre: string) => {
     if (isMountedRef.current) {
       setActiveGenre(genre);
     }
   };
 
+  // Return null immediately if no books are available
+  if (!hasBooksToDisplay) {
+    return null;
+  }
+
+  // Render books content
   const renderContent = () => {
     if (!isMountedRef.current) {
       // On the initial render, display the books prop.
@@ -45,16 +58,15 @@ const GenresContent = ({ genres, books }: GenresContentProps) => {
     }
 
     if (booksQuery.isLoading) {
-      // skeleton would be better
-      return <p>Loading ...</p>;
+      return <SkeletonGenreBooks />;
     }
 
     if (booksQuery.isError) {
-      return <p>Error loading books</p>;
-    }
-
-    if (booksQuery.data.length === 0) {
-      return <p>Sorry, no data.</p>;
+      return (
+        <div className="mt-32p">
+          <ErrorMessage onRetry={() => booksQuery.refetch()} />
+        </div>
+      );
     }
 
     return <GenresBooks books={booksQuery.data} />;

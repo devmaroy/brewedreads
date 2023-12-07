@@ -8,14 +8,12 @@ import {
   CardTitle,
 } from "@/app/_components/ui/card";
 import Rating from "@/app/_components/ui/custom/Rating";
-import { type Book, type Genre } from "@/types/types";
+import { type Book } from "@/types/types";
 import { ChevronRightIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-interface PopularBookProps extends Book {
-  genres: Genre[];
-}
+type PopularBookProps = Book;
 
 const PopularBook = ({
   coverImageUrl,
@@ -23,7 +21,7 @@ const PopularBook = ({
   title,
   slug,
   genres,
-  description,
+  teaser,
 }: PopularBookProps) => {
   return (
     <Card className="flex flex-col rounded-md border-none bg-card-foreground">
@@ -45,16 +43,18 @@ const PopularBook = ({
           </div>
 
           <ul className="mb-32p mt-24p flex flex-wrap gap-8p">
-            {genres.map(({ id, name, slug }) => (
-              <li key={id} className="dot-shape-pseudo">
-                <Link
-                  href={`/genres/${slug}`}
-                  className="text-16p text-base transition-all hover:text-primary"
-                >
-                  {name}
-                </Link>
-              </li>
-            ))}
+            {genres &&
+              genres.length !== 0 &&
+              genres.map(({ id, name, slug }) => (
+                <li key={id} className="dot-shape-pseudo">
+                  <Link
+                    href={`/genres/${slug}`}
+                    className="text-16p text-base transition-all hover:text-primary"
+                  >
+                    {name}
+                  </Link>
+                </li>
+              ))}
           </ul>
         </div>
 
@@ -63,7 +63,7 @@ const PopularBook = ({
 
       <CardContent className="px-16p !pb-0 md:px-20p">
         <CardDescription className="text-16p text-base leading-1.6">
-          {description}
+          {teaser}
         </CardDescription>
       </CardContent>
 

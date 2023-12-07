@@ -8,9 +8,11 @@ export interface Book {
   id: string;
   title: string;
   slug: string;
-  description: string;
+  teaser?: string;
+  description?: string;
   coverImageUrl: string;
   coverImageWidth?: number;
   coverImageHeight?: number;
   averageRating: number | null;
+  genres?: Genre[];
 }

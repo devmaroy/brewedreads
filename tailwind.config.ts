@@ -33,7 +33,8 @@ export default {
     },
     extend: {
       gridTemplateColumns: {
-        "fluid-fill": "repeat(auto-fill, minmax(8.5rem, 1fr))",
+        "fluid-fill-8-5": "repeat(auto-fill, minmax(8.5rem, 1fr))",
+        "fluid-fill-18-5": "repeat(auto-fill, minmax(18.5rem, 1fr))",
       },
       width: {
         "206p": "12.875rem",
@@ -55,6 +56,7 @@ export default {
         "14p": "0.875rem",
         "16p": "1rem",
         "18p": "1.125rem",
+        "20p": "1.25rem",
         "24p": "1.5rem",
         "32p": "2rem",
         "40p": "2.5rem",

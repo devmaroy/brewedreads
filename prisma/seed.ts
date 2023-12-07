@@ -6,7 +6,14 @@ const prisma = new PrismaClient();
 
 async function main() {
   const genres = await Promise.all(
-    mockData.genres.map((genre) => prisma.genre.create({ data: genre })),
+    mockData.genres.map((genre) =>
+      prisma.genre.create({
+        data: {
+          name: genre.name,
+          slug: slugify(genre.name.toLowerCase()),
+        },
+      }),
+    ),
   );
 
   const users = await Promise.all(
@@ -39,6 +46,7 @@ async function main() {
         publishedDate: new Date(book.publishedDate),
         pageCount: book.pageCount,
         description: book.description,
+        teaser: book.teaser,
         language: book.language,
         coverImageUrl: book.coverImageUrl,
         coverImageWidth: book.coverImageWidth,
@@ -50,15 +58,26 @@ async function main() {
       },
     });
 
+    let totalScore = 0;
     for (const rating of book.ratings) {
-      await prisma.rating.create({
+      const createdRating = await prisma.rating.create({
         data: {
           score: rating.score,
           bookId: createdBook.id,
           userId: userId,
         },
       });
+
+      totalScore += createdRating.score;
     }
+
+    // Calculate and update averageRating
+    const averageRating =
+      book.ratings.length > 0 ? totalScore / book.ratings.length : 0;
+    await prisma.book.update({
+      where: { id: createdBook.id },
+      data: { averageRating },
+    });
 
     for (const review of book.reviews) {
       await prisma.review.create({

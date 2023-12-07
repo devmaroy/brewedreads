@@ -2,7 +2,7 @@
 
 import GenresBooks from "@/app/_components/sections/genres/GenresBooks";
 import GenresFilters from "@/app/_components/sections/genres/GenresFilters";
-import ErrorMessage from "@/app/_components/ui/ErrorMessage";
+import ErrorMessage from "@/app/_components/ui/custom/ErrorMessage";
 import { Button } from "@/app/_components/ui/button";
 import SkeletonGenreBooks from "@/app/_components/ui/skeletons/SkeletonGenreBooks";
 import { api } from "@/trpc/react";

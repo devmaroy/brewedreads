@@ -77,7 +77,7 @@ body {
     --background: 0 0% 100%;
     --foreground: 224 71.4% 4.1%;
     --card: 0 0% 100%;
-    --card-foreground: 224 71.4% 4.1%;
+    --card-foreground: 224 45% 10%;
     --popover: 0 0% 100%;
     --popover-foreground: 224 71.4% 4.1%;
     --primary: 262.1 83.3% 57.8%;
@@ -112,6 +112,17 @@ body {
 .bg-gradient:focus,
 .bg-gradient:active {
   background-position: right center;
+}
+
+.dot-shape-pseudo:not(:last-child)::after {
+  content: "";
+  @apply bg-[linear-gradient(62.32deg,#7C3AED_12.69%,#DE6B48_88.64%)];
+  display: inline-block;
+  width: 0.375rem;
+  height: 0.375rem;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-left: 0.5rem;
 }
 
 /* Remove after */

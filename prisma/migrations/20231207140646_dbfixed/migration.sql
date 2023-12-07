@@ -44,12 +44,14 @@ CREATE TABLE "Book" (
     "publishedDate" TIMESTAMP(3) NOT NULL,
     "pageCount" INTEGER NOT NULL,
     "description" TEXT NOT NULL,
+    "teaser" TEXT NOT NULL,
     "language" TEXT NOT NULL,
     "coverImageUrl" TEXT NOT NULL,
     "coverImageWidth" INTEGER NOT NULL,
     "coverImageHeight" INTEGER NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
+    "averageRating" DOUBLE PRECISION DEFAULT 0,
 
     CONSTRAINT "Book_pkey" PRIMARY KEY ("id")
 );
@@ -58,6 +60,7 @@ CREATE TABLE "Book" (
 CREATE TABLE "Genre" (
     "id" TEXT NOT NULL,
     "name" TEXT NOT NULL,
+    "slug" TEXT NOT NULL,
 
     CONSTRAINT "Genre_pkey" PRIMARY KEY ("id")
 );

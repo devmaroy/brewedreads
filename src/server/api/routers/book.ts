@@ -37,4 +37,40 @@ export const bookRouter = createTRPCRouter({
         take: limit,
       });
     }),
+  getPopularBooks: publicProcedure
+    .input(
+      z.object({
+        limit: z.number().optional(),
+      }),
+    )
+    .query(async ({ ctx, input }) => {
+      const limit = input.limit ?? 6;
+
+      // Fetch the top books based on average rating directly from the database
+      const books = await ctx.db.book.findMany({
+        take: limit,
+        orderBy: {
+          averageRating: "desc",
+        },
+        include: {
+          ratings: {
+            select: {
+              score: true,
+            },
+          },
+          genres: {
+            select: {
+              id: true,
+              name: true,
+              slug: true,
+            },
+            orderBy: {
+              name: "asc",
+            },
+          },
+        },
+      });
+
+      return books;
+    }),
 });

@@ -1,4 +1,5 @@
 import GenresContent from "@/app/_components/sections/genres/GenresContent";
+import SectionHeader from "@/app/_components/ui/custom/SectionHeader";
 import { api } from "@/trpc/server";
 
 const Genres = async () => {
@@ -8,14 +9,12 @@ const Genres = async () => {
   return (
     <section className="mt-96p lg:mt-120p">
       <div className="container">
-        <div>
-          <h2 className="text-gradient mb-8p font-serif text-clamp-32p-to-46p font-bold leading-1.2">
-            Find Your Genre
-          </h2>
-          <p className="text-base text-clamp-16p-to-18p leading-1.4">
-            Browse through the most popular genres and find what interests you.
-          </p>
-        </div>
+        <SectionHeader
+          heading="Find Your Genre"
+          content="Browse through the most popular genres and find what interests you."
+          decorationImage="/find-your-genre-shape.svg"
+          decorationClassName="right-[-2.2rem] top-[-2.2rem] h-[4.1875rem] w-[3.75rem] md:right-[-2.875rem] md:top-[-2.5rem] md:h-[5.3125rem] md:w-[4.6875rem]"
+        />
 
         {books.length !== 0 && <GenresContent genres={genres} books={books} />}
       </div>

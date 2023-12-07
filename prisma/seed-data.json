@@ -41,6 +41,7 @@
       "publishedDate": "2023-06-29T00:00:00.000Z",
       "pageCount": 287,
       "genres": ["Romance"],
+      "teaser": "In the luminous heart of Paris, a tender romance blossoms, weaving a tale of love as timeless as the city itself.",
       "description": "A poignant love story unfolding in the heart of Paris, revealing the intimate whispers that carry the promise of romance and redemption.",
       "language": "English",
       "coverImageUrl": "https://res.cloudinary.com/dfyclbzqr/image/upload/v1701697392/brewedreads.com/cydmvzro0olftfkriw3z.jpg",
@@ -64,6 +65,7 @@
       "publishedDate": "2023-06-28T00:00:00.000Z",
       "pageCount": 322,
       "genres": ["Fantasy", "Sci-Fi"],
+      "teaser": "The destiny of kingdoms in a tapestry where magic weaves the future and every thread spins a tale of adventure.",
       "description": "An epic fantasy where the fate of the universe weaves through the Enchanted Loom, a mystical device with powers beyond comprehension.",
       "language": "English",
       "coverImageUrl": "https://res.cloudinary.com/dfyclbzqr/image/upload/v1701697393/brewedreads.com/rfznsuvkwujms6vbn6rw.jpg",
@@ -87,6 +89,7 @@
       "publishedDate": "2023-06-27T00:00:00.000Z",
       "pageCount": 298,
       "genres": ["Romance", "Crime"],
+      "teaser": "In the midst of a city's darkest crimes, a love story unfolds, entangling hearts in a web where passion meets peril, and love battles the shadows of a thrilling mystery",
       "description": "A gripping narrative that intertwines a crime investigation with a tumultuous love affair, casting shadows over the hearts involved.",
       "language": "English",
       "coverImageUrl": "https://res.cloudinary.com/dfyclbzqr/image/upload/v1701697389/brewedreads.com/jyuzzjogyvtdxs3hpkaz.jpg",
@@ -110,6 +113,7 @@
       "publishedDate": "2023-06-26T00:00:00.000Z",
       "pageCount": 360,
       "genres": ["Space Opera", "Sci-Fi"],
+      "teaser": "Join the voyage of the starship Odyssey, where uncharted galaxies await and each star holds a story of adventure, danger, and the unyielding quest for discovery.",
       "description": "Embark on a thrilling odyssey through the stars with the crew of the Odyssey, as they discover new worlds and civilizations.",
       "language": "English",
       "coverImageUrl": "https://res.cloudinary.com/dfyclbzqr/image/upload/v1701697391/brewedreads.com/jxbmvfxvwuamqcyorbzx.jpg",
@@ -132,12 +136,13 @@
       "publishedDate": "2023-06-25T00:00:00.000Z",
       "pageCount": 305,
       "genres": ["Romance", "Horror"],
+      "teaser": "In the shadowed silence of the night, a haunting romance unfolds, where passion meets the unknown, and love dances with the unseen terrors beneath the stars.",
       "description": "A love story with a dark twist, under the canopy of night.",
       "language": "English",
       "coverImageUrl": "https://res.cloudinary.com/dfyclbzqr/image/upload/v1701697390/brewedreads.com/ql02xyzo2unr4xf7hhp6.jpg",
       "coverImageWidth": 768,
       "coverImageHeight": 1024,
-      "ratings": [{ "score": 4.2 }, { "score": 3.8 }],
+      "ratings": [{ "score": 2.7 }, { "score": 2.5 }],
       "reviews": [
         { "content": "Chills and romance intertwine masterfully." },
         { "content": "Hauntingly beautiful and deeply moving." }
@@ -151,6 +156,7 @@
       "publishedDate": "2023-06-24T00:00:00.000Z",
       "pageCount": 280,
       "genres": ["Mystery", "Detective"],
+      "teaser": "In a world where everyone has an alibi, one detective's relentless pursuit of truth leads to a labyrinth of secrets and lies, testing the limits of his wit and wisdom.",
       "description": "A cunning detective with a knack for solving the unsolvable is faced with his most challenging case yet, where every suspect has an alibi.",
       "language": "English",
       "coverImageUrl": "https://res.cloudinary.com/dfyclbzqr/image/upload/v1701697392/brewedreads.com/vmu7lxcdhcgrypsz2oyk.jpg",
@@ -174,6 +180,7 @@
       "publishedDate": "2023-06-23T00:00:00.000Z",
       "pageCount": 345,
       "genres": ["Mystery", "Thriller"],
+      "teaser": "In the quiet streets of a town with a hidden history, a mystery unravels, echoing through time, where every shadow whispers secrets and every silence screams truths.",
       "description": "A gripping thriller that delves into the secrets of a small town, where the echoes of a forgotten past hold the key to solving a chilling mystery.",
       "language": "English",
       "coverImageUrl": "https://res.cloudinary.com/dfyclbzqr/image/upload/v1701697388/brewedreads.com/gbu7xcjmo5rdnsfoghxr.jpg",
@@ -197,6 +204,7 @@
       "publishedDate": "2023-06-22T00:00:00.000Z",
       "pageCount": 322,
       "genres": ["Romance", "Crime"],
+      "teaser": "In a tale where love collides with mystery, a detective becomes entwined in a complex tapestry of romance and deceit, each thread leading closer to the enigmatic figure known as the weaver's soldier.",
       "description": "In the heart of the city, a detective finds himself entangled in a web of romance and deceit, where every clue unravels more of the mysterious weaver's soldier.",
       "language": "English",
       "coverImageUrl": "https://res.cloudinary.com/dfyclbzqr/image/upload/v1701697393/brewedreads.com/vwzijkxree7ygabdxvwb.jpg",
@@ -220,6 +228,7 @@
       "publishedDate": "2023-06-21T00:00:00.000Z",
       "pageCount": 300,
       "genres": ["Young Adult", "Fantasy"],
+      "teaser": "In a realm where the chill of magic pervades, a young hero rises, destined to don the Crown of Frost, embarking on a quest to bring light to a kingdom shrouded in endless winter.",
       "description": "In a world where magic reigns and winter never ends, a young hero must wear the crown of frost to save the kingdom from eternal darkness.",
       "language": "English",
       "coverImageUrl": "https://res.cloudinary.com/dfyclbzqr/image/upload/v1701697388/brewedreads.com/umrxfh0dqtzvrknig5go.jpg",
@@ -243,6 +252,7 @@
       "publishedDate": "2023-06-20T00:00:00.000Z",
       "pageCount": 380,
       "genres": ["Historical", "Fiction"],
+      "teaser": "In the vibrant ateliers of Renaissance, a young painter's quest for mastery unfolds, blending strokes of genius with layers of secrets, in a world where art and ambition intertwine.",
       "description": "Set in the Renaissance era, a young apprentice painter embarks on a journey of discovery, art, and intrigue, learning more than just the techniques of the masters.",
       "language": "English",
       "coverImageUrl": "https://res.cloudinary.com/dfyclbzqr/image/upload/v1701697396/brewedreads.com/ghnxkncitnmpqjxgazro.jpg",
@@ -266,6 +276,7 @@
       "publishedDate": "2023-06-19T00:00:00.000Z",
       "pageCount": 345,
       "genres": ["Sci-Fi"],
+      "teaser": "Embark on a journey to the unknown as a daring team of explorers navigates the enigmatic expanses of a nebula, where each discovery redefines the mysteries of the cosmos.",
       "description": "In the vast expanse of space, a team of explorers ventures to the edge of a mysterious nebula, uncovering secrets that challenge their understanding of the universe.",
       "language": "English",
       "coverImageUrl": "https://res.cloudinary.com/dfyclbzqr/image/upload/v1701697386/brewedreads.com/dfcqdqebu4hm1j5pf0xz.jpg",
@@ -289,6 +300,7 @@
       "publishedDate": "2023-06-18T00:00:00.000Z",
       "pageCount": 310,
       "genres": ["Comedy", "Romance"],
+      "teaser": "Stir into the bustling chaos of a lively kitchen, where a humorous and heartwarming blend of love and laughter simmers, creating the perfect recipe for romance.",
       "description": "A delightful romantic comedy where the recipe for love includes a dash of humor, a pinch of passion, and a sprinkle of serendipity, all mixed in the chaos of a bustling kitchen.",
       "language": "English",
       "coverImageUrl": "https://res.cloudinary.com/dfyclbzqr/image/upload/v1701697392/brewedreads.com/wq5nporpim99kvgez5ky.jpg",
@@ -312,6 +324,7 @@
       "publishedDate": "2023-06-17T00:00:00.000Z",
       "pageCount": 356,
       "genres": ["Sci-Fi"],
+      "teaser": "Embark on a cosmic voyage with 'Uncharted Stars', where each turn in the galaxy unveils new worlds and the untold secrets of the starlit unknown.",
       "description": "A captivating journey through the cosmos, exploring new worlds and unraveling the mysteries of uncharted stars.",
       "language": "English",
       "coverImageUrl": "https://res.cloudinary.com/dfyclbzqr/image/upload/v1701697393/brewedreads.com/mi7vsmtbhovumzyfsn2x.jpg",
@@ -335,6 +348,7 @@
       "publishedDate": "2023-06-16T00:00:00.000Z",
       "pageCount": 378,
       "genres": ["Romance", "Fantasy"],
+      "teaser": "In the majestic courts of an ancient empire, a tale of forbidden love unfolds under the watchful eyes of a powerful emperor, blending magic with the whispers of romance.",
       "description": "In an ancient empire where magic and intrigue abound, a forbidden romance blossoms in the shadow of a powerful emperor.",
       "language": "English",
       "coverImageUrl": "https://res.cloudinary.com/dfyclbzqr/image/upload/v1701697395/brewedreads.com/hgwrc18zqrqqakuvjx79.jpg",
@@ -358,6 +372,7 @@
       "publishedDate": "2023-06-15T00:00:00.000Z",
       "pageCount": 342,
       "genres": ["Crime", "History"],
+      "teaser": "Step into the dramatic era of the 20th century, where a historic trial weaves a tale of justice and intrigue, culminating in a verdict that echoes through the annals of time.",
       "description": "A gripping historical crime drama set in the heart of the 20th century, where a landmark trial delivers a verdict that changes the course of history.",
       "language": "English",
       "coverImageUrl": "https://res.cloudinary.com/dfyclbzqr/image/upload/v1701697389/brewedreads.com/v2jctbi4flzliuciwuw1.jpg",
@@ -370,6 +385,126 @@
         },
         {
           "content": "An intense and compelling read that offers a unique perspective on a pivotal moment in history."
+        }
+      ]
+    },
+    {
+      "isbn": "978-1-23-456789-0",
+      "title": "The Last Code",
+      "author": "Marcus J. Ridley",
+      "publisher": "Futuristic Worlds Publishing",
+      "publishedDate": "2023-06-14T00:00:00.000Z",
+      "pageCount": 412,
+      "genres": ["Science Fiction", "Fantasy"],
+      "teaser": "In a future dominated by AI, hacker Evelyn Stiles uncovers a code that could save humanity or lead to its ultimate downfall.",
+      "description": "Set in a dystopian future where artificial intelligence reigns supreme, 'The Last Code' follows the journey of Evelyn Stiles, a brilliant hacker who stumbles upon a mysterious code. This code holds secrets that could either be the key to humanity's salvation or the trigger for its final undoing. As Evelyn grapples with the moral implications of her discovery, she finds herself entangled in a dangerous web of intrigue and power plays, racing against time to make decisions that could alter the course of human history.",
+      "language": "English",
+      "coverImageUrl": "https://res.cloudinary.com/dfyclbzqr/image/upload/v1701697395/brewedreads.com/izuqgvihhk7j1jv8h8cg.jpg",
+      "coverImageWidth": 800,
+      "coverImageHeight": 1200,
+      "ratings": [{ "score": 5.0 }, { "score": 5.0 }],
+      "reviews": [
+        {
+          "content": "Ridley masterfully blends sci-fi and fantasy elements to create a thought-provoking narrative that questions the boundaries of technology and humanity."
+        },
+        {
+          "content": "An immersive and gripping story, 'The Last Code' takes readers on a thrilling ride through a future both wondrous and terrifying."
+        }
+      ]
+    },
+    {
+      "isbn": "978-2-22-333444-7",
+      "title": "Whispers of the Ancients",
+      "author": "Elara Thornwood",
+      "publisher": "Mystic Realms Publishing",
+      "publishedDate": "2023-06-13T00:00:00.000Z",
+      "pageCount": 389,
+      "genres": ["Fantasy"],
+      "teaser": "In a realm where ancient magic breathes, young Alina discovers she's part of an age-old prophecy. Journey with her through...",
+      "description": "In 'Whispers of the Ancients', Elara Thornwood weaves a captivating tale set in a mystical world filled with magic and lore. Young Alina, an ordinary girl from a secluded village, discovers her connection to an ancient prophecy that speaks of a great power and a looming threat. As she embarks on a perilous journey to understand her destiny, she encounters mythical beings, faces daunting challenges, and unravels secrets that could change the fate of her world. This enchanting story is a blend of adventure, mystery, and the timeless struggle between light and darkness.",
+      "language": "English",
+      "coverImageUrl": "https://res.cloudinary.com/dfyclbzqr/image/upload/v1701697391/brewedreads.com/xg57do5lu8kfjstgjaza.jpg",
+      "coverImageWidth": 820,
+      "coverImageHeight": 1230,
+      "ratings": [{ "score": 5.0 }, { "score": 4.9 }],
+      "reviews": [
+        {
+          "content": "Thornwood creates a mesmerizing world that captures the heart and imagination. 'Whispers of the Ancients' is a fantasy masterpiece."
+        },
+        {
+          "content": "A breathtaking journey through a land of magic and mystery. Alina's story is both inspiring and deeply moving."
+        }
+      ]
+    },
+    {
+      "isbn": "978-3-33-555667-8",
+      "title": "Echoes in the Void",
+      "author": "Leo Draven",
+      "publisher": "Stellar Horizons Publishing",
+      "publishedDate": "2023-06-12T00:00:00.000Z",
+      "pageCount": 478,
+      "genres": ["Space Opera", "Fiction"],
+      "teaser": "A galactic adventure filled with starships, alien alliances, and cosmic battles. Captain Eliana Grace must navigate through a galaxy...",
+      "description": "In 'Echoes in the Void', Leo Draven takes readers on an exhilarating journey across the stars. Captain Eliana Grace, a seasoned commander of the starship Horizon, finds herself in the midst of a galactic turmoil. As ancient secrets resurface and new alliances form, Eliana must lead her crew through treacherous space battles, political intrigue, and unexpected betrayals. This space opera is a riveting tale of courage, loyalty, and the enduring spirit of exploration in the vast, mysterious cosmos.",
+      "language": "English",
+      "coverImageUrl": "https://res.cloudinary.com/dfyclbzqr/image/upload/v1701697390/brewedreads.com/qxlfqdz9tttmvo4ld1wx.jpg",
+      "coverImageWidth": 850,
+      "coverImageHeight": 1100,
+      "ratings": [{ "score": 4.2 }, { "score": 3.8 }],
+      "reviews": [
+        {
+          "content": "Draven crafts a universe rich with imagination and filled with action. 'Echoes in the Void' is a space opera that truly dazzles."
+        },
+        {
+          "content": "A compelling saga of interstellar adventure. Captain Eliana Grace is a character that will be remembered for ages."
+        }
+      ]
+    },
+    {
+      "isbn": "978-4-44-666778-9",
+      "title": "The Artist's Secret",
+      "author": "Clara Bennett",
+      "publisher": "Timeless Tales Publishing",
+      "publishedDate": "2023-06-11T00:00:00.000Z",
+      "pageCount": 352,
+      "genres": ["History", "Fiction"],
+      "teaser": "The vibrant art scene of 1920s Paris. This novel weaves a tale of mystery, passion, and art as aspiring artist Madeleine finds a secret that...",
+      "description": "Set against the backdrop of the roaring twenties in Paris, 'The Artist's Secret' by Clara Bennett is a mesmerizing blend of historical fiction and mystery. The novel follows the life of Madeleine, a young and ambitious artist who stumbles upon a hidden piece of art history that could change the art world forever. Her discovery leads her down a path of intrigue and romance, as she navigates the glittering art scene of Paris, filled with famous artists and their untold stories. This novel captures the essence of an era where passion, art, and secrets intertwine.",
+      "language": "English",
+      "coverImageUrl": "https://res.cloudinary.com/dfyclbzqr/image/upload/v1701697387/brewedreads.com/zm1u50ptdarbjm0diegx.jpg",
+      "coverImageWidth": 780,
+      "coverImageHeight": 1180,
+      "ratings": [{ "score": 5.0 }, { "score": 4.7 }],
+      "reviews": [
+        {
+          "content": "Clara Bennett's 'The Artist's Secret' is a captivating journey into the heart of 1920s Paris, bringing to life the era's artistic vibrancy."
+        },
+        {
+          "content": "A beautiful narrative that brilliantly captures the spirit of the time. Madeleine's story is a compelling exploration of art, ambition, and mystery."
+        }
+      ]
+    },
+    {
+      "isbn": "978-5-55-777889-1",
+      "title": "The Clockmaker's Paradox",
+      "author": "Jasper Hawthorne",
+      "publisher": "Gears & Gadgets Press",
+      "publishedDate": "2023-06-10T00:00:00.000Z",
+      "pageCount": 421,
+      "genres": ["Steampunk", "Sci-Fi"],
+      "teaser": "Based in Victorian London, brilliant clockmaker Eleanor Grayson discovers a time-bending conspiracy. With clockwork automatons...",
+      "description": "In 'The Clockmaker's Paradox', Jasper Hawthorne transports readers to a Victorian London unlike any other. Here, Eleanor Grayson, a gifted clockmaker, uncovers a hidden world of time manipulation and mechanical marvels. Her discovery of a conspiracy that could disrupt the very fabric of time sets her on a thrilling adventure. Alongside an eclectic group of allies and amidst the whirring of clockwork automatons, Eleanor must use her wits and skills to unravel the paradox at the heart of her world. This novel brilliantly combines the charm of steampunk aesthetics with the intrigue of sci-fi mystery.",
+      "language": "English",
+      "coverImageUrl": "https://res.cloudinary.com/dfyclbzqr/image/upload/v1701697392/brewedreads.com/zjg3wqw5kqibxgamezpo.jpg",
+      "coverImageWidth": 800,
+      "coverImageHeight": 1200,
+      "ratings": [{ "score": 5.0 }, { "score": 4.6 }],
+      "reviews": [
+        {
+          "content": "A masterful blend of steampunk and science fiction. Hawthorne's 'The Clockmaker's Paradox' is a vivid journey through an alternate Victorian London."
+        },
+        {
+          "content": "Eleanor Grayson's adventure is as intricate and fascinating as the clockwork world she inhabits. A truly captivating read."
         }
       ]
     }

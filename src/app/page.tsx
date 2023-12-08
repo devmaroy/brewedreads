@@ -5,7 +5,7 @@ import Community from "@/app/_components/sections/community/Community";
 
 const Home = () => {
   return (
-    <main>
+    <main className="mb-auto">
       <Hero />
       <Genres />
       <PopularBooks />

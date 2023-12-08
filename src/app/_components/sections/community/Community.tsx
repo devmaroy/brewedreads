@@ -3,7 +3,7 @@ import Image from "next/image";
 const Community = () => {
   return (
     <section className="relative mt-96p lg:mt-120p">
-      <div className="container">
+      <div className="container overflow-hidden">
         <div className="relative">
           <div className="relative ml-[-12px] h-[33rem] w-[94%] sm:ml-[-12%] sm:h-[45.5rem] md:ml-[-18%] lg:ml-[-10%] lg:w-[80%] xl:ml-0 xl:h-[48.75rem]">
             <Image

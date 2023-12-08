@@ -125,7 +125,14 @@ body {
   margin-left: 0.5rem;
 }
 
-/* Remove after */
-body {
-  padding-bottom: 20rem;
+.bar-shape-pseudo:not(:last-child)::after {
+  content: "";
+  @apply bg-[linear-gradient(62.32deg,#7C3AED_12.69%,#DE6B48_88.64%)];
+  display: inline-block;
+  width: 1px;
+  height: 20px;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }

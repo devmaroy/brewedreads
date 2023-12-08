@@ -26,14 +26,13 @@ const PopularBook = ({
   return (
     <Card className="flex flex-col rounded-md border-none bg-card-foreground">
       <CardHeader className="px-16p py-24p !pb-0 text-white md:px-20p md:py-32p">
-        <div className="relative h-[14.5rem] md:h-[17.5rem]">
+        <div className="relative h-[14.5rem] sm:h-[17.5rem]">
           <Image
             src={coverImageUrl}
             alt={`${title} book cover`}
             fill
-            objectFit="cover"
-            objectPosition="center center"
             className="rounded-md"
+            style={{ objectFit: "cover", objectPosition: "center center" }}
           />
         </div>
 

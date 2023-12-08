@@ -15,12 +15,11 @@ const GenreBook = ({ title, slug, coverImageUrl }: GenreBookProps) => {
         <Image
           src={coverImageUrl}
           alt={`${title} book cover`}
-          objectFit="cover"
           className="rounded-md transition-all hover:opacity-80"
           width={0}
           height={0}
           sizes="100vw"
-          style={{ width: "100%", height: "auto" }}
+          style={{ width: "100%", height: "auto", objectFit: "cover" }}
         />
       </Link>
     </div>

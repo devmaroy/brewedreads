@@ -16,19 +16,19 @@ export default {
       // or have default horizontal padding
       padding: {
         DEFAULT: "12px",
-        sm: "2rem",
-        lg: "4rem",
-        xl: "5rem",
-        "2xl": "6rem",
+        sm: "1rem",
+        lg: "1rem",
+        xl: "1rem",
+        "2xl": "1rem",
       },
 
       // default breakpoints but with 40px removed
       screens: {
-        sm: "1120px", // smallest mobile
-        md: "1120px", // medium devices
-        lg: "1120px", // large devices
-        xl: "1120px", // extra large devices
-        "2xl": "1120px", // largest breakpoint
+        sm: "640px", // Mobile
+        md: "768px", // Tablets
+        lg: "1024px", // Larger tablets/small laptops
+        xl: "1120px", // Desktops (maximum size)
+        "2xl": "1120px", // Very Large Screens (same as xl)
       },
     },
     extend: {
@@ -93,8 +93,10 @@ export default {
         "clamp-44p-to-80p": "clamp(2.75rem, 6vw, 5rem)",
         "clamp-46p-to-52p": "clamp(2.875rem, 6vw, 3.25rem)",
         "clamp-32p-to-46p": "clamp(2rem, 6vw, 2.875rem)",
+        "clamp-26p-to-40p": "clamp(1.625rem, 3.2vw, 2.5rem)",
         "clamp-20p-to-24p": "clamp(1.25rem, 3vw, 1.5rem)",
         "clamp-18p-to-20p": "clamp(1.125rem, 3vw, 1.25rem)",
+        "clamp-16p-to-24p": "clamp(1rem, 3vw, 1.5rem)",
         "clamp-16p-to-18p": "clamp(1rem, 3vw, 1.125rem)",
       },
       lineHeight: {

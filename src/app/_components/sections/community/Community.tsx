@@ -10,8 +10,8 @@ const Community = () => {
               src="/community.jpg"
               alt="Happy community, people everywhere"
               layout="fill"
-              objectFit="cover"
               className="rounded-r-[2.5rem] lg:rounded-[2.5rem]"
+              style={{ objectFit: "cover" }}
             />
 
             <div className="bg-gradient absolute inset-0 h-[33rem] w-[100%] rounded-r-[2.5rem] opacity-25 sm:h-[45.5rem] lg:rounded-[2.5rem] xl:h-[48.75rem]" />

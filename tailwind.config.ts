@@ -53,10 +53,12 @@ export default {
         "1.5": "-0.375rem",
         // 8pt Design Grid System
         "8p": "0.5rem",
+        "10p": "0.625rem",
         "14p": "0.875rem",
         "16p": "1rem",
         "18p": "1.125rem",
         "20p": "1.25rem",
+        "22p": "1.375rem",
         "24p": "1.5rem",
         "32p": "2rem",
         "40p": "2.5rem",

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Button } from "@/app/_components/ui/button";
 import { ChevronRightIcon } from "lucide-react";
 
@@ -6,9 +7,19 @@ const HeroInfo = () => {
     <div className="lg:max-w-[700px]">
       <div>
         <h1 className="mb-16p font-serif text-clamp-44p-to-80p font-bold leading-1.2">
-          <span className="text-gradient">Where Books</span>{" "}
+          <span className="text-gradient relative">
+            Where Books
+            <span className="z-1 absolute right-[-2.6rem] top-[-2.6rem] h-[68px] w-[70px] md:right-[-3.6rem] md:top-[-3.6rem] md:h-[84px] md:w-[86px] lg:right-[-7rem] lg:top-[-6rem] lg:h-[167px] lg:w-[174px]">
+              <Image
+                src="/hero-shape-03.svg"
+                fill
+                alt="Dot decoration shapes"
+              />
+            </span>
+          </span>{" "}
           <span className="block">Meet Coffee</span>
         </h1>
+
         <p className="text-gradient m-0 mb-32p text-clamp-18p-to-20p">
           Coffee in One Hand, Adventure{" "}
           <span className="block md:inline-block">in the Other</span>

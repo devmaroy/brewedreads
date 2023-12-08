@@ -17,7 +17,7 @@ interface NavigationProps {
 const Navigation = ({ isOpen, toggleNavigation }: NavigationProps) => {
   return (
     <>
-      <div className="relative z-50 w-max cursor-pointer rounded bg-primary p-2 text-white lg:hidden">
+      <div className="bg-gradient relative z-50 w-max cursor-pointer rounded p-2 text-white md:hidden">
         {isOpen ? (
           <X onClick={toggleNavigation} />
         ) : (
@@ -40,18 +40,23 @@ const Navigation = ({ isOpen, toggleNavigation }: NavigationProps) => {
           "transition-transform",
           "-translate-x-full",
           isOpen ? "translate-x-0" : "",
-          "lg:static",
-          "lg:transform-none",
-          "lg:flex",
-          "lg:justify-start",
-          "lg:bg-transparent",
+          "md:static",
+          "md:transform-none",
+          "md:flex",
+          "md:justify-start",
+          "md:bg-transparent",
         )}
       >
         <NavigationMenuList
-          className={cn("inline-block pl-32p pr-32p", "lg:flex", "lg:ml-20")}
+          className={cn(
+            "inline-block pl-32p pr-32p",
+            "md:flex",
+            "md:ml-16p",
+            "lg:ml-24p",
+          )}
         >
           <NavigationMenuItem
-            className={cn("!m-0", "!mt-120p", "lg:!mt-0", "lg:!mr-6")}
+            className={cn("!m-0", "!mt-120p", "md:!mt-0", "md:!mr-6")}
           >
             <Link href="/" legacyBehavior passHref>
               <NavigationMenuLink
@@ -70,7 +75,7 @@ const Navigation = ({ isOpen, toggleNavigation }: NavigationProps) => {
             </Link>
           </NavigationMenuItem>
 
-          <NavigationMenuItem className={cn("!m-0", "lg:!mr-6")}>
+          <NavigationMenuItem className={cn("!m-0", "md:!mr-6")}>
             <Link href="/discover" legacyBehavior passHref>
               <NavigationMenuLink
                 className={cn(
@@ -111,25 +116,45 @@ const Navigation = ({ isOpen, toggleNavigation }: NavigationProps) => {
           <NavigationMenuList
             className={cn(
               "block w-full pl-32p pr-32p",
-              "lg:flex",
-              "lg:w-full",
-              "lg:justify-end",
-              "lg:!pr-0",
+              "md:flex",
+              "md:w-full",
+              "md:justify-end",
+              "md:!pr-0",
             )}
           >
+            <NavigationMenuItem className={cn("!m-0", "md:!mr-6")}>
+              <Link href="/login" legacyBehavior passHref>
+                <NavigationMenuLink
+                  className={cn(
+                    navigationMenuTriggerStyle(),
+                    "bg-transparent",
+                    "hover:bg-transparent",
+                    "text-white",
+                    "hover:text-primary",
+                    "px-0 py-0",
+                    "text-left",
+                  )}
+                >
+                  Sign In
+                </NavigationMenuLink>
+              </Link>
+            </NavigationMenuItem>
+
             <NavigationMenuItem
-              className={cn("mt-32p w-full", "lg:w-auto", "lg:!mt-0")}
+              className={cn("mt-32p w-full", "md:w-auto", "md:!mt-0")}
             >
               <Link href="/register" legacyBehavior passHref>
                 <NavigationMenuLink
                   className={cn(
                     navigationMenuTriggerStyle(),
-                    "bg-primary",
+                    "bg-gradient",
+                    "rounded-full",
                     "text-white",
-                    "hover:text-primary",
+                    "hover:text-white",
                     "text-center",
                     "w-full",
-                    "lg:w-auto",
+                    "md:w-auto",
+                    "!px-22p !py-10p",
                   )}
                 >
                   Sign Up

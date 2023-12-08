@@ -5,6 +5,7 @@ import localFont from "next/font/local";
 import { cookies } from "next/headers";
 import { TRPCReactProvider } from "@/trpc/react";
 import Header from "@/app/_components/layout/Header";
+import Footer from "@/app/_components/layout/Footer";
 
 const poppins = Poppins({
   subsets: ["latin-ext"],
@@ -49,11 +50,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`font-sans ${poppins.variable} ${sourceSerifPro.variable} bg-foreground text-white`}
+        className={`flex h-screen flex-col font-sans ${poppins.variable} ${sourceSerifPro.variable} overflow-x-hidden bg-foreground text-white`}
       >
         <TRPCReactProvider cookies={cookies().toString()}>
           <Header />
           {children}
+          <Footer />
         </TRPCReactProvider>
       </body>
     </html>

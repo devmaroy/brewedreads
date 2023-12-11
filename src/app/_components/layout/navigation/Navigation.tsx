@@ -64,8 +64,10 @@ const Navigation = ({ isOpen, toggleNavigation }: NavigationProps) => {
                   navigationMenuTriggerStyle(),
                   "bg-transparent",
                   "hover:bg-transparent",
+                  "focus:bg-transparent",
                   "text-white",
                   "hover:text-primary",
+                  "focus:text-primary",
                   "px-0 py-0",
                   "text-left",
                 )}
@@ -82,8 +84,10 @@ const Navigation = ({ isOpen, toggleNavigation }: NavigationProps) => {
                   navigationMenuTriggerStyle(),
                   "bg-transparent",
                   "hover:bg-transparent",
+                  "focus:bg-transparent",
                   "text-white",
                   "hover:text-primary",
+                  "focus:text-primary",
                   "px-0 py-0",
                   "text-left",
                 )}
@@ -100,8 +104,10 @@ const Navigation = ({ isOpen, toggleNavigation }: NavigationProps) => {
                   navigationMenuTriggerStyle(),
                   "bg-transparent",
                   "hover:bg-transparent",
+                  "focus:bg-transparent",
                   "text-white",
                   "hover:text-primary",
+                  "focus:text-primary",
                   "px-0 py-0",
                   "text-left",
                 )}
@@ -129,8 +135,10 @@ const Navigation = ({ isOpen, toggleNavigation }: NavigationProps) => {
                     navigationMenuTriggerStyle(),
                     "bg-transparent",
                     "hover:bg-transparent",
+                    "focus:bg-transparent",
                     "text-white",
                     "hover:text-primary",
+                    "focus:text-primary",
                     "px-0 py-0",
                     "text-left",
                   )}

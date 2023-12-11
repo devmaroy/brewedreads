@@ -5,6 +5,17 @@ import mockData from "./seed-data.json";
 const prisma = new PrismaClient();
 
 async function main() {
+  const authors = await Promise.all(
+    mockData.authors.map((author) =>
+      prisma.author.create({
+        data: {
+          name: author.name,
+          slug: slugify(author.name.toLowerCase()),
+        },
+      }),
+    ),
+  );
+
   const genres = await Promise.all(
     mockData.genres.map((genre) =>
       prisma.genre.create({
@@ -37,6 +48,11 @@ async function main() {
       throw new Error("User ID is undefined.");
     }
 
+    const author = authors.find((author) => author.name === book.author);
+    if (!author) {
+      throw new Error(`Author not found for book: ${book.title}`);
+    }
+
     const createdBook = await prisma.book.create({
       data: {
         isbn: book.isbn,
@@ -51,6 +67,7 @@ async function main() {
         coverImageUrl: book.coverImageUrl,
         coverImageWidth: book.coverImageWidth,
         coverImageHeight: book.coverImageHeight,
+        authorId: author.id,
         userId: userId, // Ensure this matches the field name in your Prisma schema
         genres: {
           connect: genreConnections,

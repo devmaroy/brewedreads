@@ -1,9 +1,11 @@
+// import "primereact/resources/themes/bootstrap4-dark-blue/theme.css";
 import "@/styles/globals.css";
 import { type Metadata } from "next";
 import { Poppins } from "next/font/google";
 import localFont from "next/font/local";
 import { cookies } from "next/headers";
 import { TRPCReactProvider } from "@/trpc/react";
+import { PrimeReactProvider } from "primereact/api";
 import Header from "@/app/_components/layout/Header";
 import Footer from "@/app/_components/layout/Footer";
 
@@ -50,12 +52,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`flex h-screen flex-col font-sans ${poppins.variable} ${sourceSerifPro.variable} overflow-x-hidden bg-foreground text-white`}
+        className={`flex min-h-screen flex-col font-sans ${poppins.variable} ${sourceSerifPro.variable} overflow-x-hidden bg-foreground text-white`}
       >
         <TRPCReactProvider cookies={cookies().toString()}>
-          <Header />
-          {children}
-          <Footer />
+          <PrimeReactProvider>
+            <Header />
+            {children}
+            <Footer />
+          </PrimeReactProvider>
         </TRPCReactProvider>
       </body>
     </html>

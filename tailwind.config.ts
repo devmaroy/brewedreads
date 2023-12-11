@@ -34,6 +34,7 @@ export default {
     extend: {
       gridTemplateColumns: {
         "fluid-fill-8-5": "repeat(auto-fill, minmax(8.5rem, 1fr))",
+        "fluid-fill-11": "repeat(auto-fill, minmax(11rem, 1fr))",
         "fluid-fill-18-5": "repeat(auto-fill, minmax(18.5rem, 1fr))",
       },
       width: {
@@ -54,6 +55,7 @@ export default {
         // 8pt Design Grid System
         "8p": "0.5rem",
         "10p": "0.625rem",
+        "12p": "0.75rem",
         "14p": "0.875rem",
         "16p": "1rem",
         "18p": "1.125rem",
@@ -74,6 +76,7 @@ export default {
         "120p": "7.5rem",
       },
       fontSize: {
+        "14p": "0.875rem", // 14px
         "16p": "1rem", // 16px
         "18p": "1.125rem", // 18px
         "20p": "1.25rem", // 20px
@@ -112,7 +115,10 @@ export default {
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
+        foreground: {
+          DEFAULT: "hsl(var(--foreground))",
+          off: "hsl(var(--foreground-off))",
+        },
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",

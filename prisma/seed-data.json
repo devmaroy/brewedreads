@@ -1,4 +1,22 @@
 {
+  "authors": [
+    { "name": "Isabelle LaRue" },
+    { "name": "Evelyn Starling" },
+    { "name": "Helena Blakely" },
+    { "name": "Leo Draven" },
+    { "name": "James Cole" },
+    { "name": "Pete Simons" },
+    { "name": "Steve McCall" },
+    { "name": "Leo Draven" },
+    { "name": "Charlotte Betts" },
+    { "name": "Emma Valentine" },
+    { "name": "George Reed" },
+    { "name": "Marcus J. Ridley" },
+    { "name": "Elara Thornwood" },
+    { "name": "Leo Draven" },
+    { "name": "Clara Bennett" },
+    { "name": "Jasper Hawthorne" }
+  ],
   "genres": [
     { "name": "Fiction" },
     { "name": "Non-Fiction" },
@@ -132,6 +150,7 @@
     {
       "isbn": "978-0-14-313569-2",
       "title": "Stars Beneath Our Feet",
+      "author": "Leo Draven",
       "publisher": "Cosmic Tales",
       "publishedDate": "2023-06-25T00:00:00.000Z",
       "pageCount": 305,

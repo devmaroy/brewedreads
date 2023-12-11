@@ -29,7 +29,6 @@ const GenresFilters = ({
 
       {filters.map(({ id, name }) => (
         <li key={id} className="font-bold">
-          {/* <button type="button" onClick={() => setActiveGenre(filter.name)}> */}
           <button
             type="button"
             className={cn(

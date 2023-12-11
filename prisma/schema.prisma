@@ -83,6 +83,15 @@ model Book {
   ratings          Rating[]
   averageRating    Float?   @default(0)
   reviews          Review[]
+  author           Author   @relation(fields: [authorId], references: [id])
+  authorId         String
+}
+
+model Author {
+  id    String @id @default(cuid())
+  name  String
+  slug  String
+  books Book[]
 }
 
 model Genre {

@@ -11,6 +11,7 @@
 
 @layer base {
   :root {
+    --white: 0 0% 100%;
     --background: 0 0% 100%;
     --foreground: 224 71.4% 4.1%;
     --card: 0 0% 100%;
@@ -21,7 +22,7 @@
     --primary-foreground: 210 20% 98%;
     --secondary: 220 14.3% 95.9%;
     --secondary-foreground: 220.9 39.3% 11%;
-    --muted: 220 14.3% 95.9%;
+    --muted: 225 21% 68%;
     --muted-foreground: 220 8.9% 46.1%;
     --base: 225 21% 68%;
     --accent: 220 14.3% 95.9%;
@@ -56,11 +57,6 @@
   }
 }
 
-/* Additional global styles, if any */
-body {
-  padding-bottom: 20rem;
-}
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -76,6 +72,7 @@ body {
   :root {
     --background: 0 0% 100%;
     --foreground: 224 71.4% 4.1%;
+    --foreground-off: 223 35% 16%;
     --card: 0 0% 100%;
     --card-foreground: 224 45% 10%;
     --popover: 0 0% 100%;
@@ -135,4 +132,81 @@ body {
   vertical-align: middle;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
+}
+
+.bar-shape-pseudo-secondary::before {
+  content: "";
+  @apply bg-card-foreground;
+  display: inline-block;
+  width: 1px;
+  height: 28px;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 1.5rem;
+}
+
+/* Multi Select */
+.br-select {
+  @apply max-w-[22rem] rounded-md bg-foreground px-16p py-18p font-sans text-14p leading-[1.25rem] text-white lg:relative lg:z-10;
+}
+
+.bg-select-item {
+  @apply rounded-md bg-foreground-off p-14p [&:not(:last-child)]:mb-16p;
+}
+
+.bg-select-item:hover {
+  @apply bg-primary transition-all;
+}
+
+.bg-select-panel {
+  @apply rounded-md bg-foreground-off p-12p;
+  /* px-32p py-24p */
+}
+
+.bg-select-panel .p-multiselect-header {
+  @apply mb-24p border-b border-foreground p-12p;
+  /* pb-24p */
+}
+
+.p-multiselect-label.p-placeholder {
+  @apply p-0 text-14p font-bold text-white;
+}
+
+.p-multiselect-trigger {
+  @apply ml-8p;
+}
+
+.p-checkbox {
+  @apply mr-10p h-20p w-20p rounded-md bg-card-foreground;
+}
+
+.p-checkbox-box {
+  @apply flex-1 rounded-md;
+}
+
+.p-checkbox-box.p-highlight {
+  @apply bg-primary;
+}
+
+/* Sort Select */
+.without-ring:focus-visible {
+  outline: none !important;
+}
+
+.focus-visible\:ring-offset-2:focus-visible {
+  box-shadow: none !important;
+  outline: none !important;
+  border: none !important;
+}
+
+.focus\:ring-offset-2:focus {
+  --tw-ring-offset-width: 0px !important;
+}
+
+.focus\:ring-ring:focus {
+  --tw-ring-color: transparent !important;
+}
+
+.br-sort-select .lucide-chevron-down {
+  display: none;
 }

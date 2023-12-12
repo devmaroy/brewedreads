@@ -1,5 +1,5 @@
-import { genreRouter } from "@/server/api/routers/genre";
 import { bookRouter } from "@/server/api/routers/book";
+import { genreRouter } from "@/server/api/routers/genre";
 import { createTRPCRouter } from "@/server/api/trpc";
 
 /**

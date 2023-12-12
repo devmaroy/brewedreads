@@ -1,5 +1,7 @@
 import { createTRPCRouter, publicProcedure } from "@/server/api/trpc";
-import { z } from "zod"; // Zod is used for schema validation
+import { z } from "zod";
+
+// Zod is used for schema validation
 
 export const bookRouter = createTRPCRouter({
   getAll: publicProcedure
@@ -95,6 +97,7 @@ export const bookRouter = createTRPCRouter({
           averageRating: "desc",
         },
         include: {
+          author: true,
           ratings: {
             select: {
               score: true,

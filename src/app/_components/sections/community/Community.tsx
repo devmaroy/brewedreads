@@ -5,11 +5,12 @@ const Community = () => {
     <section className="relative mt-96p lg:mt-120p">
       <div className="container overflow-hidden">
         <div className="relative">
-          <div className="relative ml-[-12px] h-[33rem] w-[94%] sm:ml-[-12%] sm:h-[45.5rem] md:ml-[-18%] lg:ml-[-10%] lg:w-[80%] xl:ml-0 xl:h-[48.75rem]">
+          <div className="relative ml-[-0.75rem] h-[33rem] w-[94%] sm:ml-[-12%] sm:h-[45.5rem] md:ml-[-18%] lg:ml-[-10%] lg:w-[80%] xl:ml-0 xl:h-[48.75rem]">
             <Image
               src="/community.jpg"
               alt="Happy community, people everywhere"
-              layout="fill"
+              fill
+              sizes="(min-width: 1120px) 870px, (min-width: 1040px) 794px, (min-width: 780px) 692px, (min-width: 680px) 572px, 86.94vw"
               className="rounded-r-[2.5rem] lg:rounded-[2.5rem]"
               style={{ objectFit: "cover" }}
             />
@@ -32,7 +33,7 @@ const Community = () => {
                 favorite things!”
               </blockquote>
 
-              <span className="absolute right-[-3rem] top-[-4rem] h-[144px] w-[156px] md:top-[-6rem] md:h-[200px] md:w-[212px] lg:right-[-5rem] lg:top-[-5rem] lg:h-[376px] lg:w-[392px]">
+              <span className="absolute right-[-3rem] top-[-4rem] h-[9rem] w-[9.75rem] md:top-[-6rem] md:h-[12.5rem] md:w-[13.25rem] lg:right-[-5rem] lg:top-[-5rem] lg:h-[23.5rem] lg:w-[24.5rem]">
                 <Image
                   src="/community-shape.svg"
                   fill

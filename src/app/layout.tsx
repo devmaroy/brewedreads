@@ -1,13 +1,13 @@
 // import "primereact/resources/themes/bootstrap4-dark-blue/theme.css";
+import Footer from "@/app/_components/layout/Footer";
+import Header from "@/app/_components/layout/Header";
 import "@/styles/globals.css";
+import { TRPCReactProvider } from "@/trpc/react";
 import { type Metadata } from "next";
 import { Poppins } from "next/font/google";
 import localFont from "next/font/local";
 import { cookies } from "next/headers";
-import { TRPCReactProvider } from "@/trpc/react";
 import { PrimeReactProvider } from "primereact/api";
-import Header from "@/app/_components/layout/Header";
-import Footer from "@/app/_components/layout/Footer";
 
 const poppins = Poppins({
   subsets: ["latin-ext"],
@@ -41,7 +41,7 @@ const sourceSerifPro = localFont({
 export const metadata: Metadata = {
   title: "Brewed Reads | Coffee Book Library",
   description:
-    "Your place for finding a nice book while drinking a cup of coffee",
+    "Your place for finding a nice book while drinking a cup of coffee.",
 };
 
 export default function RootLayout({
@@ -59,6 +59,21 @@ export default function RootLayout({
             <Header />
             {children}
             <Footer />
+
+            {/* Gradient hack for gradient-color icons */}
+            <svg width="0" height="0">
+              <linearGradient
+                id="svg-gradient"
+                x1="61.7553"
+                y1="32.9184"
+                x2="73.2202"
+                y2="-17.4483"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stopColor="#7C3AED" />
+                <stop offset="1" stopColor="#DE6B48" />
+              </linearGradient>
+            </svg>
           </PrimeReactProvider>
         </TRPCReactProvider>
       </body>

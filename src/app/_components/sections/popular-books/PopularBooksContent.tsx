@@ -21,6 +21,7 @@ const PopularBooksContent = ({ popularBooks }: PopularBooksContent) => {
             averageRating,
             genres,
             title,
+            author,
             teaser,
           }) => (
             <PopularBook
@@ -32,12 +33,13 @@ const PopularBooksContent = ({ popularBooks }: PopularBooksContent) => {
               genres={genres}
               title={title}
               teaser={teaser}
+              author={author}
             />
           ),
         )}
       </div>
 
-      <span className="absolute bottom-[32rem] right-[60%] -z-50 h-[867px] w-[885px] md:bottom-[2rem] md:right-[80%] xl:hidden">
+      <span className="absolute bottom-[32rem] right-[60%] -z-50 h-[54.1875rem] w-[55.3125rem] md:bottom-[2rem] md:right-[80%] xl:hidden">
         <Image src="/popular-books-shape-01.svg" fill alt="Decoration shapes" />
       </span>
 

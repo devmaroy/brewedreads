@@ -10,7 +10,9 @@ const Genres = async () => {
 
   try {
     genres = await api.genre.getAll.query({});
-    books = await api.book.getAll.query({ orderByPublishedAt: "desc" });
+    books = await api.book.getAll.query({
+      limit: 6,
+    });
   } catch (err) {
     error = err;
     console.error("Error fetching popular books:", error);

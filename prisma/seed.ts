@@ -1,5 +1,6 @@
 import { PrismaClient } from "@prisma/client";
 import slugify from "slugify";
+
 import mockData from "./seed-data.json";
 
 const prisma = new PrismaClient();

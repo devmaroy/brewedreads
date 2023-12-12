@@ -10,7 +10,7 @@ const Footer = () => {
         <PreFooter />
 
         <div className="mt-56p md:flex md:justify-between lg:mt-80p">
-          <p className="text-16p text-base leading-1.4">
+          <p className="text-16p leading-1.4 text-muted">
             &copy; {currentYear} BrewedReads All rights reserved.
           </p>
 
@@ -18,7 +18,7 @@ const Footer = () => {
             <li className="bar-shape-pseudo">
               <Link
                 href="/terms-conditions"
-                className="text-16p text-base transition-all hover:text-primary"
+                className="text-16p text-muted transition-all hover:text-primary"
               >
                 Terms & Conditions
               </Link>
@@ -26,7 +26,7 @@ const Footer = () => {
             <li className="bar-shape-pseudo">
               <Link
                 href="/privacy-policy"
-                className="text-16p text-base transition-all hover:text-primary"
+                className="text-16p text-muted transition-all hover:text-primary"
               >
                 Privacy Policy
               </Link>

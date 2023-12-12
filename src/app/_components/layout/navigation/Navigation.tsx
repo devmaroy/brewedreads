@@ -1,3 +1,4 @@
+import ActiveNavigationMenuLink from "@/app/_components/ui/custom/ActiveNavigationMenuLink";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -79,7 +80,7 @@ const Navigation = ({ isOpen, toggleNavigation }: NavigationProps) => {
 
           <NavigationMenuItem className={cn("!m-0", "md:!mr-6")}>
             <Link href="/discover" legacyBehavior passHref>
-              <NavigationMenuLink
+              <ActiveNavigationMenuLink
                 className={cn(
                   navigationMenuTriggerStyle(),
                   "bg-transparent",
@@ -88,18 +89,21 @@ const Navigation = ({ isOpen, toggleNavigation }: NavigationProps) => {
                   "text-white",
                   "hover:text-primary",
                   "focus:text-primary",
+                  "active:text-primary",
                   "px-0 py-0",
                   "text-left",
+                  "data-[active]:bg-transparent",
+                  "data-[active]:text-primary",
                 )}
               >
                 Discover
-              </NavigationMenuLink>
+              </ActiveNavigationMenuLink>
             </Link>
           </NavigationMenuItem>
 
           <NavigationMenuItem className={cn("!m-0")}>
             <Link href="/about" legacyBehavior passHref>
-              <NavigationMenuLink
+              <ActiveNavigationMenuLink
                 className={cn(
                   navigationMenuTriggerStyle(),
                   "bg-transparent",
@@ -110,10 +114,12 @@ const Navigation = ({ isOpen, toggleNavigation }: NavigationProps) => {
                   "focus:text-primary",
                   "px-0 py-0",
                   "text-left",
+                  "data-[active]:bg-transparent",
+                  "data-[active]:text-primary",
                 )}
               >
                 About
-              </NavigationMenuLink>
+              </ActiveNavigationMenuLink>
             </Link>
           </NavigationMenuItem>
         </NavigationMenuList>
@@ -130,7 +136,7 @@ const Navigation = ({ isOpen, toggleNavigation }: NavigationProps) => {
           >
             <NavigationMenuItem className={cn("!m-0", "md:!mr-6")}>
               <Link href="/login" legacyBehavior passHref>
-                <NavigationMenuLink
+                <ActiveNavigationMenuLink
                   className={cn(
                     navigationMenuTriggerStyle(),
                     "bg-transparent",
@@ -141,10 +147,12 @@ const Navigation = ({ isOpen, toggleNavigation }: NavigationProps) => {
                     "focus:text-primary",
                     "px-0 py-0",
                     "text-left",
+                    "data-[active]:bg-transparent",
+                    "data-[active]:text-primary",
                   )}
                 >
                   Sign In
-                </NavigationMenuLink>
+                </ActiveNavigationMenuLink>
               </Link>
             </NavigationMenuItem>
 

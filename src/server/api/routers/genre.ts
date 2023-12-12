@@ -1,5 +1,7 @@
 import { createTRPCRouter, publicProcedure } from "@/server/api/trpc";
-import { z } from "zod"; // Zod is used for schema validation
+import { z } from "zod";
+
+// Zod is used for schema validation
 
 export const genreRouter = createTRPCRouter({
   getAll: publicProcedure

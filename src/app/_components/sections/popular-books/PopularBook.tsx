@@ -20,20 +20,35 @@ const PopularBook = ({
   averageRating,
   title,
   slug,
+  author,
   genres,
   teaser,
 }: PopularBookProps) => {
   return (
     <Card className="flex flex-col rounded-md border-none bg-card-foreground">
       <CardHeader className="px-16p py-24p !pb-0 text-white md:px-20p md:py-32p">
-        <div className="relative h-[14.5rem] sm:h-[17.5rem]">
-          <Image
-            src={coverImageUrl}
-            alt={`${title} book cover`}
-            fill
-            className="rounded-md"
-            style={{ objectFit: "cover", objectPosition: "center center" }}
-          />
+        <div className="relative">
+          <Link
+            href={`/books/${slug}`}
+            className="relative block h-[14.5rem] sm:h-[17.5rem]"
+          >
+            <Image
+              src={coverImageUrl}
+              alt={`${title} book cover`}
+              fill
+              sizes="(min-width: 1120px) 301px, (min-width: 1040px) 269px, (min-width: 780px) 312px, (min-width: 680px) 576px, (min-width: 360px) calc(90.67vw - 22px), calc(50vw + 114px)"
+              className="rounded-md transition-all hover:opacity-80"
+              style={{ objectFit: "cover", objectPosition: "center center" }}
+            />
+          </Link>
+
+          {author && (
+            <Link href={`/authors/${author.slug}`}>
+              <span className="bg-gradient absolute bottom-8p left-1/2 -translate-x-1/2 transform  rounded-md  px-22p  py-8p text-center text-14p font-bold text-white lg:bottom-16p lg:left-auto lg:right-16p  lg:translate-x-0 lg:transform-none">
+                {author.name}
+              </span>
+            </Link>
+          )}
         </div>
 
         <div className="!mt-24p">
@@ -48,7 +63,7 @@ const PopularBook = ({
                 <li key={id} className="dot-shape-pseudo">
                   <Link
                     href={`/genres/${slug}`}
-                    className="text-16p text-base transition-all hover:text-primary"
+                    className="text-16p text-muted transition-all hover:text-primary"
                   >
                     {name}
                   </Link>
@@ -61,7 +76,7 @@ const PopularBook = ({
       </CardHeader>
 
       <CardContent className="px-16p !pb-0 md:px-20p">
-        <CardDescription className="text-16p text-base leading-1.6">
+        <CardDescription className="text-16p leading-1.6 text-muted">
           {teaser}
         </CardDescription>
       </CardContent>

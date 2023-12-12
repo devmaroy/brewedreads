@@ -1,7 +1,7 @@
 "use client";
 
-import Logo from "@/app/_components/ui/custom/Logo";
 import Navigation from "@/app/_components/layout/navigation/Navigation";
+import Logo from "@/app/_components/ui/custom/Logo";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 

@@ -1,5 +1,5 @@
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 
 const PreFooterSocial = () => {
   return (
@@ -12,6 +12,7 @@ const PreFooterSocial = () => {
               alt="Facebook icon"
               height={18}
               width={11.25}
+              className="transition-all hover:opacity-70"
             />
           </Link>
         </li>
@@ -22,6 +23,7 @@ const PreFooterSocial = () => {
               alt="Facebook icon"
               height={18}
               width={18}
+              className="transition-all hover:opacity-70"
             />
           </Link>
         </li>
@@ -32,6 +34,7 @@ const PreFooterSocial = () => {
               alt="Facebook icon"
               height={18}
               width={15.75}
+              className="transition-all hover:opacity-70"
             />
           </Link>
         </li>
@@ -42,6 +45,7 @@ const PreFooterSocial = () => {
               alt="Facebook icon"
               height={18}
               width={15.75}
+              className="transition-all hover:opacity-70"
             />
           </Link>
         </li>
@@ -52,6 +56,7 @@ const PreFooterSocial = () => {
               alt="Facebook icon"
               height={18}
               width={20.25}
+              className="transition-all hover:opacity-70"
             />
           </Link>
         </li>

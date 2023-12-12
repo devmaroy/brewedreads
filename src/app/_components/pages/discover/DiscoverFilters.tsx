@@ -78,6 +78,7 @@ const DiscoverFilters = ({
                 <SelectValue />
               </SelectTrigger>
               <SelectContent className="border-none bg-foreground-off py-14p text-left font-sans text-white">
+                {/* REVIEW: add to list of sort options and use map */}
                 <SelectItem
                   value="title_asc"
                   className="mb-8p mr-8p cursor-pointer px-14p py-8p transition-all focus:bg-primary focus:text-white"

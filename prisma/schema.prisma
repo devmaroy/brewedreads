@@ -119,6 +119,8 @@ model Review {
   userId  String
 }
 
+// REVIEW: Fix uppercase like Account or Session
+
 model User {
   id            String    @id @default(cuid())
   name          String

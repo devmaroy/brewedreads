@@ -5,6 +5,8 @@ interface DiscoverBooksProps {
   books: Book[];
 }
 
+// Review: Not needed to split this component into a separate file, since we dont need it to be reused.
+
 const DiscoverBooks = ({ books }: DiscoverBooksProps) => {
   return (
     <div className="mt-56p grid grid-cols-fluid-fill-8-5 gap-x-24p gap-y-32p md:gap-x-32p md:gap-y-48p lg:mt-64p lg:grid-cols-fluid-fill-11">

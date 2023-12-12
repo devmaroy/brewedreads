@@ -36,6 +36,12 @@ const DiscoverContent = ({ genres, books }: DiscoverContentProps) => {
   );
   const isMountedRef = useRef(false);
 
+  // REVIEW this: This is a red flag
+  // TIP, check how to enable SSR on first load, with SSR
+
+  // https://trpc.io/docs/client/nextjs/ssr
+  // https://github.com/tuanphungcz/javascriptdevs.com/blob/9fcf17abdc8384d2a602f85769f1962405023661/utils/trpc.ts#L57
+
   useEffect(() => {
     // Component is now mounted
     isMountedRef.current = true;

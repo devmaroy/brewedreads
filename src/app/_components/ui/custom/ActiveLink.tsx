@@ -23,7 +23,7 @@ const ActiveLink = ({
     // you get a global isActive class name, it is better than
     // nothing, but it means you do not have scoping ability in
     // certain cases
-    <Link {...rest} className={isActive ? "hafik" : ""}>
+    <Link {...rest} className={isActive ? activeClassName : ""}>
       {children}
     </Link>
   );

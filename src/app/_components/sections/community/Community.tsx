@@ -9,7 +9,8 @@ const Community = () => {
             <Image
               src="/community.jpg"
               alt="Happy community, people everywhere"
-              layout="fill"
+              fill
+              sizes="(min-width: 1120px) 870px, (min-width: 1040px) 794px, (min-width: 780px) 692px, (min-width: 680px) 572px, 86.94vw"
               className="rounded-r-[2.5rem] lg:rounded-[2.5rem]"
               style={{ objectFit: "cover" }}
             />

@@ -27,12 +27,16 @@ const PopularBook = ({
   return (
     <Card className="flex flex-col rounded-md border-none bg-card-foreground">
       <CardHeader className="px-16p py-24p !pb-0 text-white md:px-20p md:py-32p">
-        <div className="relative h-[14.5rem] sm:h-[17.5rem]">
-          <Link href={`/books/${slug}`}>
+        <div className="relative">
+          <Link
+            href={`/books/${slug}`}
+            className="relative block h-[14.5rem] sm:h-[17.5rem]"
+          >
             <Image
               src={coverImageUrl}
               alt={`${title} book cover`}
               fill
+              sizes="(min-width: 1120px) 301px, (min-width: 1040px) 269px, (min-width: 780px) 312px, (min-width: 680px) 576px, (min-width: 360px) calc(90.67vw - 22px), calc(50vw + 114px)"
               className="rounded-md transition-all hover:opacity-80"
               style={{ objectFit: "cover", objectPosition: "center center" }}
             />

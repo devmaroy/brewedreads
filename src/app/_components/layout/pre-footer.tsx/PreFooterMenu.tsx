@@ -1,6 +1,6 @@
-import Link from "next/link";
-import Image from "next/image";
 import PreFooterSocial from "@/app/_components/layout/pre-footer.tsx/PreFooterSocial";
+import Image from "next/image";
+import Link from "next/link";
 
 const PreFooterMenu = () => {
   return (
@@ -13,7 +13,7 @@ const PreFooterMenu = () => {
           <li className="mb-16p">
             <Link
               href="/"
-              className="text-base transition-all hover:text-primary"
+              className="text-muted transition-all hover:text-primary"
             >
               Home
             </Link>
@@ -22,7 +22,7 @@ const PreFooterMenu = () => {
           <li className="mb-16p">
             <Link
               href="/discover"
-              className="text-base transition-all hover:text-primary"
+              className="text-muted transition-all hover:text-primary"
             >
               Discover
             </Link>
@@ -31,7 +31,7 @@ const PreFooterMenu = () => {
           <li className="mb-16p">
             <Link
               href="/about"
-              className="text-base transition-all hover:text-primary"
+              className="text-muted transition-all hover:text-primary"
             >
               About
             </Link>
@@ -40,7 +40,7 @@ const PreFooterMenu = () => {
           <li className="mb-16p">
             <Link
               href="/blog"
-              className="text-base transition-all hover:text-primary"
+              className="text-muted transition-all hover:text-primary"
             >
               Blog
             </Link>
@@ -56,7 +56,7 @@ const PreFooterMenu = () => {
           <li className="mb-16p">
             <Link
               href="/getting-started"
-              className="text-base transition-all hover:text-primary"
+              className="text-muted transition-all hover:text-primary"
             >
               Getting started
             </Link>
@@ -65,7 +65,7 @@ const PreFooterMenu = () => {
           <li className="mb-16p">
             <Link
               href="/help-center"
-              className="text-base transition-all hover:text-primary"
+              className="text-muted transition-all hover:text-primary"
             >
               Help center
             </Link>
@@ -74,7 +74,7 @@ const PreFooterMenu = () => {
           <li className="mb-16p">
             <Link
               href="/server-status"
-              className="text-base transition-all hover:text-primary"
+              className="text-muted transition-all hover:text-primary"
             >
               Server status
             </Link>
@@ -83,7 +83,7 @@ const PreFooterMenu = () => {
           <li>
             <Link
               href="/report-bug"
-              className="text-base transition-all hover:text-primary"
+              className="text-muted transition-all hover:text-primary"
             >
               Report a bug
             </Link>
@@ -99,7 +99,7 @@ const PreFooterMenu = () => {
           <li>
             <Link
               href="@mailto:contact@brewedreads.com"
-              className="inline-flex text-base"
+              className="inline-flex text-muted"
             >
               <Image
                 src="/envelope-icon.svg"

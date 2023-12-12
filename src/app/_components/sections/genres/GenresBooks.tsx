@@ -1,5 +1,5 @@
-import { type Book } from "@/types/types";
 import GenreBook from "@/app/_components/sections/genres/GenreBook";
+import { type Book } from "@/types/types";
 
 interface GenresBooks {
   books: Book[];

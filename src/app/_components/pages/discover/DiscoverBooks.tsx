@@ -1,5 +1,5 @@
-import { type Book } from "@/types/types";
 import DiscoverBook from "@/app/_components/pages/discover/DiscoverBook";
+import { type Book } from "@/types/types";
 
 interface DiscoverBooksProps {
   books: Book[];

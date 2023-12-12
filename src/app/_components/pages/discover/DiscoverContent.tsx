@@ -1,12 +1,14 @@
 "use client";
 
-import ErrorMessage from "@/app/_components/ui/custom/ErrorMessage";
+import DiscoverBooks from "@/app/_components/pages/discover/DiscoverBooks";
 import DiscoverFilters from "@/app/_components/pages/discover/DiscoverFilters";
+import ErrorMessage from "@/app/_components/ui/custom/ErrorMessage";
+import SkeletonBooks from "@/app/_components/ui/skeletons/SkeletonBooks";
+import useDebounce from "@/hooks/useDebounce";
 import { api } from "@/trpc/react";
+import { type SortKey, type SortOption } from "@/types/types";
 import { type Book, type Genre } from "@prisma/client";
 import { useEffect, useRef, useState } from "react";
-import DiscoverBooks from "@/app/_components/pages/discover/DiscoverBooks";
-import { type SortKey, type SortOption } from "@/types/types";
 
 interface DiscoverContentProps {
   genres: Genre[];
@@ -28,6 +30,7 @@ const DiscoverContent = ({ genres, books }: DiscoverContentProps) => {
   const [selectAllGenres, setSelectAllGenres] = useState(false);
   const [activeGenres, setActiveGenres] = useState<string[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const debouncedSearch = useDebounce(searchTerm, 500);
   const [sortBy, setSortBy] = useState<SortOption>(
     sortOptions.publishedDate_desc,
   );
@@ -36,13 +39,17 @@ const DiscoverContent = ({ genres, books }: DiscoverContentProps) => {
   useEffect(() => {
     // Component is now mounted
     isMountedRef.current = true;
+
+    return () => {
+      isMountedRef.current = false;
+    };
   }, []);
 
   const booksQuery = api.book.getAll.useQuery(
     {
       genre:
         activeGenres && activeGenres.length !== 0 ? activeGenres : undefined,
-      searchTerm: searchTerm,
+      searchTerm: debouncedSearch,
       sortBy: sortBy?.fieldName ?? "publishedDate",
       sortOrder: sortBy?.order ?? "desc",
     },
@@ -50,11 +57,6 @@ const DiscoverContent = ({ genres, books }: DiscoverContentProps) => {
       enabled: isMountedRef.current, // Runs only when the filter button is clicked on.
     },
   );
-
-  const hasBooksToDisplay = isMountedRef.current
-    ? (booksQuery.data && booksQuery.data.length > 0) ??
-      (booksQuery.isLoading || booksQuery.isError)
-    : books.length > 0;
 
   const handleSelectAllGenres = (selectAllGenres: boolean) => {
     setSelectAllGenres(selectAllGenres);
@@ -105,11 +107,6 @@ const DiscoverContent = ({ genres, books }: DiscoverContentProps) => {
     }
   };
 
-  // Return null immediately if no books are available
-  if (!hasBooksToDisplay) {
-    return null;
-  }
-
   // Render books content
   const renderContent = () => {
     if (!isMountedRef.current) {
@@ -118,13 +115,23 @@ const DiscoverContent = ({ genres, books }: DiscoverContentProps) => {
     }
 
     if (booksQuery.isLoading) {
-      return "skeletom loadingg...";
+      return (
+        <SkeletonBooks wrapperClassName="mt-56p grid grid-cols-fluid-fill-8-5 gap-x-24p gap-y-32p md:gap-x-32p md:gap-y-48p lg:mt-64p lg:grid-cols-fluid-fill-11" />
+      );
     }
 
     if (booksQuery.isError) {
       return (
-        <div className="mt-32p">
+        <div className="mt-56p lg:mt-64p">
           <ErrorMessage onRetry={() => booksQuery.refetch()} />
+        </div>
+      );
+    }
+
+    if (!booksQuery.data || booksQuery.data.length === 0) {
+      return (
+        <div className="mt-56p lg:mt-64p">
+          Ooops. There are no books matching these filters :(
         </div>
       );
     }

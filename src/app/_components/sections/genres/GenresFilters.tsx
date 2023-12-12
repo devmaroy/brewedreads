@@ -18,7 +18,7 @@ const GenresFilters = ({
         <button
           type="button"
           className={cn(
-            "text-base transition-all hover:text-primary",
+            "text-muted transition-all hover:text-primary",
             `${activeFilter === "All" && "text-primary"}`,
           )}
           onClick={() => setActiveFilter("All")}
@@ -32,7 +32,7 @@ const GenresFilters = ({
           <button
             type="button"
             className={cn(
-              "text-base transition-all hover:text-primary",
+              "text-muted transition-all hover:text-primary",
               `${activeFilter === name && "text-primary"}`,
             )}
             onClick={() => setActiveFilter(name)}

@@ -1,7 +1,7 @@
-import SectionHeader from "@/app/_components/ui/custom/SectionHeader";
 import PopularBooksContent from "@/app/_components/sections/popular-books/PopularBooksContent";
-import { api } from "@/trpc/server";
 import ErrorMessage from "@/app/_components/ui/custom/ErrorMessage";
+import SectionHeader from "@/app/_components/ui/custom/SectionHeader";
+import { api } from "@/trpc/server";
 
 const PopularBooks = async () => {
   let popularBooks;

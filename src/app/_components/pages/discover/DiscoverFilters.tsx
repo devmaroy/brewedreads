@@ -1,9 +1,5 @@
-import { MultiSelect } from "primereact/multiselect";
-import { Input } from "@/app/_components/ui/input";
 import { Button } from "@/app/_components/ui/button";
-import { cn } from "@/lib/utils";
-import { type SortOption, type Genre, type SortKey } from "@/types/types";
-import { ArrowDownUp, Check, ChevronRightIcon, Search } from "lucide-react";
+import { Input } from "@/app/_components/ui/input";
 import {
   Select,
   SelectContent,
@@ -11,6 +7,10 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/app/_components/ui/select";
+import { cn } from "@/lib/utils";
+import { type Genre, type SortKey, type SortOption } from "@/types/types";
+import { ArrowDownUp, Check, ChevronRightIcon, Search } from "lucide-react";
+import { MultiSelect } from "primereact/multiselect";
 
 interface DiscoverFilters {
   filters: Genre[];
@@ -153,11 +153,15 @@ const DiscoverFilters = ({
       <div className="mt-40p lg:mt-48p">
         <h3 className="flex items-center font-serif text-24p font-bold leading-1.2">
           <span className="text-gradient">
-            Filter Books by Your Favorite Genre{" "}
-            <ChevronRightIcon
-              className="ml-8p inline-block h-5 w-5 text-white"
-              strokeWidth={3}
-            />
+            Filter Books by{" "}
+            <span className="block sm:inline">
+              Your Favorite Genre{" "}
+              <ChevronRightIcon
+                className="relative top-[-0.0625] inline-block h-6 w-6 text-white"
+                stroke="url(#svg-gradient)"
+                strokeWidth={3}
+              />
+            </span>
           </span>
         </h3>
 

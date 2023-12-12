@@ -20,7 +20,7 @@ const HeroImage = () => {
           className="relative z-50 rounded-md"
         />
 
-        <span className="z-1 absolute bottom-[-64px] left-0 right-[-120px] 2xl:right-[-64px]">
+        <span className="z-1 absolute bottom-[-4rem] left-0 right-[-7.5rem] 2xl:right-[-4rem]">
           <Image
             src="/hero-shape-02.svg"
             layout="responsive"

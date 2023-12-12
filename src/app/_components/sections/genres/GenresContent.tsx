@@ -2,9 +2,9 @@
 
 import GenresBooks from "@/app/_components/sections/genres/GenresBooks";
 import GenresFilters from "@/app/_components/sections/genres/GenresFilters";
-import ErrorMessage from "@/app/_components/ui/custom/ErrorMessage";
 import { Button } from "@/app/_components/ui/button";
-import SkeletonGenreBooks from "@/app/_components/ui/skeletons/SkeletonGenreBooks";
+import ErrorMessage from "@/app/_components/ui/custom/ErrorMessage";
+import SkeletonBooks from "@/app/_components/ui/skeletons/SkeletonBooks";
 import { api } from "@/trpc/react";
 import { type Book, type Genre } from "@prisma/client";
 import { ChevronRightIcon } from "lucide-react";
@@ -28,6 +28,7 @@ const GenresContent = ({ genres, books }: GenresContentProps) => {
   const booksQuery = api.book.getAll.useQuery(
     {
       genre: activeGenre !== "All" ? activeGenre : undefined,
+      limit: 6,
     },
     {
       enabled: isMountedRef.current, // Runs only when the filter button is clicked on.
@@ -58,7 +59,7 @@ const GenresContent = ({ genres, books }: GenresContentProps) => {
     }
 
     if (booksQuery.isLoading) {
-      return <SkeletonGenreBooks />;
+      return <SkeletonBooks />;
     }
 
     if (booksQuery.isError) {

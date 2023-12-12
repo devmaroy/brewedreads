@@ -36,7 +36,7 @@ const Discover = async () => {
                 Discover Your{" "}
                 <span className="block sm:inline-block">Coffee Book</span>
               </h1>
-              <p className="font-clamp-16p-to-18p text-base">
+              <p className="font-clamp-16p-to-18p text-muted">
                 Find the newest books added to our platform.
               </p>
             </div>

@@ -1,6 +1,6 @@
-import Link from "next/link";
-import Image from "next/image";
 import { type Book } from "@/types/types";
+import Image from "next/image";
+import Link from "next/link";
 
 interface GenreBookProps {
   title: Book["title"];

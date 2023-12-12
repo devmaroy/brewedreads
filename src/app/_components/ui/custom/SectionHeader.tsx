@@ -21,7 +21,7 @@ const SectionHeader = ({
           <Image src={decorationImage} alt="Decoration image" fill />
         </span>
       </h2>
-      <p className="text-base text-clamp-16p-to-18p leading-1.4">{content}</p>
+      <p className="text-clamp-16p-to-18p leading-1.4 text-muted">{content}</p>
     </div>
   );
 };

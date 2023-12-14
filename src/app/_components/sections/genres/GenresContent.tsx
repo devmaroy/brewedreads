@@ -9,7 +9,7 @@ import { api } from "@/trpc/react";
 import { type Book, type Genre } from "@prisma/client";
 import { ChevronRightIcon } from "lucide-react";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 interface GenresContentProps {
   genres: Genre[];
@@ -17,13 +17,9 @@ interface GenresContentProps {
 }
 
 const GenresContent = ({ genres, books }: GenresContentProps) => {
+  const [filtersApplied, setFiltersApplied] = useState(false);
   const [activeGenre, setActiveGenre] = useState("All");
   const isMountedRef = useRef(false);
-
-  useEffect(() => {
-    // Component is now mounted
-    isMountedRef.current = true;
-  }, []);
 
   const booksQuery = api.book.getAll.useQuery(
     {
@@ -31,7 +27,7 @@ const GenresContent = ({ genres, books }: GenresContentProps) => {
       limit: 6,
     },
     {
-      enabled: isMountedRef.current, // Runs only when the filter button is clicked on.
+      enabled: filtersApplied, // Runs only when the filter button is clicked on.
     },
   );
 
@@ -41,9 +37,8 @@ const GenresContent = ({ genres, books }: GenresContentProps) => {
     : books.length > 0;
 
   const handleFilterClick = (genre: string) => {
-    if (isMountedRef.current) {
-      setActiveGenre(genre);
-    }
+    setFiltersApplied(true);
+    setActiveGenre(genre);
   };
 
   // Return null immediately if no books are available
@@ -53,7 +48,7 @@ const GenresContent = ({ genres, books }: GenresContentProps) => {
 
   // Render books content
   const renderContent = () => {
-    if (!isMountedRef.current) {
+    if (!filtersApplied) {
       // On the initial render, display the books prop.
       return <GenresBooks books={books} />;
     }

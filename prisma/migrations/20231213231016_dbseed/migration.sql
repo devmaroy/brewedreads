@@ -99,6 +99,7 @@ CREATE TABLE "Review" (
 CREATE TABLE "User" (
     "id" TEXT NOT NULL,
     "name" TEXT NOT NULL,
+    "slug" TEXT NOT NULL,
     "email" TEXT,
     "emailVerified" TIMESTAMP(3),
     "avatar" TEXT,

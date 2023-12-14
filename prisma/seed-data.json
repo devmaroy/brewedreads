@@ -1,64 +1,116 @@
 {
+  "users": [
+    {
+      "id": "clq3nbdb5000l08jve7k14f0h",
+      "name": "Alice Johnson",
+      "email": "alice@example.com",
+      "emailVerified": "2022-10-12T07:20:50.52Z",
+      "avatar": "http://example.com/images/users/alice.jpg"
+    },
+    {
+      "id": "clq3nbfeu000m08jvcxvlbhlu",
+      "name": "Bob Smith",
+      "email": "bob@example.com",
+      "emailVerified": "2022-10-13T08:30:10.31Z",
+      "avatar": "http://example.com/images/users/bob.jpg"
+    },
+    {
+      "id": "clq3nbj11000n08jvagokgohk",
+      "name": "Carol White",
+      "email": "carol@example.com",
+      "emailVerified": "2022-09-10T11:15:33.00Z",
+      "avatar": "http://example.com/images/users/carol.jpg"
+    },
+    {
+      "id": "clq3nbmg8000o08jv4j8j3ydq",
+      "name": "David Brown",
+      "email": "david@example.com",
+      "emailVerified": "2022-11-01T17:22:45.67Z",
+      "avatar": "http://example.com/images/users/david.jpg"
+    }
+  ],
   "authors": [
-    { "name": "Isabelle LaRue" },
-    { "name": "Evelyn Starling" },
-    { "name": "Helena Blakely" },
-    { "name": "Leo Draven" },
-    { "name": "James Cole" },
-    { "name": "Pete Simons" },
-    { "name": "Steve McCall" },
-    { "name": "Leo Draven" },
-    { "name": "Charlotte Betts" },
-    { "name": "Emma Valentine" },
-    { "name": "George Reed" },
-    { "name": "Marcus J. Ridley" },
-    { "name": "Elara Thornwood" },
-    { "name": "Leo Draven" },
-    { "name": "Clara Bennett" },
-    { "name": "Jasper Hawthorne" }
+    { "id": "clq3ndjo0000q08jv34s7am4f", "name": "Isabelle LaRue" },
+    { "id": "clq3ndx01000r08jvf5536ky5", "name": "Evelyn Starling" },
+    { "id": "clq3ndywh000s08jv8awp3p95", "name": "Helena Blakely" },
+    { "id": "clq3ne18t000t08jv0o6zdku2", "name": "Leo Draven" },
+    { "id": "clq3ne347000u08jvdp7c1lgj", "name": "James Cole" },
+    { "id": "clq3ne4s6000v08jv88sy4dql", "name": "Pete Simons" },
+    { "id": "clq3ne69c000w08jv5ln87qm0", "name": "Steve McCall" },
+    { "id": "clq3ne8ji000x08jv3ph1c8yq", "name": "Leo Draven" },
+    { "id": "clq3neacl000y08jvgj7u3dcc", "name": "Charlotte Betts" },
+    { "id": "clq3necmm000z08jvcs9j1grn", "name": "Emma Valentine" },
+    { "id": "clq3neeaq001008jvbvg0bkjk", "name": "George Reed" },
+    { "id": "clq3negi9001108jv0haig3b7", "name": "Marcus J. Ridley" },
+    { "id": "clq3nei57001208jvhu7rdtoj", "name": "Elara Thornwood" },
+    { "id": "clq3nejub001308jv8fct49jt", "name": "Leo Draven" },
+    { "id": "clq3nelrg001408jv9t830xs8", "name": "Clara Bennett" },
+    { "id": "clq3nenq4001508jv2l1e92ac", "name": "Jasper Hawthorne" }
   ],
   "genres": [
-    { "name": "Fiction" },
-    { "name": "Non-Fiction" },
-    { "name": "Romance" },
-    { "name": "Sci-Fi" },
-    { "name": "History" },
-    { "name": "Steampunk" },
-    { "name": "Fantasy" },
-    { "name": "Mystery" },
-    { "name": "Thriller" },
-    { "name": "Young Adult" },
-    { "name": "Children" },
-    { "name": "Horror" },
-    { "name": "Graphic Novels" },
-    { "name": "Comics" },
-    { "name": "Poetry" },
-    { "name": "Photography" },
-    { "name": "Technology" },
-    { "name": "Cookbooks" },
-    { "name": "Food" },
-    { "name": "Travel" },
-    { "name": "Adventure" },
-    { "name": "Art" },
-    { "name": "Science" },
-    { "name": "Religion" },
-    { "name": "Spirituality" },
-    { "name": "Health" },
-    { "name": "Fitness" },
-    { "name": "Business" },
-    { "name": "Economics" },
-    { "name": "Education" },
-    { "name": "Teaching" }
+    { "id": "clq3nf6m2001608jva4byervk", "name": "Fiction" },
+    { "id": "clq3nf84r001708jv6z0sgbpu", "name": "Non-Fiction" },
+    { "id": "clq3nf9md001808jv0qvfdp5l", "name": "Romance" },
+    { "id": "clq3nfb6q001908jvevix0qff", "name": "Sci-Fi" },
+    { "id": "clq3nfcqv001a08jv1884cj3j", "name": "History" },
+    { "id": "clq3nfeke001b08jvdr2y50zv", "name": "Steampunk" },
+    { "id": "clq3nfg5w001c08jvha7d9haf", "name": "Fantasy" },
+    { "id": "clq3nfhq6001d08jv9w8o2b8j", "name": "Mystery" },
+    { "id": "clq3nfj95001e08jv2o5zcr3v", "name": "Thriller" },
+    { "id": "clq3nfp9k001g08jv3u6ncs4h", "name": "Young Adult" },
+    { "id": "clq3nfqv6001h08jvdpxg3jgk", "name": "Children" },
+    { "id": "clq3nfshz001i08jvf8m43kfh", "name": "Horror" },
+    { "id": "clq3nfu6x001j08jvfp7p3ntu", "name": "Graphic Novels" },
+    { "id": "clq3nfvt8001k08jv4xhfcmd2", "name": "Comics" },
+    { "id": "clq3nfxl4001l08jv74j3h49r", "name": "Poetry" },
+    { "id": "clq3nfz9j001m08jv841rdmn2", "name": "Photography" },
+    { "id": "clq3ng136001n08jv206i9p21", "name": "Technology" },
+    { "id": "clq3ng2yn001o08jv0wu54tch", "name": "Cookbooks" },
+    { "id": "clq3ng4mb001p08jv438r7njc", "name": "Food" },
+    { "id": "clq3ng69u001q08jv060pbhfg", "name": "Travel" },
+    { "id": "clq3ng82j001r08jv95lbh7ak", "name": "Adventure" },
+    { "id": "clq3ng9o9001s08jv56r76q6s", "name": "Art" },
+    { "id": "clq3ngc62001t08jvg7bje2yo", "name": "Science" },
+    { "id": "clq3ngfyx001v08jvdfnz1l4p", "name": "Religion" },
+    { "id": "clq3ngdy8001u08jvez5f8a2l", "name": "Spirituality" },
+    { "id": "clq3nghsz001w08jv5mo5cg2j", "name": "Health" },
+    { "id": "clq3ngk5q001x08jvdhv0arof", "name": "Fitness" },
+    { "id": "clq3ngm2u001y08jvd0tz3lfj", "name": "Business" },
+    { "id": "clq3ngnqi001z08jvfwu83gmc", "name": "Economics" },
+    { "id": "clq3ngpd6002008jvgbk6bv6s", "name": "Education" },
+    { "id": "clq3ngqzj002108jvfr1ocpwp", "name": "Teaching" },
+    { "id": "clq4ztv2j000008kxh56f7pzu", "name": "Crime" },
+    { "id": "clq4zx727000208kx0s9o3oxw", "name": "Space Opera" },
+    { "id": "clq4zybnk000408kxfzrb8ugn", "name": "Detective" },
+    { "id": "clq4zzw6b000508kx75tghvo5", "name": "Comedy" }
+  ],
+  "reviews": [
+    {
+      "id": "clq3op90p000008l38gzvfpb2",
+      "content": "A novel that truly captures the essence of love in the city of lights.",
+      "bookId": "clq3n81sb000008jv8jndad84",
+      "userId": "clq3nbdb5000l08jve7k14f0h"
+    }
+  ],
+  "ratings": [
+    {
+      "id": "clq3oy2o1000008jw0rj1831f",
+      "score": 3.5,
+      "bookId": "clq3n81sb000008jv8jndad84",
+      "userId": "clq3nbdb5000l08jve7k14f0h"
+    }
   ],
   "books": [
     {
+      "id": "clq3n81sb000008jv8jndad84",
       "isbn": "978-0-00-000001-1",
       "title": "Whispers of Paris",
-      "author": "Isabelle LaRue",
+      "authorId": "clq3ndjo0000q08jv34s7am4f",
+      "userId": "clq3nbdb5000l08jve7k14f0h",
       "publisher": "Amour Editions",
       "publishedDate": "2023-06-29T00:00:00.000Z",
       "pageCount": 287,
-      "genres": ["Romance"],
+      "genres": ["clq3nf9md001808jv0qvfdp5l"],
       "teaser": "In the luminous heart of Paris, a tender romance blossoms, weaving a tale of love as timeless as the city itself.",
       "description": "A poignant love story unfolding in the heart of Paris, revealing the intimate whispers that carry the promise of romance and redemption.",
       "language": "English",
@@ -68,21 +120,20 @@
       "ratings": [{ "score": 4.4 }, { "score": 4.6 }],
       "reviews": [
         {
-          "content": "A novel that truly captures the essence of love in the city of lights."
-        },
-        {
-          "content": "LaRue enchants readers with a beautifully written tale of passion and discovery."
+          "id": "clq3op90p000008l38gzvfpb2"
         }
       ]
     },
     {
+      "id": "clq3n8alw000108jv5c45c3m5",
       "isbn": "978-0-00-000001-2",
       "title": "The Enchanted Loom",
-      "author": "Evelyn Starling",
+      "authorId": "clq3ndx01000r08jvf5536ky5",
+      "userId": "clq3nbj11000n08jvagokgohk",
       "publisher": "Galactic Reads",
       "publishedDate": "2023-06-28T00:00:00.000Z",
       "pageCount": 322,
-      "genres": ["Fantasy", "Sci-Fi"],
+      "genres": ["clq3nfg5w001c08jvha7d9haf", "clq3nfb6q001908jvevix0qff"],
       "teaser": "The destiny of kingdoms in a tapestry where magic weaves the future and every thread spins a tale of adventure.",
       "description": "An epic fantasy where the fate of the universe weaves through the Enchanted Loom, a mystical device with powers beyond comprehension.",
       "language": "English",
@@ -92,21 +143,20 @@
       "ratings": [{ "score": 4.8 }, { "score": 4.7 }],
       "reviews": [
         {
-          "content": "Starling's masterpiece intricately blends fantasy and science fiction to create a unique reading experience."
-        },
-        {
-          "content": "The Enchanted Loom is a compelling tale of adventure and the timeless struggle between good and evil."
+          "id": "clq3op90p000008l38gzvfpb2"
         }
       ]
     },
     {
+      "id": "clq3n8f7h000208jvfzysguoh",
       "isbn": "978-0-00-000001-3",
       "title": "Shadows Over Love",
-      "author": "Helena Blakely",
+      "authorId": "clq3ndywh000s08jv8awp3p95",
+      "userId": "clq3nbj11000n08jvagokgohk",
       "publisher": "Crimson Quill",
       "publishedDate": "2023-06-27T00:00:00.000Z",
       "pageCount": 298,
-      "genres": ["Romance", "Crime"],
+      "genres": ["clq3nf9md001808jv0qvfdp5l", "clq4ztv2j000008kxh56f7pzu"],
       "teaser": "In the midst of a city's darkest crimes, a love story unfolds, entangling hearts in a web where passion meets peril, and love battles the shadows of a thrilling mystery",
       "description": "A gripping narrative that intertwines a crime investigation with a tumultuous love affair, casting shadows over the hearts involved.",
       "language": "English",
@@ -116,21 +166,20 @@
       "ratings": [{ "score": 4.5 }, { "score": 4.3 }],
       "reviews": [
         {
-          "content": "Blakely's Shadows Over Love is a dark romance that keeps you on the edge of your seat."
-        },
-        {
-          "content": "A seductive thriller that explores the complex layers of love and betrayal."
+          "id": "clq3op90p000008l38gzvfpb2"
         }
       ]
     },
     {
+      "id": "clq3n8k3t000308jvepmbhp5w",
       "isbn": "978-0-00-000002-1",
       "title": "Galactic Pioneers",
-      "author": "Helena Blakely",
+      "authorId": "clq3ndywh000s08jv8awp3p95",
+      "userId": "clq3nbj11000n08jvagokgohk",
       "publisher": "Interstellar Books",
       "publishedDate": "2023-06-26T00:00:00.000Z",
       "pageCount": 360,
-      "genres": ["Space Opera", "Sci-Fi"],
+      "genres": ["clq4zx727000208kx0s9o3oxw", "clq3nfb6q001908jvevix0qff"],
       "teaser": "Join the voyage of the starship Odyssey, where uncharted galaxies await and each star holds a story of adventure, danger, and the unyielding quest for discovery.",
       "description": "Embark on a thrilling odyssey through the stars with the crew of the Odyssey, as they discover new worlds and civilizations.",
       "language": "English",
@@ -140,21 +189,20 @@
       "ratings": [{ "score": 4.7 }, { "score": 4.5 }],
       "reviews": [
         {
-          "content": "Blakely's vision of space exploration redefines the space opera genre."
-        },
-        {
-          "content": "Galactic Pioneers is an exhilarating journey that pushes the boundaries of imagination."
+          "id": "clq3op90p000008l38gzvfpb2"
         }
       ]
     },
     {
+      "id": "clq3n8qbb000408jvcca58yj4",
       "isbn": "978-0-14-313569-2",
       "title": "Stars Beneath Our Feet",
-      "author": "Leo Draven",
+      "authorId": "clq3ne18t000t08jv0o6zdku2",
+      "userId": "clq3nbj11000n08jvagokgohk",
       "publisher": "Cosmic Tales",
       "publishedDate": "2023-06-25T00:00:00.000Z",
       "pageCount": 305,
-      "genres": ["Romance", "Horror"],
+      "genres": ["clq3nf9md001808jv0qvfdp5l", "clq3nfshz001i08jvf8m43kfh"],
       "teaser": "In the shadowed silence of the night, a haunting romance unfolds, where passion meets the unknown, and love dances with the unseen terrors beneath the stars.",
       "description": "A love story with a dark twist, under the canopy of night.",
       "language": "English",
@@ -163,18 +211,21 @@
       "coverImageHeight": 1024,
       "ratings": [{ "score": 2.7 }, { "score": 2.5 }],
       "reviews": [
-        { "content": "Chills and romance intertwine masterfully." },
-        { "content": "Hauntingly beautiful and deeply moving." }
+        {
+          "id": "clq3op90p000008l38gzvfpb2"
+        }
       ]
     },
     {
+      "id": "clq3n8vch000508jvav8l3vyt",
       "isbn": "978-0-00-000002-3",
       "title": "The Last Alibi",
-      "author": "James Cole",
+      "authorId": "clq3ne347000u08jvdp7c1lgj",
+      "userId": "clq3nbj11000n08jvagokgohk",
       "publisher": "Mystery Masters Publishing",
       "publishedDate": "2023-06-24T00:00:00.000Z",
       "pageCount": 280,
-      "genres": ["Mystery", "Detective"],
+      "genres": ["clq3nfhq6001d08jv9w8o2b8j", "clq4zybnk000408kxfzrb8ugn"],
       "teaser": "In a world where everyone has an alibi, one detective's relentless pursuit of truth leads to a labyrinth of secrets and lies, testing the limits of his wit and wisdom.",
       "description": "A cunning detective with a knack for solving the unsolvable is faced with his most challenging case yet, where every suspect has an alibi.",
       "language": "English",
@@ -184,21 +235,20 @@
       "ratings": [{ "score": 4.6 }, { "score": 4.4 }],
       "reviews": [
         {
-          "content": "Cole's intricate plot twists make The Last Alibi a must-read for mystery aficionados."
-        },
-        {
-          "content": "A masterclass in detective fiction, James Cole's latest book is both intellectually stimulating and deeply engaging."
+          "id": "clq3op90p000008l38gzvfpb2"
         }
       ]
     },
     {
+      "id": "clq3n90dx000608jv2cbu04wv",
       "isbn": "978-0-00-000003-1",
       "title": "Echoes of the Past",
-      "author": "Pete Simons",
+      "authorId": "clq3ne4s6000v08jv88sy4dql",
+      "userId": "clq3nbj11000n08jvagokgohk",
       "publisher": "Thrill Bound Publishing",
       "publishedDate": "2023-06-23T00:00:00.000Z",
       "pageCount": 345,
-      "genres": ["Mystery", "Thriller"],
+      "genres": ["clq3nfhq6001d08jv9w8o2b8j", "clq3nfj95001e08jv2o5zcr3v"],
       "teaser": "In the quiet streets of a town with a hidden history, a mystery unravels, echoing through time, where every shadow whispers secrets and every silence screams truths.",
       "description": "A gripping thriller that delves into the secrets of a small town, where the echoes of a forgotten past hold the key to solving a chilling mystery.",
       "language": "English",
@@ -208,21 +258,20 @@
       "ratings": [{ "score": 4.5 }, { "score": 4.3 }],
       "reviews": [
         {
-          "content": "Simons masterfully crafts a suspenseful tale that keeps you guessing until the last page."
-        },
-        {
-          "content": "Echoes of the Past is an enthralling read that combines deep character development with a compelling mystery."
+          "id": "clq3op90p000008l38gzvfpb2"
         }
       ]
     },
     {
+      "id": "clq3n98xr000708jv0s803azo",
       "isbn": "978-0-00-000003-2",
       "title": "Weaver's Soldier",
-      "author": "Steve McCall",
+      "authorId": "clq3ne69c000w08jv5ln87qm0",
+      "userId": "clq3nbj11000n08jvagokgohk",
       "publisher": "Heart & Crime Publishing",
       "publishedDate": "2023-06-22T00:00:00.000Z",
       "pageCount": 322,
-      "genres": ["Romance", "Crime"],
+      "genres": ["clq3nf9md001808jv0qvfdp5l", "clq4ztv2j000008kxh56f7pzu"],
       "teaser": "In a tale where love collides with mystery, a detective becomes entwined in a complex tapestry of romance and deceit, each thread leading closer to the enigmatic figure known as the weaver's soldier.",
       "description": "In the heart of the city, a detective finds himself entangled in a web of romance and deceit, where every clue unravels more of the mysterious weaver's soldier.",
       "language": "English",
@@ -232,21 +281,20 @@
       "ratings": [{ "score": 4.4 }, { "score": 4.2 }],
       "reviews": [
         {
-          "content": "McCall's unique blend of crime and romance makes Weaver's Soldier an unforgettable read."
-        },
-        {
-          "content": "A novel that expertly weaves together elements of passion and intrigue."
+          "id": "clq3op90p000008l38gzvfpb2"
         }
       ]
     },
     {
+      "id": "clq3n9dej000808jv3gkl103b",
       "isbn": "978-0-00-000003-3",
       "title": "Crown of Frost",
-      "author": "Leo Draven",
+      "authorId": "clq3ne18t000t08jv0o6zdku2",
+      "userId": "clq3nbj11000n08jvagokgohk",
       "publisher": "Fantasia Youth",
       "publishedDate": "2023-06-21T00:00:00.000Z",
       "pageCount": 300,
-      "genres": ["Young Adult", "Fantasy"],
+      "genres": ["clq3nfp9k001g08jv3u6ncs4h", "clq3nfg5w001c08jvha7d9haf"],
       "teaser": "In a realm where the chill of magic pervades, a young hero rises, destined to don the Crown of Frost, embarking on a quest to bring light to a kingdom shrouded in endless winter.",
       "description": "In a world where magic reigns and winter never ends, a young hero must wear the crown of frost to save the kingdom from eternal darkness.",
       "language": "English",
@@ -256,21 +304,20 @@
       "ratings": [{ "score": 4.7 }, { "score": 4.5 }],
       "reviews": [
         {
-          "content": "Draven's Crown of Frost is a mesmerizing fantasy adventure, perfect for young adult readers."
-        },
-        {
-          "content": "A magical tale filled with enchanting characters and a spellbinding plot."
+          "id": "clq3op90p000008l38gzvfpb2"
         }
       ]
     },
     {
+      "id": "clq3n9j0p000908jvfnjgang0",
       "isbn": "978-0-00-000004-1",
       "title": "The Painter's Apprentice",
-      "author": "Charlotte Betts",
+      "authorId": "clq3neacl000y08jvgj7u3dcc",
+      "userId": "clq3nbj11000n08jvagokgohk",
       "publisher": "Epoch Publishing House",
       "publishedDate": "2023-06-20T00:00:00.000Z",
       "pageCount": 380,
-      "genres": ["Historical", "Fiction"],
+      "genres": ["clq3nfcqv001a08jv1884cj3j", "clq3nf6m2001608jva4byervk"],
       "teaser": "In the vibrant ateliers of Renaissance, a young painter's quest for mastery unfolds, blending strokes of genius with layers of secrets, in a world where art and ambition intertwine.",
       "description": "Set in the Renaissance era, a young apprentice painter embarks on a journey of discovery, art, and intrigue, learning more than just the techniques of the masters.",
       "language": "English",
@@ -280,21 +327,20 @@
       "ratings": [{ "score": 4.5 }, { "score": 4.4 }],
       "reviews": [
         {
-          "content": "A vivid and rich portrayal of historical artistry. Betts weaves a tale as intricate as the paintings she describes."
-        },
-        {
-          "content": "An immersive journey into the heart of the Renaissance, filled with color, passion, and drama."
+          "id": "clq3op90p000008l38gzvfpb2"
         }
       ]
     },
     {
+      "id": "clq3n9o79000a08jv05lncw6j",
       "isbn": "978-0-00-000004-2",
       "title": "Nebula's Edge",
-      "author": "Steve McCall",
+      "authorId": "clq3ne69c000w08jv5ln87qm0",
+      "userId": "clq3nbj11000n08jvagokgohk",
       "publisher": "Cosmos Press",
       "publishedDate": "2023-06-19T00:00:00.000Z",
       "pageCount": 345,
-      "genres": ["Sci-Fi"],
+      "genres": ["clq3nfb6q001908jvevix0qff"],
       "teaser": "Embark on a journey to the unknown as a daring team of explorers navigates the enigmatic expanses of a nebula, where each discovery redefines the mysteries of the cosmos.",
       "description": "In the vast expanse of space, a team of explorers ventures to the edge of a mysterious nebula, uncovering secrets that challenge their understanding of the universe.",
       "language": "English",
@@ -304,21 +350,20 @@
       "ratings": [{ "score": 4.6 }, { "score": 4.7 }],
       "reviews": [
         {
-          "content": "McCall delivers an epic sci-fi adventure that's both thrilling and thought-provoking."
-        },
-        {
-          "content": "Nebula's Edge is a masterful blend of science and storytelling, pushing the boundaries of space exploration fiction."
+          "id": "clq3op90p000008l38gzvfpb2"
         }
       ]
     },
     {
+      "id": "clq3n9vc8000b08jv2ha121kv",
       "isbn": "978-0-00-000004-3",
       "title": "Love's Recipe",
-      "author": "Emma Valentine",
+      "authorId": "clq3necmm000z08jvcs9j1grn",
+      "userId": "clq3nbj11000n08jvagokgohk",
       "publisher": "Heartfelt Tales",
       "publishedDate": "2023-06-18T00:00:00.000Z",
       "pageCount": 310,
-      "genres": ["Comedy", "Romance"],
+      "genres": ["clq4zzw6b000508kx75tghvo5", "clq3nf9md001808jv0qvfdp5l"],
       "teaser": "Stir into the bustling chaos of a lively kitchen, where a humorous and heartwarming blend of love and laughter simmers, creating the perfect recipe for romance.",
       "description": "A delightful romantic comedy where the recipe for love includes a dash of humor, a pinch of passion, and a sprinkle of serendipity, all mixed in the chaos of a bustling kitchen.",
       "language": "English",
@@ -328,21 +373,20 @@
       "ratings": [{ "score": 4.3 }, { "score": 4.2 }],
       "reviews": [
         {
-          "content": "Valentine whips up a deliciously funny and heartwarming story with Love's Recipe."
-        },
-        {
-          "content": "A perfect blend of laughter, love, and culinary chaos. A must-read for rom-com enthusiasts."
+          "id": "clq3op90p000008l38gzvfpb2"
         }
       ]
     },
     {
+      "id": "clq3n9zlw000c08jv3afw7in1",
       "isbn": "978-0-00-000005-1",
       "title": "Uncharted Stars",
-      "author": "George Reed",
+      "authorId": "clq3neeaq001008jvbvg0bkjk",
+      "userId": "clq3nbj11000n08jvagokgohk",
       "publisher": "Galactic Tales Publishing",
       "publishedDate": "2023-06-17T00:00:00.000Z",
       "pageCount": 356,
-      "genres": ["Sci-Fi"],
+      "genres": ["clq3nfb6q001908jvevix0qff"],
       "teaser": "Embark on a cosmic voyage with 'Uncharted Stars', where each turn in the galaxy unveils new worlds and the untold secrets of the starlit unknown.",
       "description": "A captivating journey through the cosmos, exploring new worlds and unraveling the mysteries of uncharted stars.",
       "language": "English",
@@ -352,21 +396,20 @@
       "ratings": [{ "score": 4.6 }, { "score": 4.8 }],
       "reviews": [
         {
-          "content": "Reed's Uncharted Stars is a thrilling space odyssey, rich in detail and imagination."
-        },
-        {
-          "content": "An awe-inspiring adventure that takes you to the furthest reaches of the galaxy."
+          "id": "clq3op90p000008l38gzvfpb2"
         }
       ]
     },
     {
+      "id": "clq3na3xx000d08jvabhn4e3c",
       "isbn": "978-0-00-000005-2",
       "title": "The Emperor's Shadow",
-      "author": "George Reed",
+      "authorId": "clq3neeaq001008jvbvg0bkjk",
+      "userId": "clq3nbj11000n08jvagokgohk",
       "publisher": "Mystical Realms",
       "publishedDate": "2023-06-16T00:00:00.000Z",
       "pageCount": 378,
-      "genres": ["Romance", "Fantasy"],
+      "genres": ["clq3nf9md001808jv0qvfdp5l", "clq3nfg5w001c08jvha7d9haf"],
       "teaser": "In the majestic courts of an ancient empire, a tale of forbidden love unfolds under the watchful eyes of a powerful emperor, blending magic with the whispers of romance.",
       "description": "In an ancient empire where magic and intrigue abound, a forbidden romance blossoms in the shadow of a powerful emperor.",
       "language": "English",
@@ -376,23 +419,22 @@
       "ratings": [{ "score": 4.7 }, { "score": 4.5 }],
       "reviews": [
         {
-          "content": "A mesmerizing tale of love and power, set in a beautifully crafted fantasy world."
-        },
-        {
-          "content": "Reed's The Emperor's Shadow is a spellbinding romance that deftly weaves magic and intrigue."
+          "id": "clq3op90p000008l38gzvfpb2"
         }
       ]
     },
     {
+      "id": "clq3naaew000e08jv2ecn2fl2",
       "isbn": "978-0-00-000005-3",
       "title": "Final Verdict",
-      "author": "Steve McCall",
+      "authorId": "clq3ne69c000w08jv5ln87qm0",
+      "userId": "clq3nbj11000n08jvagokgohk",
       "publisher": "Justice Thrillers",
       "publishedDate": "2023-06-15T00:00:00.000Z",
       "pageCount": 342,
-      "genres": ["Crime", "History"],
+      "genres": ["clq4ztv2j000008kxh56f7pzu", "clq3nfcqv001a08jv1884cj3j"],
       "teaser": "Step into the dramatic era of the 20th century, where a historic trial weaves a tale of justice and intrigue, culminating in a verdict that echoes through the annals of time.",
-      "description": "A gripping historical crime drama set in the heart of the 20th century, where a landmark trial delivers a verdict that changes the course of history.",
+      "description": "A gripping History crime drama set in the heart of the 20th century, where a landmark trial delivers a verdict that changes the course of history.",
       "language": "English",
       "coverImageUrl": "https://res.cloudinary.com/dfyclbzqr/image/upload/v1701697389/brewedreads.com/v2jctbi4flzliuciwuw1.jpg",
       "coverImageWidth": 768,
@@ -400,21 +442,20 @@
       "ratings": [{ "score": 4.4 }, { "score": 4.6 }],
       "reviews": [
         {
-          "content": "McCall's Final Verdict masterfully blends historical fact with a riveting crime narrative."
-        },
-        {
-          "content": "An intense and compelling read that offers a unique perspective on a pivotal moment in history."
+          "id": "clq3op90p000008l38gzvfpb2"
         }
       ]
     },
     {
+      "id": "clq3nag17000f08jv1clq6f9s",
       "isbn": "978-1-23-456789-0",
       "title": "The Last Code",
-      "author": "Marcus J. Ridley",
+      "authorId": "clq3negi9001108jv0haig3b7",
+      "userId": "clq3nbj11000n08jvagokgohk",
       "publisher": "Futuristic Worlds Publishing",
       "publishedDate": "2023-06-14T00:00:00.000Z",
       "pageCount": 412,
-      "genres": ["Science Fiction", "Fantasy"],
+      "genres": ["clq3nfb6q001908jvevix0qff", "clq3nfg5w001c08jvha7d9haf"],
       "teaser": "In a future dominated by AI, hacker Evelyn Stiles uncovers a code that could save humanity or lead to its ultimate downfall.",
       "description": "Set in a dystopian future where artificial intelligence reigns supreme, 'The Last Code' follows the journey of Evelyn Stiles, a brilliant hacker who stumbles upon a mysterious code. This code holds secrets that could either be the key to humanity's salvation or the trigger for its final undoing. As Evelyn grapples with the moral implications of her discovery, she finds herself entangled in a dangerous web of intrigue and power plays, racing against time to make decisions that could alter the course of human history.",
       "language": "English",
@@ -424,21 +465,20 @@
       "ratings": [{ "score": 5.0 }, { "score": 5.0 }],
       "reviews": [
         {
-          "content": "Ridley masterfully blends sci-fi and fantasy elements to create a thought-provoking narrative that questions the boundaries of technology and humanity."
-        },
-        {
-          "content": "An immersive and gripping story, 'The Last Code' takes readers on a thrilling ride through a future both wondrous and terrifying."
+          "id": "clq3op90p000008l38gzvfpb2"
         }
       ]
     },
     {
+      "id": "clq3najz9000g08jv2ev8fpp6",
       "isbn": "978-2-22-333444-7",
       "title": "Whispers of the Ancients",
-      "author": "Elara Thornwood",
+      "authorId": "clq3nei57001208jvhu7rdtoj",
+      "userId": "clq3nbj11000n08jvagokgohk",
       "publisher": "Mystic Realms Publishing",
       "publishedDate": "2023-06-13T00:00:00.000Z",
       "pageCount": 389,
-      "genres": ["Fantasy"],
+      "genres": ["clq3nfg5w001c08jvha7d9haf"],
       "teaser": "In a realm where ancient magic breathes, young Alina discovers she's part of an age-old prophecy. Journey with her through...",
       "description": "In 'Whispers of the Ancients', Elara Thornwood weaves a captivating tale set in a mystical world filled with magic and lore. Young Alina, an ordinary girl from a secluded village, discovers her connection to an ancient prophecy that speaks of a great power and a looming threat. As she embarks on a perilous journey to understand her destiny, she encounters mythical beings, faces daunting challenges, and unravels secrets that could change the fate of her world. This enchanting story is a blend of adventure, mystery, and the timeless struggle between light and darkness.",
       "language": "English",
@@ -448,21 +488,20 @@
       "ratings": [{ "score": 5.0 }, { "score": 4.9 }],
       "reviews": [
         {
-          "content": "Thornwood creates a mesmerizing world that captures the heart and imagination. 'Whispers of the Ancients' is a fantasy masterpiece."
-        },
-        {
-          "content": "A breathtaking journey through a land of magic and mystery. Alina's story is both inspiring and deeply moving."
+          "id": "clq3op90p000008l38gzvfpb2"
         }
       ]
     },
     {
+      "id": "clq3naot8000h08jvd968a9v9",
       "isbn": "978-3-33-555667-8",
       "title": "Echoes in the Void",
-      "author": "Leo Draven",
+      "authorId": "clq3ne8ji000x08jv3ph1c8yq",
+      "userId": "clq3nbj11000n08jvagokgohk",
       "publisher": "Stellar Horizons Publishing",
       "publishedDate": "2023-06-12T00:00:00.000Z",
       "pageCount": 478,
-      "genres": ["Space Opera", "Fiction"],
+      "genres": ["clq4zx727000208kx0s9o3oxw", "clq3nf6m2001608jva4byervk"],
       "teaser": "A galactic adventure filled with starships, alien alliances, and cosmic battles. Captain Eliana Grace must navigate through a galaxy...",
       "description": "In 'Echoes in the Void', Leo Draven takes readers on an exhilarating journey across the stars. Captain Eliana Grace, a seasoned commander of the starship Horizon, finds herself in the midst of a galactic turmoil. As ancient secrets resurface and new alliances form, Eliana must lead her crew through treacherous space battles, political intrigue, and unexpected betrayals. This space opera is a riveting tale of courage, loyalty, and the enduring spirit of exploration in the vast, mysterious cosmos.",
       "language": "English",
@@ -472,23 +511,22 @@
       "ratings": [{ "score": 4.2 }, { "score": 3.8 }],
       "reviews": [
         {
-          "content": "Draven crafts a universe rich with imagination and filled with action. 'Echoes in the Void' is a space opera that truly dazzles."
-        },
-        {
-          "content": "A compelling saga of interstellar adventure. Captain Eliana Grace is a character that will be remembered for ages."
+          "id": "clq3op90p000008l38gzvfpb2"
         }
       ]
     },
     {
+      "id": "clq3nasiw000i08jv50kc3195",
       "isbn": "978-4-44-666778-9",
       "title": "The Artist's Secret",
-      "author": "Clara Bennett",
+      "authorId": "clq3nelrg001408jv9t830xs8",
+      "userId": "clq3nbj11000n08jvagokgohk",
       "publisher": "Timeless Tales Publishing",
       "publishedDate": "2023-06-11T00:00:00.000Z",
       "pageCount": 352,
-      "genres": ["History", "Fiction"],
+      "genres": ["clq3nfcqv001a08jv1884cj3j", "clq3nf6m2001608jva4byervk"],
       "teaser": "The vibrant art scene of 1920s Paris. This novel weaves a tale of mystery, passion, and art as aspiring artist Madeleine finds a secret that...",
-      "description": "Set against the backdrop of the roaring twenties in Paris, 'The Artist's Secret' by Clara Bennett is a mesmerizing blend of historical fiction and mystery. The novel follows the life of Madeleine, a young and ambitious artist who stumbles upon a hidden piece of art history that could change the art world forever. Her discovery leads her down a path of intrigue and romance, as she navigates the glittering art scene of Paris, filled with famous artists and their untold stories. This novel captures the essence of an era where passion, art, and secrets intertwine.",
+      "description": "Set against the backdrop of the roaring twenties in Paris, 'The Artist's Secret' by Clara Bennett is a mesmerizing blend of History fiction and mystery. The novel follows the life of Madeleine, a young and ambitious artist who stumbles upon a hidden piece of art history that could change the art world forever. Her discovery leads her down a path of intrigue and romance, as she navigates the glittering art scene of Paris, filled with famous artists and their untold stories. This novel captures the essence of an era where passion, art, and secrets intertwine.",
       "language": "English",
       "coverImageUrl": "https://res.cloudinary.com/dfyclbzqr/image/upload/v1701697387/brewedreads.com/zm1u50ptdarbjm0diegx.jpg",
       "coverImageWidth": 780,
@@ -496,21 +534,20 @@
       "ratings": [{ "score": 5.0 }, { "score": 4.7 }],
       "reviews": [
         {
-          "content": "Clara Bennett's 'The Artist's Secret' is a captivating journey into the heart of 1920s Paris, bringing to life the era's artistic vibrancy."
-        },
-        {
-          "content": "A beautiful narrative that brilliantly captures the spirit of the time. Madeleine's story is a compelling exploration of art, ambition, and mystery."
+          "id": "clq3op90p000008l38gzvfpb2"
         }
       ]
     },
     {
+      "id": "clq3naxy5000j08jvfmbs9zla",
       "isbn": "978-5-55-777889-1",
       "title": "The Clockmaker's Paradox",
-      "author": "Jasper Hawthorne",
+      "authorId": "clq3nenq4001508jv2l1e92ac",
+      "userId": "clq3nbj11000n08jvagokgohk",
       "publisher": "Gears & Gadgets Press",
       "publishedDate": "2023-06-10T00:00:00.000Z",
       "pageCount": 421,
-      "genres": ["Steampunk", "Sci-Fi"],
+      "genres": ["clq3nfeke001b08jvdr2y50zv", "clq3nfb6q001908jvevix0qff"],
       "teaser": "Based in Victorian London, brilliant clockmaker Eleanor Grayson discovers a time-bending conspiracy. With clockwork automatons...",
       "description": "In 'The Clockmaker's Paradox', Jasper Hawthorne transports readers to a Victorian London unlike any other. Here, Eleanor Grayson, a gifted clockmaker, uncovers a hidden world of time manipulation and mechanical marvels. Her discovery of a conspiracy that could disrupt the very fabric of time sets her on a thrilling adventure. Alongside an eclectic group of allies and amidst the whirring of clockwork automatons, Eleanor must use her wits and skills to unravel the paradox at the heart of her world. This novel brilliantly combines the charm of steampunk aesthetics with the intrigue of sci-fi mystery.",
       "language": "English",
@@ -520,38 +557,9 @@
       "ratings": [{ "score": 5.0 }, { "score": 4.6 }],
       "reviews": [
         {
-          "content": "A masterful blend of steampunk and science fiction. Hawthorne's 'The Clockmaker's Paradox' is a vivid journey through an alternate Victorian London."
-        },
-        {
-          "content": "Eleanor Grayson's adventure is as intricate and fascinating as the clockwork world she inhabits. A truly captivating read."
+          "id": "clq3op90p000008l38gzvfpb2"
         }
       ]
-    }
-  ],
-  "users": [
-    {
-      "name": "Alice Johnson",
-      "email": "alice@example.com",
-      "emailVerified": "2022-10-12T07:20:50.52Z",
-      "avatar": "http://example.com/images/users/alice.jpg"
-    },
-    {
-      "name": "Bob Smith",
-      "email": "bob@example.com",
-      "emailVerified": "2022-10-13T08:30:10.31Z",
-      "avatar": "http://example.com/images/users/bob.jpg"
-    },
-    {
-      "name": "Carol White",
-      "email": "carol@example.com",
-      "emailVerified": "2022-09-10T11:15:33.00Z",
-      "avatar": "http://example.com/images/users/carol.jpg"
-    },
-    {
-      "name": "David Brown",
-      "email": "david@example.com",
-      "emailVerified": "2022-11-01T17:22:45.67Z",
-      "avatar": "http://example.com/images/users/david.jpg"
     }
   ]
 }

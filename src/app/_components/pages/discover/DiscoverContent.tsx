@@ -8,7 +8,7 @@ import useDebounce from "@/hooks/useDebounce";
 import { api } from "@/trpc/react";
 import { type SortKey, type SortOption } from "@/types/types";
 import { type Book, type Genre } from "@prisma/client";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 
 interface DiscoverContentProps {
   genres: Genre[];
@@ -27,6 +27,7 @@ const sortOptions: Record<SortKey, SortOption> = {
 };
 
 const DiscoverContent = ({ genres, books }: DiscoverContentProps) => {
+  const [filtersApplied, setFiltersApplied] = useState(false);
   const [selectAllGenres, setSelectAllGenres] = useState(false);
   const [activeGenres, setActiveGenres] = useState<string[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -34,22 +35,6 @@ const DiscoverContent = ({ genres, books }: DiscoverContentProps) => {
   const [sortBy, setSortBy] = useState<SortOption>(
     sortOptions.publishedDate_desc,
   );
-  const isMountedRef = useRef(false);
-
-  // REVIEW this: This is a red flag
-  // TIP, check how to enable SSR on first load, with SSR
-
-  // https://trpc.io/docs/client/nextjs/ssr
-  // https://github.com/tuanphungcz/javascriptdevs.com/blob/9fcf17abdc8384d2a602f85769f1962405023661/utils/trpc.ts#L57
-
-  useEffect(() => {
-    // Component is now mounted
-    isMountedRef.current = true;
-
-    return () => {
-      isMountedRef.current = false;
-    };
-  }, []);
 
   const booksQuery = api.book.getAll.useQuery(
     {
@@ -60,7 +45,7 @@ const DiscoverContent = ({ genres, books }: DiscoverContentProps) => {
       sortOrder: sortBy?.order ?? "desc",
     },
     {
-      enabled: isMountedRef.current, // Runs only when the filter button is clicked on.
+      enabled: filtersApplied, // Runs only when the filter button is clicked on.
     },
   );
 
@@ -69,53 +54,49 @@ const DiscoverContent = ({ genres, books }: DiscoverContentProps) => {
   };
 
   const handleSetActiveGenres = (selectedGenres: string[]) => {
-    if (isMountedRef.current) {
-      setActiveGenres(selectedGenres);
-    }
+    setFiltersApplied(true);
+    setActiveGenres(selectedGenres);
   };
 
   const handleSetSearchTerm = (searchTerm: string) => {
-    if (isMountedRef.current) {
-      setSearchTerm(searchTerm);
-    }
+    setFiltersApplied(true);
+    setSearchTerm(searchTerm);
   };
 
   const handleSortBy = (sortBy: SortKey) => {
-    if (isMountedRef.current) {
-      const selectedSortOption = sortOptions[sortBy] as SortOption | undefined;
+    setFiltersApplied(true);
+    const selectedSortOption = sortOptions[sortBy] as SortOption | undefined;
 
-      if (selectedSortOption) {
-        setSortBy({
-          input: sortBy,
-          fieldName: selectedSortOption.fieldName,
-          order: selectedSortOption.order,
-        });
-      } else {
-        setSortBy(sortOptions.publishedDate_desc);
-      }
+    if (selectedSortOption) {
+      setSortBy({
+        input: sortBy,
+        fieldName: selectedSortOption.fieldName,
+        order: selectedSortOption.order,
+      });
+    } else {
+      setSortBy(sortOptions.publishedDate_desc);
     }
   };
 
   const handleButtonClick = (genre: string) => {
-    if (isMountedRef.current) {
-      setActiveGenres((prevState) => {
-        // Toggle clicked genre
-        const updatedGenres = new Set(prevState);
+    setFiltersApplied(true);
+    setActiveGenres((prevState) => {
+      // Toggle clicked genre
+      const updatedGenres = new Set(prevState);
 
-        if (updatedGenres.has(genre)) {
-          updatedGenres.delete(genre);
-        } else {
-          updatedGenres.add(genre);
-        }
+      if (updatedGenres.has(genre)) {
+        updatedGenres.delete(genre);
+      } else {
+        updatedGenres.add(genre);
+      }
 
-        return Array.from(updatedGenres);
-      });
-    }
+      return Array.from(updatedGenres);
+    });
   };
 
   // Render books content
   const renderContent = () => {
-    if (!isMountedRef.current) {
+    if (!filtersApplied) {
       // On the initial render, display the books prop.
       return <DiscoverBooks books={books} />;
     }

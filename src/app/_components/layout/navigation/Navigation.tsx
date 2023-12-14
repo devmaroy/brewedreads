@@ -58,6 +58,7 @@ const Navigation = ({ isOpen, toggleNavigation }: NavigationProps) => {
         >
           <NavigationMenuItem
             className={cn("!m-0", "!mt-120p", "md:!mt-0", "md:!mr-6")}
+            onClick={toggleNavigation}
           >
             <Link href="/" legacyBehavior passHref>
               <NavigationMenuLink
@@ -78,7 +79,10 @@ const Navigation = ({ isOpen, toggleNavigation }: NavigationProps) => {
             </Link>
           </NavigationMenuItem>
 
-          <NavigationMenuItem className={cn("!m-0", "md:!mr-6")}>
+          <NavigationMenuItem
+            className={cn("!m-0", "md:!mr-6")}
+            onClick={toggleNavigation}
+          >
             <Link href="/discover" legacyBehavior passHref>
               <ActiveNavigationMenuLink
                 className={cn(
@@ -101,7 +105,7 @@ const Navigation = ({ isOpen, toggleNavigation }: NavigationProps) => {
             </Link>
           </NavigationMenuItem>
 
-          <NavigationMenuItem className={cn("!m-0")}>
+          <NavigationMenuItem className={cn("!m-0")} onClick={toggleNavigation}>
             <Link href="/about" legacyBehavior passHref>
               <ActiveNavigationMenuLink
                 className={cn(
@@ -134,7 +138,10 @@ const Navigation = ({ isOpen, toggleNavigation }: NavigationProps) => {
               "md:!pr-0",
             )}
           >
-            <NavigationMenuItem className={cn("!m-0", "md:!mr-6")}>
+            <NavigationMenuItem
+              className={cn("!m-0", "md:!mr-6")}
+              onClick={toggleNavigation}
+            >
               <Link href="/login" legacyBehavior passHref>
                 <ActiveNavigationMenuLink
                   className={cn(
@@ -158,6 +165,7 @@ const Navigation = ({ isOpen, toggleNavigation }: NavigationProps) => {
 
             <NavigationMenuItem
               className={cn("mt-32p w-full", "md:w-auto", "md:!mt-0")}
+              onClick={toggleNavigation}
             >
               <Link href="/register" legacyBehavior passHref>
                 <NavigationMenuLink

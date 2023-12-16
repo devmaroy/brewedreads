@@ -4,68 +4,61 @@ import GenresBooks from "@/app/_components/sections/genres/GenresBooks";
 import GenresFilters from "@/app/_components/sections/genres/GenresFilters";
 import { Button } from "@/app/_components/ui/button";
 import ErrorMessage from "@/app/_components/ui/custom/ErrorMessage";
-import SkeletonBooks from "@/app/_components/ui/skeletons/SkeletonBooks";
 import { api } from "@/trpc/react";
-import { type Book, type Genre } from "@prisma/client";
+import { type Book, type Genre } from "@/types/types";
 import { ChevronRightIcon } from "lucide-react";
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { useState } from "react";
 
 interface GenresContentProps {
+  limit?: number;
   genres: Genre[];
   books: Book[];
 }
 
-const GenresContent = ({ genres, books }: GenresContentProps) => {
-  const [filtersApplied, setFiltersApplied] = useState(false);
+const GenresContent = ({ limit = 6, genres, books }: GenresContentProps) => {
+  const [initialLoad, setInitialLoad] = useState(true);
   const [activeGenre, setActiveGenre] = useState("All");
-  const isMountedRef = useRef(false);
 
-  const booksQuery = api.book.getAll.useQuery(
+  const { data, isFetching, isError, refetch } = api.book.getAll.useQuery(
     {
       genre: activeGenre !== "All" ? activeGenre : undefined,
-      limit: 6,
+      limit,
     },
-    {
-      enabled: filtersApplied, // Runs only when the filter button is clicked on.
-    },
+    { enabled: !initialLoad },
   );
 
-  const hasBooksToDisplay = isMountedRef.current
-    ? (booksQuery.data && booksQuery.data.length > 0) ??
-      (booksQuery.isLoading || booksQuery.isError)
-    : books.length > 0;
-
   const handleFilterClick = (genre: string) => {
-    setFiltersApplied(true);
+    setInitialLoad(false);
     setActiveGenre(genre);
   };
 
-  // Return null immediately if no books are available
-  if (!hasBooksToDisplay) {
-    return null;
-  }
+  const booksFromQuery: Book[] = data?.books ?? [];
 
   // Render books content
   const renderContent = () => {
-    if (!filtersApplied) {
+    const hasSSRBooks = books && books.length !== 0;
+
+    if (initialLoad && hasSSRBooks) {
       // On the initial render, display the books prop.
       return <GenresBooks books={books} />;
     }
 
-    if (booksQuery.isLoading) {
-      return <SkeletonBooks />;
-    }
-
-    if (booksQuery.isError) {
+    if (isError) {
       return (
         <div className="mt-32p">
-          <ErrorMessage onRetry={() => booksQuery.refetch()} />
+          <ErrorMessage onRetry={() => refetch()} />
         </div>
       );
     }
 
-    return <GenresBooks books={booksQuery.data} />;
+    return (
+      <GenresBooks
+        books={booksFromQuery}
+        skeletonCount={limit}
+        showSkeletons={isFetching}
+      />
+    );
   };
 
   return (
@@ -75,6 +68,7 @@ const GenresContent = ({ genres, books }: GenresContentProps) => {
         activeFilter={activeGenre}
         setActiveFilter={handleFilterClick}
       />
+
       {renderContent()}
 
       <div className="mt-24p text-right md:mt-32p">

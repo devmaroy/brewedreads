@@ -8,7 +8,15 @@ const PopularBooks = async () => {
   let error;
 
   try {
-    popularBooks = await api.book.getPopularBooks.query({});
+    popularBooks = await api.book.getAll.query({
+      sortBy: "averageRating",
+      sortOrder: "desc",
+      limit: 6,
+      include: {
+        author: true,
+        genres: true,
+      },
+    });
   } catch (err) {
     error = err;
     console.error("Error fetching popular books:", error);
@@ -27,7 +35,7 @@ const PopularBooks = async () => {
   }
 
   // Check if there are any books to display
-  if (popularBooks && popularBooks.length > 0) {
+  if (popularBooks && popularBooks.books.length > 0) {
     return (
       <section className="z-99 relative mt-96p lg:mt-120p">
         <div className="container">
@@ -38,7 +46,7 @@ const PopularBooks = async () => {
             decorationClassName="right-[-4.2rem] top-[-2.6rem] h-[6.3125rem] w-[6.3125rem] md:right-[-11.8rem] md:top-[-6rem] md:h-[14.375rem] md:w-[14.375rem]"
           />
 
-          <PopularBooksContent popularBooks={popularBooks} />
+          <PopularBooksContent popularBooks={popularBooks.books} />
         </div>
       </section>
     );

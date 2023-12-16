@@ -22,6 +22,11 @@ export interface Book {
   genres?: Genre[];
 }
 
+export interface BookPage {
+  books: Book[];
+  nextCursor: string | undefined;
+}
+
 export type SortKey =
   | "title_asc"
   | "title_desc"

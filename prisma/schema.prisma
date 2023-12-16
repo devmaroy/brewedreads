@@ -50,14 +50,15 @@ model VerificationToken {
 }
 
 model Book {
-  id               String   @id @default(cuid())
-  isbn             String   @unique
-  title            String
-  slug             String
-  publisher        String
-  user             User     @relation(fields: [userId], references: [id])
-  userId           String
-  publishedDate    DateTime
+  id            String   @id @default(cuid())
+  isbn          String   @unique
+  title         String
+  slug          String
+  publisher     String
+  user          User     @relation(fields: [userId], references: [id])
+  userId        String
+  publishedDate DateTime
+
   pageCount        Int
   genres           Genre[]
   description      String
@@ -66,8 +67,8 @@ model Book {
   coverImageUrl    String
   coverImageWidth  Int
   coverImageHeight Int
-  createdAt        DateTime @default(now())
-  updatedAt        DateTime @updatedAt
+  createdDate      DateTime @default(now())
+  updatedDate      DateTime @default(now())
   ratings          Rating[]
   averageRating    Float?   @default(0)
   reviews          Review[]

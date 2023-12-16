@@ -31,7 +31,7 @@ const Genres = async () => {
   }
 
   // Check if there are any books to display
-  if (books && genres && books.length > 0 && genres.length > 0) {
+  if (books && genres && books.books.length > 0 && genres.length > 0) {
     return (
       <section className="mt-96p lg:mt-120p">
         <div className="container">
@@ -42,7 +42,7 @@ const Genres = async () => {
             decorationClassName="right-[-2.2rem] top-[-2.2rem] h-[4.1875rem] w-[3.75rem] md:right-[-2.875rem] md:top-[-2.5rem] md:h-[5.3125rem] md:w-[4.6875rem]"
           />
 
-          <GenresContent genres={genres} books={books} />
+          <GenresContent genres={genres} limit={6} books={books.books} />
         </div>
       </section>
     );

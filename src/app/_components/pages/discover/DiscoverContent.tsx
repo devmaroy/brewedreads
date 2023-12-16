@@ -2,17 +2,24 @@
 
 import DiscoverBooks from "@/app/_components/pages/discover/DiscoverBooks";
 import DiscoverFilters from "@/app/_components/pages/discover/DiscoverFilters";
+import { Button } from "@/app/_components/ui/button";
 import ErrorMessage from "@/app/_components/ui/custom/ErrorMessage";
-import SkeletonBooks from "@/app/_components/ui/skeletons/SkeletonBooks";
 import useDebounce from "@/hooks/useDebounce";
 import { api } from "@/trpc/react";
-import { type SortKey, type SortOption } from "@/types/types";
-import { type Book, type Genre } from "@prisma/client";
+import {
+  type Book,
+  type BookPage,
+  type Genre,
+  type SortKey,
+  type SortOption,
+} from "@/types/types";
 import { useState } from "react";
 
 interface DiscoverContentProps {
-  genres: Genre[];
+  limit?: number;
   books: Book[];
+  booksNextCursor?: string;
+  genres: Genre[];
 }
 
 const sortOptions: Record<SortKey, SortOption> = {
@@ -26,8 +33,13 @@ const sortOptions: Record<SortKey, SortOption> = {
   averageRating_desc: { fieldName: "averageRating", order: "desc" },
 };
 
-const DiscoverContent = ({ genres, books }: DiscoverContentProps) => {
-  const [filtersApplied, setFiltersApplied] = useState(false);
+const DiscoverContent = ({
+  limit = 10,
+  genres,
+  books,
+  booksNextCursor,
+}: DiscoverContentProps) => {
+  const [initialLoad, setInitialLoad] = useState(true);
   const [selectAllGenres, setSelectAllGenres] = useState(false);
   const [activeGenres, setActiveGenres] = useState<string[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -36,35 +48,46 @@ const DiscoverContent = ({ genres, books }: DiscoverContentProps) => {
     sortOptions.publishedDate_desc,
   );
 
-  const booksQuery = api.book.getAll.useQuery(
-    {
-      genre:
-        activeGenres && activeGenres.length !== 0 ? activeGenres : undefined,
-      searchTerm: debouncedSearch,
-      sortBy: sortBy?.fieldName ?? "publishedDate",
-      sortOrder: sortBy?.order ?? "desc",
-    },
-    {
-      enabled: filtersApplied, // Runs only when the filter button is clicked on.
-    },
-  );
+  const { data, hasNextPage, fetchNextPage, isFetching, isError, refetch } =
+    api.book.getAll.useInfiniteQuery(
+      {
+        limit,
+        genre: activeGenres.length !== 0 ? activeGenres : undefined,
+        searchTerm: debouncedSearch,
+        sortBy: sortBy?.fieldName ?? "publishedDate",
+        sortOrder: sortBy?.order ?? "desc",
+        include: {
+          author: true,
+          genres: true,
+        },
+      },
+      {
+        enabled: !initialLoad,
+        initialData: {
+          pages: [{ books, nextCursor: booksNextCursor ?? "" }],
+          pageParams: [null],
+        },
+        getNextPageParam: (lastPage: BookPage) => lastPage.nextCursor,
+      },
+    );
 
   const handleSelectAllGenres = (selectAllGenres: boolean) => {
+    setInitialLoad(false);
     setSelectAllGenres(selectAllGenres);
   };
 
   const handleSetActiveGenres = (selectedGenres: string[]) => {
-    setFiltersApplied(true);
+    setInitialLoad(false);
     setActiveGenres(selectedGenres);
   };
 
   const handleSetSearchTerm = (searchTerm: string) => {
-    setFiltersApplied(true);
+    setInitialLoad(false);
     setSearchTerm(searchTerm);
   };
 
   const handleSortBy = (sortBy: SortKey) => {
-    setFiltersApplied(true);
+    setInitialLoad(false);
     const selectedSortOption = sortOptions[sortBy] as SortOption | undefined;
 
     if (selectedSortOption) {
@@ -79,7 +102,8 @@ const DiscoverContent = ({ genres, books }: DiscoverContentProps) => {
   };
 
   const handleButtonClick = (genre: string) => {
-    setFiltersApplied(true);
+    setInitialLoad(false);
+
     setActiveGenres((prevState) => {
       // Toggle clicked genre
       const updatedGenres = new Set(prevState);
@@ -94,36 +118,42 @@ const DiscoverContent = ({ genres, books }: DiscoverContentProps) => {
     });
   };
 
-  // Render books content
-  const renderContent = () => {
-    if (!filtersApplied) {
-      // On the initial render, display the books prop.
-      return <DiscoverBooks books={books} />;
-    }
+  const booksFromQuery: Book[] =
+    data?.pages.flatMap((page: BookPage) => page.books) ?? [];
 
-    if (booksQuery.isLoading) {
+  const handleLoadMore = async () => {
+    setInitialLoad(false);
+    await fetchNextPage();
+  };
+
+  const renderBooks = () => {
+    const hasSSRBooks = books && books.length !== 0;
+
+    if (initialLoad && hasSSRBooks) {
       return (
-        <SkeletonBooks wrapperClassName="mt-56p grid grid-cols-fluid-fill-8-5 gap-x-24p gap-y-32p md:gap-x-32p md:gap-y-48p lg:mt-64p lg:grid-cols-fluid-fill-11" />
+        <DiscoverBooks
+          books={books}
+          skeletonCount={limit}
+          showSkeletons={false}
+        />
       );
     }
 
-    if (booksQuery.isError) {
+    if (isError) {
       return (
         <div className="mt-56p lg:mt-64p">
-          <ErrorMessage onRetry={() => booksQuery.refetch()} />
+          <ErrorMessage onRetry={() => refetch()} />
         </div>
       );
     }
 
-    if (!booksQuery.data || booksQuery.data.length === 0) {
-      return (
-        <div className="mt-56p lg:mt-64p">
-          Ooops. There are no books matching these filters :(
-        </div>
-      );
-    }
-
-    return <DiscoverBooks books={booksQuery.data} />;
+    return (
+      <DiscoverBooks
+        books={booksFromQuery}
+        skeletonCount={limit}
+        showSkeletons={isFetching}
+      />
+    );
   };
 
   return (
@@ -141,7 +171,18 @@ const DiscoverContent = ({ genres, books }: DiscoverContentProps) => {
         setSortBy={handleSortBy}
       />
 
-      {renderContent()}
+      {renderBooks()}
+
+      {hasNextPage && (
+        <div className="text-center mt-56p">
+          <Button
+            onClick={handleLoadMore}
+            className="rounded-full bg-gradient font-bold text-16p !py-14p !px-40p h-auto lg:!py-16p lg:!px-64p"
+          >
+            Find More Reads
+          </Button>
+        </div>
+      )}
     </div>
   );
 };

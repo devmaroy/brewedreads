@@ -49,8 +49,8 @@ CREATE TABLE "Book" (
     "coverImageUrl" TEXT NOT NULL,
     "coverImageWidth" INTEGER NOT NULL,
     "coverImageHeight" INTEGER NOT NULL,
-    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" TIMESTAMP(3) NOT NULL,
+    "createdDate" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedDate" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "averageRating" DOUBLE PRECISION DEFAULT 0,
     "authorId" TEXT NOT NULL,
 

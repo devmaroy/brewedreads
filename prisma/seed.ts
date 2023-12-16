@@ -53,6 +53,8 @@ async function main() {
           slug: slugify(book.title.toLowerCase()),
           publisher: book.publisher,
           publishedDate: new Date(book.publishedDate),
+          createdDate: new Date().toISOString(),
+          updatedDate: new Date().toISOString(),
           pageCount: book.pageCount,
           description: book.description,
           teaser: book.teaser,

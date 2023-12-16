@@ -6,9 +6,16 @@ const Discover = async () => {
   let books;
   let genres;
   let error;
+  const limit = 5;
 
   try {
-    books = await api.book.getAll.query({ orderByPublishedAt: "desc" });
+    books = await api.book.getAll.query({
+      limit,
+      include: {
+        author: true,
+        genres: true,
+      },
+    });
     genres = await api.genre.getAll.query({});
   } catch (err) {
     error = err;
@@ -26,7 +33,7 @@ const Discover = async () => {
     );
   }
 
-  if (books && genres && books.length > 0 && genres.length > 0) {
+  if (books && genres && books.books.length > 0 && genres.length > 0) {
     return (
       <section className="mt-72p">
         <div className="sm:container">
@@ -41,7 +48,12 @@ const Discover = async () => {
               </p>
             </div>
 
-            <DiscoverContent books={books} genres={genres} />
+            <DiscoverContent
+              limit={limit}
+              books={books.books}
+              booksNextCursor={books.nextCursor}
+              genres={genres}
+            />
           </div>
         </div>
       </section>

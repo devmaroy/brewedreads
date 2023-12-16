@@ -1,38 +1,32 @@
 import { createTRPCRouter, publicProcedure } from "@/server/api/trpc";
+import { type Book } from "@/types/types";
 import { z } from "zod";
-
-// Zod is used for schema validation
 
 export const bookRouter = createTRPCRouter({
   getAll: publicProcedure
     .input(
       z.object({
-        sortBy: z
-          .enum(["title", "publishedDate", "pageCount", "averageRating"])
-          .optional(),
-        sortOrder: z.enum(["asc", "desc"]).optional(),
-        orderByPublishedAt: z.enum(["asc", "desc"]).optional(),
+        cursor: z.string().optional(),
+        limit: z.number().min(1).max(100).default(10),
         genre: z.union([z.string(), z.array(z.string())]).optional(),
         searchTerm: z.string().optional(),
-        limit: z.number().optional(),
+        sortBy: z
+          .enum(["title", "publishedDate", "pageCount", "averageRating"])
+          .optional()
+          .default("publishedDate"),
+        sortOrder: z.enum(["asc", "desc"]).optional().default("desc"),
+        include: z.record(z.any()).optional().default({}),
       }),
     )
-    .query(({ ctx, input }) => {
-      const limit = input.limit ?? 10;
+    .query(async ({ ctx, input }) => {
+      const { db } = ctx;
+      const { cursor, limit, genre, searchTerm, sortBy, sortOrder, include } =
+        input;
 
-      // Filter by genres
-
-      // Create a variable that is always an array to simplify the filter logic
-      const genreArray = Array.isArray(input.genre)
-        ? input.genre
-        : input.genre
-          ? [input.genre]
-          : [];
-
-      // Filter by genre
+      // Genres filter
       let genreFilter = {};
-      if (genreArray && genreArray.length > 0) {
-        // Filter by specific genres
+      if (genre) {
+        const genreArray = Array.isArray(genre) ? genre : [genre];
         genreFilter = {
           OR: genreArray.map((genre) => ({
             genres: {
@@ -42,80 +36,53 @@ export const bookRouter = createTRPCRouter({
             },
           })),
         };
-      } else {
-        // No genre filter applied, return all books
-        genreFilter = {};
       }
 
-      // Filter by search term
-      const searchTermFilter = input.searchTerm
-        ? {
-            title: {
-              contains: input.searchTerm,
-              mode: "insensitive",
-            },
-          }
-        : {};
-
-      // Filter by sortBy
-      let orderBy = {};
-      if (input.sortBy) {
-        orderBy = {
-          [input.sortBy]: input.sortOrder ?? "asc",
-        };
-      } else {
-        orderBy = {
-          publishedDate: "desc",
+      // Search term filter
+      let searchTermFilter = {};
+      if (searchTerm) {
+        searchTermFilter = {
+          title: {
+            contains: input.searchTerm,
+            mode: "insensitive",
+          },
         };
       }
 
-      return ctx.db.book.findMany({
+      // SortBy filter
+      let sortByFilter = {};
+      if (sortBy && sortOrder) {
+        sortByFilter = {
+          [sortBy]: sortOrder,
+        };
+      }
+
+      // Include
+      let includeFilter = {};
+      if (include) {
+        includeFilter = include;
+      }
+
+      const books: Book[] = await db.book.findMany({
+        take: limit + 1,
         where: {
           AND: [genreFilter, searchTermFilter],
         },
-        orderBy,
-        take: limit,
-        include: {
-          genres: true,
-          author: true,
-        },
-      });
-    }),
-  getPopularBooks: publicProcedure
-    .input(
-      z.object({
-        limit: z.number().optional(),
-      }),
-    )
-    .query(async ({ ctx, input }) => {
-      const limit = input.limit ?? 6;
-
-      // Fetch the top books based on average rating directly from the database
-      const books = await ctx.db.book.findMany({
-        take: limit,
-        orderBy: {
-          averageRating: "desc",
-        },
-        include: {
-          author: true,
-          ratings: {
-            select: {
-              score: true,
-            },
-          },
-          genres: {
-            select: {
-              id: true,
-              name: true,
-              slug: true,
-            },
-            orderBy: {
-              name: "asc",
-            },
-          },
-        },
+        orderBy: sortByFilter,
+        cursor: cursor ? { id: cursor } : undefined,
+        include: { ...includeFilter },
       });
 
-      return books;
+      let nextCursor: typeof cursor | undefined = undefined;
+
+      if (books.length > limit) {
+        const nextItem = books.pop()!;
+        nextCursor = nextItem.id;
+      }
+
+      return {
+        books,
+        nextCursor,
+      };
     }),
 });

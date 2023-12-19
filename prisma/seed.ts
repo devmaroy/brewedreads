@@ -53,8 +53,9 @@ async function main() {
           slug: slugify(book.title.toLowerCase()),
           publisher: book.publisher,
           publishedDate: new Date(book.publishedDate),
-          createdDate: new Date().toISOString(),
-          updatedDate: new Date().toISOString(),
+          //  REVIEW:  not needed, prisma will automatically set the date for createdat and updatedat
+          // createdDate: new Date().toISOString(),
+          // updatedDate: new Date().toISOString(),
           pageCount: book.pageCount,
           description: book.description,
           teaser: book.teaser,
@@ -76,7 +77,7 @@ async function main() {
       }),
     ),
   );
-
+  //  REVIEW: one transaction is enough
   await prisma.$transaction([
     // Create reviews
     prisma.review.createMany({

@@ -13,7 +13,7 @@ import {
   type SortKey,
   type SortOption,
 } from "@/types/types";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface DiscoverContentProps {
   limit?: number;
@@ -62,7 +62,7 @@ const DiscoverContent = ({
         },
       },
       {
-        enabled: !initialLoad,
+        enabled: false,
         initialData: {
           pages: [{ books, nextCursor: booksNextCursor ?? "" }],
           pageParams: [null],
@@ -70,6 +70,11 @@ const DiscoverContent = ({
         getNextPageParam: (lastPage: BookPage) => lastPage.nextCursor,
       },
     );
+
+  //   // REVIEW: try to rework to this logic to remove setInitialLoad
+  // useEffect(() => {
+  //   refetch();
+  // }, [refetch, debouncedSearch, activeGenres, sortBy]);
 
   const handleSelectAllGenres = (selectAllGenres: boolean) => {
     setInitialLoad(false);
@@ -126,6 +131,15 @@ const DiscoverContent = ({
     await fetchNextPage();
   };
 
+  // REVIEW: try to rework to this logic
+  // const books =  booksFromQuery || books
+
+  //   <DiscoverBooks
+  //   books={books}
+  //   skeletonCount={limit}
+  //   showSkeletons={isFetching}
+  // />
+
   const renderBooks = () => {
     const hasSSRBooks = books && books.length !== 0;
 
@@ -171,7 +185,8 @@ const DiscoverContent = ({
         setSortBy={handleSortBy}
       />
 
-      {renderBooks()}
+      {/* // REVIEW do not use this pattern if not needed, this is basically a component inside a component */}
+      {/* {renderBooks()} */}
 
       {hasNextPage && (
         <div className="text-center mt-56p">

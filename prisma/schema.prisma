@@ -68,7 +68,7 @@ model Book {
   coverImageWidth  Int
   coverImageHeight Int
   createdDate      DateTime @default(now())
-  updatedDate      DateTime @default(now())
+  updatedDate      DateTime @updatedAt
   ratings          Rating[]
   averageRating    Float?   @default(0)
   reviews          Review[]

@@ -1,5 +1,4 @@
-import useSetQueryString from "@/hooks/useSetQueryString";
-import { Filter } from "@/types/types";
+import { type Filter } from "@/types/types";
 import { Check } from "lucide-react";
 import { MultiSelect } from "primereact/multiselect";
 

@@ -29,7 +29,6 @@ const DiscoverContent = ({
 
   const {
     isFilterActive,
-    searchTerm,
     debouncedSearchTerm,
     activeGenres,
     activeSortByFilter,

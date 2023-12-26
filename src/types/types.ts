@@ -1,3 +1,8 @@
+export interface Filter {
+  label: string;
+  value: string;
+}
+
 export interface Genre {
   id: string;
   name: string;
@@ -28,6 +33,7 @@ export interface BookPage {
 }
 
 export type SortKey =
+  | ""
   | "title_asc"
   | "title_desc"
   | "publishedDate_asc"

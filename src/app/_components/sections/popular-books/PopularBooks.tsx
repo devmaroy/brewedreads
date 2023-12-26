@@ -1,29 +1,19 @@
+import { fetchBooks } from "@/api/api";
 import PopularBooksContent from "@/app/_components/sections/popular-books/PopularBooksContent";
 import ErrorMessage from "@/app/_components/ui/custom/ErrorMessage";
 import SectionHeader from "@/app/_components/ui/custom/SectionHeader";
-import { api } from "@/trpc/server";
 
 const PopularBooks = async () => {
-  let popularBooks;
-  let error;
-
-  try {
-    popularBooks = await api.book.getAll.query({
-      sortBy: "averageRating",
-      sortOrder: "desc",
-      limit: 6,
-      include: {
-        author: true,
-        genres: true,
-      },
-    });
-  } catch (err) {
-    error = err;
-    console.error("Error fetching popular books:", error);
-  }
+  const { books, isError, isSuccess, hasBooks } = await fetchBooks({
+    limit: 5,
+    include: {
+      author: true,
+      genres: true,
+    },
+  });
 
   // Check if we have some error.
-  if (error) {
+  if (isError || !isSuccess) {
     // Return an error message or a component to indicate the error
     return (
       <section className="z-99 relative mt-96p lg:mt-120p">
@@ -35,7 +25,7 @@ const PopularBooks = async () => {
   }
 
   // Check if there are any books to display
-  if (popularBooks && popularBooks.books.length > 0) {
+  if (hasBooks) {
     return (
       <section className="z-99 relative mt-96p lg:mt-120p">
         <div className="container">
@@ -46,13 +36,11 @@ const PopularBooks = async () => {
             decorationClassName="right-[-4.2rem] top-[-2.6rem] h-[6.3125rem] w-[6.3125rem] md:right-[-11.8rem] md:top-[-6rem] md:h-[14.375rem] md:w-[14.375rem]"
           />
 
-          <PopularBooksContent popularBooks={popularBooks.books} />
+          <PopularBooksContent popularBooks={books} />
         </div>
       </section>
     );
   }
-
-  return null;
 };
 
 export default PopularBooks;

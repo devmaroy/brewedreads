@@ -120,7 +120,7 @@ model User {
   ratings       Rating[]
   reviews       Review[]
   account       Account[]
-  Session       Session[]
+  session       Session[]
   role          Role?     @relation(fields: [roleId], references: [id])
   roleId        String?
   book          Book[]

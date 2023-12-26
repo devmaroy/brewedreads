@@ -4,194 +4,98 @@ import DiscoverBooks from "@/app/_components/pages/discover/DiscoverBooks";
 import DiscoverFilters from "@/app/_components/pages/discover/DiscoverFilters";
 import { Button } from "@/app/_components/ui/button";
 import ErrorMessage from "@/app/_components/ui/custom/ErrorMessage";
-import useDebounce from "@/hooks/useDebounce";
-import { api } from "@/trpc/react";
-import {
-  type Book,
-  type BookPage,
-  type Genre,
-  type SortKey,
-  type SortOption,
-} from "@/types/types";
-import { useEffect, useState } from "react";
+import { useDiscoverContext } from "@/context/DiscoverContext";
+import { useFetchPaginatedBooks } from "@/hooks/api";
+import { type Book } from "@/types/types";
 
 interface DiscoverContentProps {
   limit?: number;
   books: Book[];
   booksNextCursor?: string;
-  genres: Genre[];
 }
-
-const sortOptions: Record<SortKey, SortOption> = {
-  title_asc: { fieldName: "title", order: "asc" },
-  title_desc: { fieldName: "title", order: "desc" },
-  publishedDate_asc: { fieldName: "publishedDate", order: "asc" },
-  publishedDate_desc: { fieldName: "publishedDate", order: "desc" },
-  pageCount_asc: { fieldName: "pageCount", order: "asc" },
-  pageCount_desc: { fieldName: "pageCount", order: "desc" },
-  averageRating_asc: { fieldName: "averageRating", order: "asc" },
-  averageRating_desc: { fieldName: "averageRating", order: "desc" },
-};
 
 const DiscoverContent = ({
   limit = 10,
-  genres,
-  books,
-  booksNextCursor,
+  books: SSRBooks,
+  booksNextCursor: SSRBooksNextCursor,
 }: DiscoverContentProps) => {
-  const [initialLoad, setInitialLoad] = useState(true);
-  const [selectAllGenres, setSelectAllGenres] = useState(false);
-  const [activeGenres, setActiveGenres] = useState<string[]>([]);
-  const [searchTerm, setSearchTerm] = useState("");
-  const debouncedSearch = useDebounce(searchTerm, 500);
-  const [sortBy, setSortBy] = useState<SortOption>(
-    sortOptions.publishedDate_desc,
-  );
+  const context = useDiscoverContext();
 
-  const { data, hasNextPage, fetchNextPage, isFetching, isError, refetch } =
-    api.book.getAll.useInfiniteQuery(
-      {
-        limit,
-        genre: activeGenres.length !== 0 ? activeGenres : undefined,
-        searchTerm: debouncedSearch,
-        sortBy: sortBy?.fieldName ?? "publishedDate",
-        sortOrder: sortBy?.order ?? "desc",
-        include: {
-          author: true,
-          genres: true,
-        },
-      },
-      {
-        enabled: false,
-        initialData: {
-          pages: [{ books, nextCursor: booksNextCursor ?? "" }],
-          pageParams: [null],
-        },
-        getNextPageParam: (lastPage: BookPage) => lastPage.nextCursor,
-      },
+  if (!context) {
+    throw new Error(
+      "useDiscoverContext must be used within a DiscoverContextProvider",
     );
+  }
 
-  //   // REVIEW: try to rework to this logic to remove setInitialLoad
-  // useEffect(() => {
-  //   refetch();
-  // }, [refetch, debouncedSearch, activeGenres, sortBy]);
+  const {
+    isFilterActive,
+    debouncedSearchTerm,
+    activeGenres,
+    activeSortByFilter,
+  } = context;
 
-  const handleSelectAllGenres = (selectAllGenres: boolean) => {
-    setInitialLoad(false);
-    setSelectAllGenres(selectAllGenres);
-  };
+  // const shouldFetchData =
+  //   searchTerm !== "" || activeGenres.length > 0 || activeSortByFilter !== "";
 
-  const handleSetActiveGenres = (selectedGenres: string[]) => {
-    setInitialLoad(false);
-    setActiveGenres(selectedGenres);
-  };
+  const {
+    books,
+    isError,
+    isFetching,
+    isSuccess,
+    hasBooks,
+    hasNextPage,
+    fetchNextPage,
+    refetch,
+  } = useFetchPaginatedBooks({
+    limit,
+    genres: activeGenres,
+    searchTerm: debouncedSearchTerm,
+    sortBy: activeSortByFilter,
+    include: {
+      genres: true,
+      author: true,
+    },
+    initialData: {
+      pages: [
+        {
+          books: SSRBooks,
+          nextCursor: SSRBooksNextCursor ?? "",
+        },
+      ],
+      pageParams: [null],
+    },
+    enabled: isFilterActive,
+  });
 
-  const handleSetSearchTerm = (searchTerm: string) => {
-    setInitialLoad(false);
-    setSearchTerm(searchTerm);
-  };
-
-  const handleSortBy = (sortBy: SortKey) => {
-    setInitialLoad(false);
-    const selectedSortOption = sortOptions[sortBy] as SortOption | undefined;
-
-    if (selectedSortOption) {
-      setSortBy({
-        input: sortBy,
-        fieldName: selectedSortOption.fieldName,
-        order: selectedSortOption.order,
-      });
-    } else {
-      setSortBy(sortOptions.publishedDate_desc);
-    }
-  };
-
-  const handleButtonClick = (genre: string) => {
-    setInitialLoad(false);
-
-    setActiveGenres((prevState) => {
-      // Toggle clicked genre
-      const updatedGenres = new Set(prevState);
-
-      if (updatedGenres.has(genre)) {
-        updatedGenres.delete(genre);
-      } else {
-        updatedGenres.add(genre);
-      }
-
-      return Array.from(updatedGenres);
-    });
-  };
-
-  const booksFromQuery: Book[] =
-    data?.pages.flatMap((page: BookPage) => page.books) ?? [];
-
-  const handleLoadMore = async () => {
-    setInitialLoad(false);
+  const handleLoadMorePages = async () => {
     await fetchNextPage();
   };
 
-  // REVIEW: try to rework to this logic
-  // const books =  booksFromQuery || books
-
-  //   <DiscoverBooks
-  //   books={books}
-  //   skeletonCount={limit}
-  //   showSkeletons={isFetching}
-  // />
-
-  const renderBooks = () => {
-    const hasSSRBooks = books && books.length !== 0;
-
-    if (initialLoad && hasSSRBooks) {
-      return (
-        <DiscoverBooks
-          books={books}
-          skeletonCount={limit}
-          showSkeletons={false}
-        />
-      );
-    }
-
-    if (isError) {
-      return (
-        <div className="mt-56p lg:mt-64p">
-          <ErrorMessage onRetry={() => refetch()} />
-        </div>
-      );
-    }
-
+  // Check if we have some error.
+  if (isError || !isSuccess) {
+    // Return an error message or a component to indicate the error
     return (
-      <DiscoverBooks
-        books={booksFromQuery}
-        skeletonCount={limit}
-        showSkeletons={isFetching}
-      />
+      <section className="mt-56p">
+        <ErrorMessage explorePath="/" onRetry={() => refetch()} />
+      </section>
     );
-  };
+  }
 
   return (
     <div>
-      <DiscoverFilters
-        filters={genres}
-        activeGenres={activeGenres}
-        setActiveGenres={handleSetActiveGenres}
-        setActiveGenresButton={handleButtonClick}
-        selectAllGenres={selectAllGenres}
-        setSelectAllGenres={handleSelectAllGenres}
-        searchTerm={searchTerm}
-        setSearchTerm={handleSetSearchTerm}
-        sortBy={sortBy}
-        setSortBy={handleSortBy}
-      />
+      <DiscoverFilters />
 
-      {/* // REVIEW do not use this pattern if not needed, this is basically a component inside a component */}
-      {/* {renderBooks()} */}
+      <DiscoverBooks
+        hasBooks={hasBooks}
+        books={books}
+        skeletonCount={books.length ? books.length + limit : limit}
+        showSkeletons={isFetching}
+      />
 
       {hasNextPage && (
         <div className="text-center mt-56p">
           <Button
-            onClick={handleLoadMore}
+            onClick={handleLoadMorePages}
             className="rounded-full bg-gradient font-bold text-16p !py-14p !px-40p h-auto lg:!py-16p lg:!px-64p"
           >
             Find More Reads

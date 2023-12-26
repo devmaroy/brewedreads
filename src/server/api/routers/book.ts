@@ -1,6 +1,17 @@
 import { createTRPCRouter, publicProcedure } from "@/server/api/trpc";
 import { type Book } from "@/types/types";
+import { type Prisma } from "@prisma/client";
 import { z } from "zod";
+
+// Function to create genres filter
+const createGenresFilter = (
+  genres: string | string[] | undefined,
+): Prisma.BookWhereInput => {
+  if (!genres || genres.length === 0) return {};
+  const slugFilter =
+    typeof genres === "string" ? { equals: genres } : { in: genres };
+  return { genres: { some: { slug: { ...slugFilter, mode: "insensitive" } } } };
+};
 
 export const bookRouter = createTRPCRouter({
   getAll: publicProcedure
@@ -8,70 +19,68 @@ export const bookRouter = createTRPCRouter({
       z.object({
         cursor: z.string().optional(),
         limit: z.number().min(1).max(100).default(10),
-        genre: z.union([z.string(), z.array(z.string())]).optional(),
-        searchTerm: z.string().optional(),
+        genres: z.union([
+          z.string().optional(),
+          z.array(z.string()).optional(),
+        ]),
+        searchTerm: z.string().optional().default(""),
         sortBy: z
-          .enum(["title", "publishedDate", "pageCount", "averageRating"])
+          .enum([
+            "",
+            "title_asc",
+            "title_desc",
+            "publishedDate_asc",
+            "publishedDate_desc",
+            "pageCount_asc",
+            "pageCount_desc",
+            "averageRating_asc",
+            "averageRating_desc",
+          ])
           .optional()
-          .default("publishedDate"),
-        sortOrder: z.enum(["asc", "desc"]).optional().default("desc"),
-        include: z.record(z.any()).optional().default({}),
+          .default("publishedDate_desc"),
+        include: z
+          .object({
+            author: z.boolean().optional(),
+            genres: z.boolean().optional(),
+          })
+          .optional()
+          .default({}),
       }),
     )
     .query(async ({ ctx, input }) => {
       const { db } = ctx;
-      const { cursor, limit, genre, searchTerm, sortBy, sortOrder, include } =
-        input;
+      const { cursor, limit, genres, searchTerm, sortBy, include } = input;
 
       // Genres filter
-      let genreFilter = {};
-      if (genre) {
-        const genreArray = Array.isArray(genre) ? genre : [genre];
-        genreFilter = {
-          OR: genreArray.map((genre) => ({
-            genres: {
-              some: {
-                name: genre,
-              },
-            },
-          })),
-        };
-      }
-
-      // Search term filter
-      let searchTermFilter = {};
-      if (searchTerm) {
-        searchTermFilter = {
-          title: {
-            contains: input.searchTerm,
-            mode: "insensitive",
-          },
-        };
-      }
+      const genresFilter = createGenresFilter(genres);
 
       // SortBy filter
-      let sortByFilter = {};
-      if (sortBy && sortOrder) {
-        sortByFilter = {
-          [sortBy]: sortOrder,
-        };
-      }
+      const [sortByField = "publishedDate", sortByOrder = "desc"] = sortBy
+        ? sortBy.split("_")
+        : [];
 
-      // Include
-      let includeFilter = {};
-      if (include) {
-        includeFilter = include;
-      }
-
-      const books: Book[] = await db.book.findMany({
-        take: limit + 1,
-        where: {
-          AND: [genreFilter, searchTermFilter],
+      // Where clause
+      const where: Prisma.BookWhereInput = {
+        AND: {
+          title: {
+            contains: searchTerm,
+            mode: "insensitive",
+          },
+          ...genresFilter,
         },
-        orderBy: sortByFilter,
-        cursor: cursor ? { id: cursor } : undefined,
-        include: { ...includeFilter },
-      });
+      };
+
+      const [books]: [Book[]] = await db.$transaction([
+        db.book.findMany({
+          take: limit + 1,
+          where,
+          orderBy: {
+            [sortByField]: sortByOrder,
+          },
+          cursor: cursor ? { id: cursor } : undefined,
+          include: include,
+        }),
+      ]);
 
       let nextCursor: typeof cursor | undefined = undefined;
 

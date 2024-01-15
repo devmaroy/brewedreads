@@ -109,3 +109,39 @@ export const fetchBooks = async ({ limit, include }: FetchBooksProps) => {
     };
   }
 };
+
+interface FetchBookProps {
+  slug: string;
+  include?: {
+    author?: boolean;
+    genres?: boolean;
+    reviews?:
+      | boolean
+      | {
+          include: {
+            rating?: { select: { id: boolean; score: boolean } };
+            user?: { select: { id: boolean; name: boolean; avatar: boolean } };
+          };
+        };
+  };
+}
+
+export const fetchBookBySlug = async ({ slug, include }: FetchBookProps) => {
+  try {
+    const { book } = await api.book.getOne.query({ slug, include });
+
+    return {
+      book,
+      isError: false,
+      isSuccess: true,
+      hasBook: book !== null,
+    };
+  } catch (error) {
+    return {
+      book: null,
+      isError: true,
+      isSucces: false,
+      hasBook: false,
+    };
+  }
+};

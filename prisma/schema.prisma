@@ -49,33 +49,6 @@ model VerificationToken {
   @@unique([identifier, token])
 }
 
-model Book {
-  id            String   @id @default(cuid())
-  isbn          String   @unique
-  title         String
-  slug          String
-  publisher     String
-  user          User     @relation(fields: [userId], references: [id])
-  userId        String
-  publishedDate DateTime
-
-  pageCount        Int
-  genres           Genre[]
-  description      String
-  teaser           String
-  language         String
-  coverImageUrl    String
-  coverImageWidth  Int
-  coverImageHeight Int
-  createdDate      DateTime @default(now())
-  updatedDate      DateTime @updatedAt
-  ratings          Rating[]
-  averageRating    Float?   @default(0)
-  reviews          Review[]
-  author           Author   @relation(fields: [authorId], references: [id])
-  authorId         String
-}
-
 model Author {
   id    String @id @default(cuid())
   name  String
@@ -91,21 +64,51 @@ model Genre {
 }
 
 model Rating {
-  id     String @id @default(cuid())
-  score  Float
-  book   Book   @relation(fields: [bookId], references: [id])
-  bookId String
-  user   User   @relation(fields: [userId], references: [id])
-  userId String
+  id       String  @id @default(cuid())
+  score    Float
+  book     Book    @relation(fields: [bookId], references: [id])
+  bookId   String
+  user     User    @relation(fields: [userId], references: [id])
+  userId   String
+  review   Review? @relation(fields: [reviewId], references: [id])
+  reviewId String? @unique
 }
 
 model Review {
-  id      String @id @default(cuid())
-  content String
-  book    Book   @relation(fields: [bookId], references: [id])
-  bookId  String
-  user    User   @relation(fields: [userId], references: [id])
-  userId  String
+  id          String   @id @default(cuid())
+  createdDate DateTime @default(now())
+  content     String
+  book        Book     @relation(fields: [bookId], references: [id])
+  bookId      String
+  user        User     @relation(fields: [userId], references: [id])
+  userId      String
+  rating      Rating?
+}
+
+model Book {
+  id               String   @id @default(cuid())
+  isbn             String   @unique
+  title            String
+  slug             String   @unique
+  publisher        String
+  user             User     @relation(fields: [userId], references: [id])
+  userId           String
+  publishedDate    DateTime
+  pageCount        Int
+  genres           Genre[]
+  description      String
+  teaser           String
+  language         String
+  coverImageUrl    String
+  coverImageWidth  Int
+  coverImageHeight Int
+  createdDate      DateTime @default(now())
+  updatedDate      DateTime @updatedAt
+  ratings          Rating[]
+  averageRating    Float?   @default(0)
+  reviews          Review[]
+  author           Author   @relation(fields: [authorId], references: [id])
+  authorId         String
 }
 
 // REVIEW: Fix uppercase like Account or Session

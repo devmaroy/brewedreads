@@ -38,6 +38,7 @@ async function main() {
         id: user.id,
         name: user.name,
         slug: slugify(user.name.toLowerCase()),
+        avatar: user.avatar,
       })),
     }),
   ]);
@@ -95,6 +96,7 @@ async function main() {
         score: rating.score,
         bookId: rating.bookId,
         userId: rating.userId,
+        reviewId: rating.reviewId,
       })),
     }),
   ]);

@@ -27,6 +27,41 @@
       "email": "david@example.com",
       "emailVerified": "2022-11-01T17:22:45.67Z",
       "avatar": "http://example.com/images/users/david.jpg"
+    },
+    {
+      "id": "clr9i64al000008ldfc6zb38o",
+      "name": "Sarah Rickins",
+      "email": "sarahrick@example.com",
+      "emailVerified": "2022-11-01T17:22:45.67Z",
+      "avatar": "https://res.cloudinary.com/dfyclbzqr/image/upload/v1704995844/brewedreads.com/yhnb7cog5za8fyuzbauq.jpg"
+    },
+    {
+      "id": "clr9iizf0000009lcggsz2167",
+      "name": "Martin Kan",
+      "email": "mkaouemx@example.com",
+      "emailVerified": "2022-11-01T17:22:45.67Z",
+      "avatar": "https://res.cloudinary.com/dfyclbzqr/image/upload/v1704995949/brewedreads.com/t04rnvgyafjc75zqw7rt.jpg"
+    },
+    {
+      "id": "clr9ilh0l000109lc0pa36stv",
+      "name": "Patrick Murphy",
+      "email": "pmarphyu@example.com",
+      "emailVerified": "2022-11-01T17:22:45.67Z",
+      "avatar": "https://res.cloudinary.com/dfyclbzqr/image/upload/v1704996046/brewedreads.com/jcau94jyd5hemjezt7qg.jpg"
+    },
+    {
+      "id": "clr9ipoir000209lc3ramd7ai",
+      "name": "Lucy Collins",
+      "email": "luciyucoll@example.com",
+      "emailVerified": "2022-11-01T17:22:45.67Z",
+      "avatar": "https://res.cloudinary.com/dfyclbzqr/image/upload/v1704996272/brewedreads.com/hf9ocryxt2uagqdq38ot.jpg"
+    },
+    {
+      "id": "clr9isqvm000309lc0x5xhxve",
+      "name": "George Owen",
+      "email": "geoowen@example.com",
+      "emailVerified": "2022-11-01T17:22:45.67Z",
+      "avatar": "https://res.cloudinary.com/dfyclbzqr/image/upload/v1704996411/brewedreads.com/a03czmmdupckzjylekkq.jpg"
     }
   ],
   "authors": [
@@ -86,18 +121,76 @@
   ],
   "reviews": [
     {
-      "id": "clq3op90p000008l38gzvfpb2",
-      "content": "A novel that truly captures the essence of love in the city of lights.",
-      "bookId": "clq3n81sb000008jv8jndad84",
-      "userId": "clq3nbdb5000l08jve7k14f0h"
+      "id": "clr9ixk9m000409lcgw7e7tzz",
+      "content": "Great adventure! Lyra is a fantastic character. The ending felt rushed but still a worthwhile read.",
+      "bookId": "clq3n8alw000108jv5c45c3m5",
+      "userId": "clr9i64al000008ldfc6zb38o",
+      "ratingId": { "score": 5.0 }
+    },
+    {
+      "id": "clr9ixnt9000509lcgtng4lu7",
+      "content": "Couldn't put it down! The world-building is really top-notch. A must for fantasy fans!",
+      "bookId": "clq3n8alw000108jv5c45c3m5",
+      "userId": "clr9iizf0000009lcggsz2167",
+      "ratingId": "clq3oy2o1000008jw0rj1831f"
+    },
+    {
+      "id": "clr9ixppy000609lc5yt28502",
+      "content": "Interesting concept, but I wanted more character depth. Still, the setting is captivating.",
+      "bookId": "clq3n8alw000108jv5c45c3m5",
+      "userId": "clr9ilh0l000109lc0pa36stv",
+      "ratingId": "clq3oy2o1000008jw0rj1831f"
+    },
+    {
+      "id": "clr9ixrn1000709lch3qde8td",
+      "content": "Incredible storytelling. The magic system is unique and the twist was unexpected. Loved it!",
+      "bookId": "clq3n8alw000108jv5c45c3m5",
+      "userId": "clr9ipoir000209lc3ramd7ai",
+      "ratingId": "clq3oy2o1000008jw0rj1831f"
+    },
+    {
+      "id": "clr9ixtbb000809lcdqfga85z",
+      "content": "Really charming and engaging story. Some parts were a bit quick, but overall, a solid read.",
+      "bookId": "clq3n8alw000108jv5c45c3m5",
+      "userId": "clr9isqvm000309lc0x5xhxve",
+      "ratingId": "clq3oy2o1000008jw0rj1831f"
     }
   ],
   "ratings": [
     {
-      "id": "clq3oy2o1000008jw0rj1831f",
-      "score": 3.5,
-      "bookId": "clq3n81sb000008jv8jndad84",
-      "userId": "clq3nbdb5000l08jve7k14f0h"
+      "id": "clrexe9lg000008l78bswbcy5",
+      "score": 5.0,
+      "bookId": "clq3n8alw000108jv5c45c3m5",
+      "userId": "clr9i64al000008ldfc6zb38o",
+      "reviewId": "clr9ixk9m000409lcgw7e7tzz"
+    },
+    {
+      "id": "clrexedgd000108l7g0peb3pn",
+      "score": 5.0,
+      "bookId": "clq3n8alw000108jv5c45c3m5",
+      "userId": "clr9iizf0000009lcggsz2167",
+      "reviewId": "clr9ixnt9000509lcgtng4lu7"
+    },
+    {
+      "id": "clrexefgp000208l7c0o2529d",
+      "score": 4.6,
+      "bookId": "clq3n8alw000108jv5c45c3m5",
+      "userId": "clr9ilh0l000109lc0pa36stv",
+      "reviewId": "clr9ixppy000609lc5yt28502"
+    },
+    {
+      "id": "clrexehmy000308l7fdvs0qwv",
+      "score": 4.9,
+      "bookId": "clq3n8alw000108jv5c45c3m5",
+      "userId": "clr9ipoir000209lc3ramd7ai",
+      "reviewId": "clr9ixrn1000709lch3qde8td"
+    },
+    {
+      "id": "clrexejol000408l7awbxd5or",
+      "score": 3.3,
+      "bookId": "clq3n8alw000108jv5c45c3m5",
+      "userId": "clr9isqvm000309lc0x5xhxve",
+      "reviewId": "clr9ixtbb000809lcdqfga85z"
     }
   ],
   "books": [

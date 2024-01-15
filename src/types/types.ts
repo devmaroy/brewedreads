@@ -1,3 +1,10 @@
+export interface User {
+  id: string;
+  name: string;
+  email?: string;
+  avatar: string | null;
+}
+
 export interface Filter {
   label: string;
   value: string;
@@ -25,6 +32,36 @@ export interface Book {
   coverImageHeight?: number;
   averageRating: number | null;
   genres?: Genre[];
+}
+
+export interface BookReview {
+  id: string;
+  createdDate: Date;
+  content: string;
+  user: User;
+  rating: { id: string; score: number } | null;
+}
+
+export interface SingleBook {
+  cover: {
+    width: number;
+    height: number;
+    url: string;
+  };
+  genres: Genre[];
+  title: string;
+  rating: number;
+  author: {
+    id: string;
+    slug: string;
+    name: string;
+  };
+  teaser: string;
+  description: string;
+  pageCount: number;
+  publishedDate: Date;
+  publisher: string;
+  reviews?: BookReview[];
 }
 
 export interface BookPage {

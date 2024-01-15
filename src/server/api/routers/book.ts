@@ -94,4 +94,83 @@ export const bookRouter = createTRPCRouter({
         nextCursor,
       };
     }),
+  getOne: publicProcedure
+    .input(
+      z.object({
+        slug: z.string(),
+        include: z
+          .object({
+            author: z.boolean().optional(),
+            genres: z.boolean().optional(),
+            reviews: z
+              .union([
+                z.boolean(),
+                z.object({
+                  include: z.object({
+                    rating: z
+                      .object({
+                        select: z.object({
+                          id: z.boolean().optional(),
+                          score: z.boolean().optional(),
+                        }),
+                      })
+                      .optional(),
+                    user: z
+                      .object({
+                        select: z.object({
+                          id: z.boolean().optional(),
+                          name: z.boolean().optional(),
+                          avatar: z.boolean().optional(),
+                        }),
+                      })
+                      .optional(),
+                  }),
+                }),
+              ])
+              .optional(),
+          })
+          .optional(),
+      }),
+    )
+    .query(async ({ ctx, input }) => {
+      const { db } = ctx;
+      const { slug, include } = input;
+
+      console.log("------------------------");
+      console.log(include?.reviews);
+      // include:
+      console.log("------------------------");
+
+      const book = await db.book.findUnique({
+        where: {
+          slug: slug,
+        },
+        // include,
+        include: {
+          author: true,
+          genres: true,
+          reviews: {
+            include: {
+              rating: {
+                select: {
+                  id: true,
+                  score: true,
+                },
+              },
+              user: {
+                select: {
+                  id: true,
+                  name: true,
+                  avatar: true,
+                },
+              },
+            },
+          },
+        },
+      });
+
+      return {
+        book,
+      };
+    }),
 });

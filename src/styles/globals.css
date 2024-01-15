@@ -67,6 +67,11 @@
   transition: background-position 0.5s ease;
 }
 
+.separator-gradient::before {
+  content: "";
+  @apply block h-[.0625rem] w-full bg-[linear-gradient(62.32deg,#7C3AED_12.69%,#DE6B48_88.64%)] opacity-25;
+}
+
 .bg-gradient:hover,
 .bg-gradient:focus,
 .bg-gradient:active {

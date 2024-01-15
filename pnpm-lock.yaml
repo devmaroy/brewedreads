@@ -59,6 +59,9 @@ dependencies:
   cmdk:
     specifier: ^0.2.0
     version: 0.2.0(@types/react@18.2.39)(react-dom@18.2.0)(react@18.2.0)
+  date-fns:
+    specifier: ^3.2.0
+    version: 3.2.0
   input:
     specifier: ^1.0.1
     version: 1.0.1
@@ -3164,6 +3167,13 @@ packages:
         integrity: sha512-0R9ikRb668HB7QDxT1vkpuUBtqc53YyAwMwGeUFKRojY/NWKvdZ+9UYtRfGmhqNbRkTSVpMbmyhXipFFv2cb/A==,
       }
     engines: { node: ">= 12" }
+    dev: false
+
+  /date-fns@3.2.0:
+    resolution:
+      {
+        integrity: sha512-E4KWKavANzeuusPi0jUjpuI22SURAznGkx7eZV+4i6x2A+IZxAMcajgkvuDAU1bg40+xuhW1zRdVIIM/4khuIg==,
+      }
     dev: false
 
   /debug@4.3.4:

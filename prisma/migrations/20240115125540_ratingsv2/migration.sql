@@ -34,30 +34,6 @@ CREATE TABLE "VerificationToken" (
 );
 
 -- CreateTable
-CREATE TABLE "Book" (
-    "id" TEXT NOT NULL,
-    "isbn" TEXT NOT NULL,
-    "title" TEXT NOT NULL,
-    "slug" TEXT NOT NULL,
-    "publisher" TEXT NOT NULL,
-    "userId" TEXT NOT NULL,
-    "publishedDate" TIMESTAMP(3) NOT NULL,
-    "pageCount" INTEGER NOT NULL,
-    "description" TEXT NOT NULL,
-    "teaser" TEXT NOT NULL,
-    "language" TEXT NOT NULL,
-    "coverImageUrl" TEXT NOT NULL,
-    "coverImageWidth" INTEGER NOT NULL,
-    "coverImageHeight" INTEGER NOT NULL,
-    "createdDate" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedDate" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "averageRating" DOUBLE PRECISION DEFAULT 0,
-    "authorId" TEXT NOT NULL,
-
-    CONSTRAINT "Book_pkey" PRIMARY KEY ("id")
-);
-
--- CreateTable
 CREATE TABLE "Author" (
     "id" TEXT NOT NULL,
     "name" TEXT NOT NULL,
@@ -81,6 +57,7 @@ CREATE TABLE "Rating" (
     "score" DOUBLE PRECISION NOT NULL,
     "bookId" TEXT NOT NULL,
     "userId" TEXT NOT NULL,
+    "reviewId" TEXT,
 
     CONSTRAINT "Rating_pkey" PRIMARY KEY ("id")
 );
@@ -88,11 +65,36 @@ CREATE TABLE "Rating" (
 -- CreateTable
 CREATE TABLE "Review" (
     "id" TEXT NOT NULL,
+    "createdDate" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "content" TEXT NOT NULL,
     "bookId" TEXT NOT NULL,
     "userId" TEXT NOT NULL,
 
     CONSTRAINT "Review_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "Book" (
+    "id" TEXT NOT NULL,
+    "isbn" TEXT NOT NULL,
+    "title" TEXT NOT NULL,
+    "slug" TEXT NOT NULL,
+    "publisher" TEXT NOT NULL,
+    "userId" TEXT NOT NULL,
+    "publishedDate" TIMESTAMP(3) NOT NULL,
+    "pageCount" INTEGER NOT NULL,
+    "description" TEXT NOT NULL,
+    "teaser" TEXT NOT NULL,
+    "language" TEXT NOT NULL,
+    "coverImageUrl" TEXT NOT NULL,
+    "coverImageWidth" INTEGER NOT NULL,
+    "coverImageHeight" INTEGER NOT NULL,
+    "createdDate" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedDate" TIMESTAMP(3) NOT NULL,
+    "averageRating" DOUBLE PRECISION DEFAULT 0,
+    "authorId" TEXT NOT NULL,
+
+    CONSTRAINT "Book_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
@@ -135,7 +137,13 @@ CREATE UNIQUE INDEX "VerificationToken_token_key" ON "VerificationToken"("token"
 CREATE UNIQUE INDEX "VerificationToken_identifier_token_key" ON "VerificationToken"("identifier", "token");
 
 -- CreateIndex
+CREATE UNIQUE INDEX "Rating_reviewId_key" ON "Rating"("reviewId");
+
+-- CreateIndex
 CREATE UNIQUE INDEX "Book_isbn_key" ON "Book"("isbn");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "Book_slug_key" ON "Book"("slug");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
@@ -156,22 +164,25 @@ ALTER TABLE "Account" ADD CONSTRAINT "Account_userId_fkey" FOREIGN KEY ("userId"
 ALTER TABLE "Session" ADD CONSTRAINT "Session_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "Book" ADD CONSTRAINT "Book_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
-
--- AddForeignKey
-ALTER TABLE "Book" ADD CONSTRAINT "Book_authorId_fkey" FOREIGN KEY ("authorId") REFERENCES "Author"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
-
--- AddForeignKey
 ALTER TABLE "Rating" ADD CONSTRAINT "Rating_bookId_fkey" FOREIGN KEY ("bookId") REFERENCES "Book"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "Rating" ADD CONSTRAINT "Rating_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
+ALTER TABLE "Rating" ADD CONSTRAINT "Rating_reviewId_fkey" FOREIGN KEY ("reviewId") REFERENCES "Review"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
 ALTER TABLE "Review" ADD CONSTRAINT "Review_bookId_fkey" FOREIGN KEY ("bookId") REFERENCES "Book"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "Review" ADD CONSTRAINT "Review_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "Book" ADD CONSTRAINT "Book_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "Book" ADD CONSTRAINT "Book_authorId_fkey" FOREIGN KEY ("authorId") REFERENCES "Author"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "User" ADD CONSTRAINT "User_roleId_fkey" FOREIGN KEY ("roleId") REFERENCES "Role"("id") ON DELETE SET NULL ON UPDATE CASCADE;

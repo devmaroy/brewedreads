@@ -42,7 +42,7 @@ const SingleSelectGenres = ({
               onSelectAllGenres(!selectAllGenres);
             }}
             className={cn(
-              "hover:bg-primary bg-foreground py-",
+              "hover:bg-primary bg-foreground",
               `${selectAllGenres && "bg-primary"}`,
             )}
           >

@@ -98,6 +98,7 @@ export default {
         "clamp-44p-to-80p": "clamp(2.75rem, 6vw, 5rem)",
         "clamp-46p-to-52p": "clamp(2.875rem, 6vw, 3.25rem)",
         "clamp-32p-to-46p": "clamp(2rem, 6vw, 2.875rem)",
+        "clamp-24p-to-30p": "clamp(1.5rem, 3.2vw, 1.875rem)",
         "clamp-26p-to-40p": "clamp(1.625rem, 3.2vw, 2.5rem)",
         "clamp-20p-to-24p": "clamp(1.25rem, 3vw, 1.5rem)",
         "clamp-18p-to-20p": "clamp(1.125rem, 3vw, 1.25rem)",

@@ -2,7 +2,6 @@ import { Button } from "@/app/_components/ui/button";
 import Rating from "@/app/_components/ui/custom/Rating";
 import { formatDate } from "@/lib/utils";
 import { type SingleBook } from "@/types/types";
-import { format, parseISO } from "date-fns";
 import Image from "next/image";
 import Link from "next/link";
 

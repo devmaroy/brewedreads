@@ -2,7 +2,9 @@ import BookInfo from "@/app/_components/pages/books/BookInfo";
 import BookReviews from "@/app/_components/pages/books/BookReviews";
 import { type SingleBook } from "@/types/types";
 
-type BookProps = SingleBook;
+interface BookProps extends SingleBook {
+  limitReviews: number;
+}
 
 const Book = ({
   cover,
@@ -16,6 +18,8 @@ const Book = ({
   publishedDate,
   publisher,
   reviews,
+  reviewsNextCursor,
+  limitReviews,
 }: BookProps) => {
   return (
     <div>
@@ -32,7 +36,13 @@ const Book = ({
         publisher={publisher}
       />
 
-      {reviews && reviews.length > 0 && <BookReviews reviews={reviews} />}
+      {reviews && reviews.length > 0 && (
+        <BookReviews
+          reviews={reviews}
+          limitReviews={limitReviews}
+          reviewsNextCursor={reviewsNextCursor}
+        />
+      )}
     </div>
   );
 };

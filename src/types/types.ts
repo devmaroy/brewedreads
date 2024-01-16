@@ -1,7 +1,7 @@
 export interface User {
   id: string;
   name: string;
-  email?: string;
+  email?: string | null;
   avatar: string | null;
 }
 
@@ -32,40 +32,64 @@ export interface Book {
   coverImageHeight?: number;
   averageRating: number | null;
   genres?: Genre[];
+  reviews?: Review[];
+  pageCount?: number;
+  publishedDate?: Date;
+  publisher?: string;
 }
 
-export interface BookReview {
+export interface Review {
+  rating: {
+    id: string;
+    score: number;
+    bookId: string;
+    userId: string;
+    reviewId: string | null;
+  } | null;
+  user: {
+    id: string;
+    name: string;
+    slug: string;
+    email: string | null;
+    emailVerified: Date | null;
+    avatar: string | null;
+    roleId: string | null;
+  };
   id: string;
   createdDate: Date;
   content: string;
-  user: User;
-  rating: { id: string; score: number } | null;
 }
 
 export interface SingleBook {
-  cover: {
-    width: number;
-    height: number;
+  cover?: {
+    width?: number;
+    height?: number;
     url: string;
   };
-  genres: Genre[];
+  genres?: Genre[];
   title: string;
   rating: number;
-  author: {
+  author?: {
     id: string;
     slug: string;
     name: string;
   };
-  teaser: string;
-  description: string;
-  pageCount: number;
-  publishedDate: Date;
-  publisher: string;
-  reviews?: BookReview[];
+  teaser?: string;
+  description?: string;
+  pageCount?: number;
+  publishedDate?: Date;
+  publisher?: string;
+  reviews?: Review[];
+  reviewsNextCursor?: string;
 }
 
 export interface BookPage {
   books: Book[];
+  nextCursor: string | undefined;
+}
+
+export interface ReviewPage {
+  reviews: Review[];
   nextCursor: string | undefined;
 }
 

@@ -2,6 +2,8 @@ import { fetchBookBySlug } from "@/api/api";
 import Book from "@/app/_components/pages/books/Book";
 import ErrorMessage from "@/app/_components/ui/custom/ErrorMessage";
 
+const LIMIT_BOOK_REVIEWS_PER_LOAD = 2;
+
 interface BooksPageProps {
   params: {
     slug: string;
@@ -10,13 +12,17 @@ interface BooksPageProps {
 
 const BooksPage = async ({ params }: BooksPageProps) => {
   const slug = params.slug ?? "";
-  const { book } = await fetchBookBySlug({
+  const { book, reviewsNextCursor } = await fetchBookBySlug({
     slug,
+    limitReviews: LIMIT_BOOK_REVIEWS_PER_LOAD,
     include: {
       author: true,
       genres: true,
       reviews: {
-        include: {
+        select: {
+          id: true,
+          createdDate: true,
+          content: true,
           rating: {
             select: {
               id: true,
@@ -57,6 +63,8 @@ const BooksPage = async ({ params }: BooksPageProps) => {
                 publishedDate={book.publishedDate}
                 publisher={book.publisher}
                 reviews={book.reviews}
+                limitReviews={LIMIT_BOOK_REVIEWS_PER_LOAD}
+                reviewsNextCursor={reviewsNextCursor}
               />
             ) : (
               <ErrorMessage />

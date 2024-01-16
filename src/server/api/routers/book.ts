@@ -98,6 +98,8 @@ export const bookRouter = createTRPCRouter({
     .input(
       z.object({
         slug: z.string(),
+        cursor: z.string().optional(),
+        limitReviews: z.number().min(1).max(100).default(10),
         include: z
           .object({
             author: z.boolean().optional(),
@@ -106,7 +108,10 @@ export const bookRouter = createTRPCRouter({
               .union([
                 z.boolean(),
                 z.object({
-                  include: z.object({
+                  select: z.object({
+                    id: z.boolean().optional(),
+                    createdDate: z.boolean().optional(),
+                    content: z.boolean().optional(),
                     rating: z
                       .object({
                         select: z.object({
@@ -134,43 +139,40 @@ export const bookRouter = createTRPCRouter({
     )
     .query(async ({ ctx, input }) => {
       const { db } = ctx;
-      const { slug, include } = input;
+      const { slug, cursor, limitReviews, include } = input;
 
-      console.log("------------------------");
-      console.log(include?.reviews);
-      // include:
-      console.log("------------------------");
-
-      const book = await db.book.findUnique({
+      const book: Book | null = await db.book.findUnique({
         where: {
           slug: slug,
         },
-        // include,
         include: {
-          author: true,
-          genres: true,
+          ...include,
           reviews: {
-            include: {
-              rating: {
-                select: {
-                  id: true,
-                  score: true,
-                },
-              },
-              user: {
-                select: {
-                  id: true,
-                  name: true,
-                  avatar: true,
-                },
-              },
+            take: limitReviews + 1,
+            cursor: cursor ? { id: cursor } : undefined,
+            select: {
+              // Default includes for rating and user
+              rating: true,
+              user: true,
+              // Spread the inner select if it exists
+              ...(typeof include?.reviews === "object"
+                ? include.reviews.select
+                : {}),
             },
           },
         },
       });
 
+      let reviewsNextCursor: typeof cursor | undefined = undefined;
+
+      if (book?.reviews && book.reviews.length > limitReviews) {
+        const nextItem = book.reviews.pop()!;
+        reviewsNextCursor = nextItem.id;
+      }
+
       return {
         book,
+        reviewsNextCursor,
       };
     }),
 });

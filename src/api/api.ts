@@ -112,13 +112,17 @@ export const fetchBooks = async ({ limit, include }: FetchBooksProps) => {
 
 interface FetchBookProps {
   slug: string;
+  limitReviews?: number;
   include?: {
     author?: boolean;
     genres?: boolean;
     reviews?:
       | boolean
       | {
-          include: {
+          select: {
+            id?: boolean;
+            createdDate?: boolean;
+            content?: boolean;
             rating?: { select: { id: boolean; score: boolean } };
             user?: { select: { id: boolean; name: boolean; avatar: boolean } };
           };
@@ -126,12 +130,21 @@ interface FetchBookProps {
   };
 }
 
-export const fetchBookBySlug = async ({ slug, include }: FetchBookProps) => {
+export const fetchBookBySlug = async ({
+  slug,
+  include,
+  limitReviews,
+}: FetchBookProps) => {
   try {
-    const { book } = await api.book.getOne.query({ slug, include });
+    const { book, reviewsNextCursor } = await api.book.getOne.query({
+      slug,
+      limitReviews,
+      include,
+    });
 
     return {
       book,
+      reviewsNextCursor,
       isError: false,
       isSuccess: true,
       hasBook: book !== null,
@@ -139,6 +152,7 @@ export const fetchBookBySlug = async ({ slug, include }: FetchBookProps) => {
   } catch (error) {
     return {
       book: null,
+      reviewsNextCursor: "",
       isError: true,
       isSucces: false,
       hasBook: false,
